@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japan & Korea — October 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1814;
+    --ink-mid: #3d3a34;
+    --ink-light: #7a7570;
+    --ink-faint: #c4bfb8;
+    --paper: #faf8f4;
+    --paper-warm: #f3efe8;
+    --paper-mid: #e8e2d9;
+    --accent: #c8502a;
+    --gold: #b8914a;
+    --gold-light: #f0e4c8;
+    --teal: #2a6b5e;
+    --teal-light: #d0e8e3;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); font-size: 14px; line-height: 1.6; }
+
+  /* COVER */
+  .cover { background: var(--ink); color: var(--paper); padding: 64px 60px 52px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: 0; right: 0; width: 340px; height: 340px; background: radial-gradient(circle at 70% 30%, rgba(200,80,42,0.18) 0%, transparent 70%); pointer-events: none; }
+  .cover-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  .cover-title { font-family: 'Cormorant Garamond', serif; font-size: 68px; font-weight: 300; line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 6px; }
+  .cover-title em { font-style: italic; color: var(--gold); }
+  .cover-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; font-style: italic; color: var(--ink-faint); margin-bottom: 40px; }
+  .cover-divider { width: 48px; height: 1px; background: var(--accent); margin: 32px 0; }
+  .cover-meta { display: flex; gap: 36px; flex-wrap: wrap; }
+  .cover-meta-label { font-size: 9px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 4px; }
+  .cover-meta-value { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--paper); }
+
+  /* FLIGHTS BANNER */
+  .flights-banner { background: #111; border-top: 1px solid #2a2a2a; padding: 0 60px; }
+  .flights-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .flight-col { padding: 20px 0; border-right: 1px solid #2a2a2a; padding-right: 32px; margin-right: 32px; }
+  .flight-col:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+  .flight-label { font-size: 9px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #555; margin-bottom: 10px; }
+  .flight-party { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #222; }
+  .flight-party:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .flight-party-label { font-size: 10px; color: var(--accent); font-weight: 500; margin-bottom: 5px; letter-spacing: 0.05em; }
+  .flight-row { display: flex; align-items: baseline; gap: 8px; font-size: 12px; color: #bbb; line-height: 1.5; }
+  .flight-time { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: #eee; font-weight: 400; min-width: 60px; }
+  .flight-via { font-size: 10px; color: #555; margin: 2px 0 2px 68px; }
+  .flight-num { font-size: 10px; color: #444; margin-left: 68px; }
+
+  /* ROUTE STRIP */
+  .route-strip { background: var(--paper-warm); border-bottom: 1px solid var(--paper-mid); padding: 0 60px; display: flex; align-items: center; overflow-x: auto; font-size: 11px; }
+  .route-city { padding: 14px 12px; display: flex; flex-direction: column; align-items: center; gap: 2px; flex-shrink: 0; }
+  .route-city span:first-child { font-size: 13px; font-weight: 500; color: var(--ink); }
+  .route-city span:last-child { font-size: 10px; color: var(--ink-light); }
+  .route-arrow { color: var(--ink-faint); font-size: 11px; padding: 0 2px; flex-shrink: 0; }
+
+  /* MAIN */
+  .main { display: grid; grid-template-columns: 224px 1fr; min-height: calc(100vh - 260px); }
+
+  /* SIDEBAR */
+  .sidebar { background: var(--ink); padding: 32px 0 40px; position: sticky; top: 0; height: 100vh; overflow-y: auto; }
+  .sidebar::-webkit-scrollbar { width: 3px; }
+  .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+  .sidebar-section-label { font-size: 9px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #444; padding: 0 24px 10px; }
+  .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 24px; cursor: pointer; transition: background 0.15s; border-left: 2px solid transparent; }
+  .nav-item:hover { background: rgba(255,255,255,0.05); }
+  .nav-item.active { background: rgba(200,80,42,0.12); border-left-color: var(--accent); }
+  .nav-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .nav-label { font-size: 12px; font-weight: 500; color: rgba(250,248,244,0.88); display: block; }
+  .nav-dates { font-size: 10px; color: rgba(250,248,244,0.35); display: block; margin-top: 1px; }
+  .nav-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 14px 24px; }
+
+  /* NAV UTILITY BUTTONS — prominent tiles */
+  .nav-utility-section { padding: 0 16px; margin-top: 6px; display: flex; flex-direction: column; gap: 6px; }
+  .nav-tile { padding: 11px 14px; border-radius: 8px; cursor: pointer; transition: all 0.15s; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; gap: 10px; }
+  .nav-tile:hover { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); }
+  .nav-tile.active { border-color: transparent; }
+  .nav-tile-budget.active { background: rgba(184,145,74,0.2); border-color: rgba(184,145,74,0.4); }
+  .nav-tile-book.active { background: rgba(200,80,42,0.2); border-color: rgba(200,80,42,0.4); }
+  .nav-tile-pack.active { background: rgba(42,107,94,0.25); border-color: rgba(42,107,94,0.5); }
+  .nav-tile-icon { font-size: 16px; flex-shrink: 0; }
+  .nav-tile-text {}
+  .nav-tile-name { font-size: 12px; font-weight: 500; color: rgba(250,248,244,0.9); display: block; }
+  .nav-tile-sub { font-size: 10px; color: rgba(250,248,244,0.4); display: block; margin-top: 1px; }
+
+  /* CONTENT */
+  .content { overflow: hidden; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* SECTION HEADER */
+  .section-header { padding: 44px 56px 28px; border-bottom: 1px solid var(--paper-mid); position: relative; }
+  .section-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .sh-tokyo::before { background: #378ADD; }
+  .sh-seoul::before { background: #7F77DD; }
+  .sh-busan::before { background: #c8502a; }
+  .sh-fukuoka::before { background: #1D9E75; }
+  .sh-osaka::before { background: #D4537E; }
+  .sh-hakone::before { background: #639922; }
+  .sh-budget::before { background: var(--gold); }
+  .sh-book::before { background: #c8502a; }
+  .sh-pack::before { background: var(--teal); }
+  .section-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 8px; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; line-height: 1.05; margin-bottom: 4px; }
+  .section-title em { font-style: italic; }
+  .section-subtitle { font-size: 13px; color: var(--ink-light); margin-bottom: 16px; }
+  .section-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+  .tag { padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid; }
+  .tag-nights { border-color: var(--paper-mid); color: var(--ink-mid); background: var(--paper-warm); }
+  .tag-food { border-color: #f0c8b0; color: #8a3a1a; background: #fdf0ea; }
+  .tag-culture { border-color: #c8d4f0; color: #2a3a7a; background: #eef2fc; }
+  .tag-shopping { border-color: #c8e8d8; color: #1a5a3a; background: #eafaf0; }
+
+  /* DAYS */
+  .days-container { padding: 28px 56px 48px; }
+  .day-block { margin-bottom: 20px; border: 1px solid var(--paper-mid); border-radius: 12px; overflow: hidden; transition: box-shadow 0.2s; }
+  .day-block:hover { box-shadow: 0 3px 16px rgba(26,24,20,0.06); }
+  .day-header { display: flex; align-items: center; gap: 14px; padding: 14px 18px; cursor: pointer; background: var(--paper-warm); user-select: none; }
+  .day-number { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--ink-faint); min-width: 34px; line-height: 1; }
+  .day-info { flex: 1; }
+  .day-date-str { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 2px; }
+  .day-title-str { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .day-toggle { width: 22px; height: 22px; border-radius: 50%; background: var(--paper-mid); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--ink-light); transition: transform 0.2s, background 0.2s; flex-shrink: 0; }
+  .day-block.open .day-toggle { transform: rotate(90deg); background: var(--ink); color: var(--paper); }
+  .day-body { display: none; padding: 0 18px 18px; border-top: 1px solid var(--paper-mid); }
+  .day-body.open { display: block; }
+
+  /* TIMELINE */
+  .timeline { padding-top: 18px; }
+  .tl-item { display: flex; gap: 14px; margin-bottom: 18px; position: relative; }
+  .tl-item:not(:last-child)::before { content: ''; position: absolute; left: 37px; top: 26px; bottom: -6px; width: 1px; background: var(--paper-mid); }
+  .tl-time { font-size: 11px; color: var(--ink-light); min-width: 52px; padding-top: 3px; text-align: right; flex-shrink: 0; }
+  .tl-dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--paper-mid); margin-top: 4px; flex-shrink: 0; }
+  .tl-content { flex: 1; }
+  .tl-act-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+  .tl-act-desc { font-size: 12px; color: var(--ink-light); line-height: 1.55; }
+  .cost-badge { display: inline-block; background: var(--gold-light); color: #7a5e20; border: 1px solid #ddc87a; border-radius: 4px; font-size: 10px; font-weight: 500; padding: 1px 7px; margin-left: 8px; vertical-align: middle; }
+
+  /* FOOD CARD */
+  .food-card { background: linear-gradient(135deg, #fdf6ed 0%, #faf2e8 100%); border: 1px solid #e8d8c0; border-radius: 10px; padding: 13px 15px; margin: 14px 0 6px; }
+  .food-card-label { font-size: 9px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .food-card-content { font-size: 12px; color: var(--ink-mid); line-height: 1.6; }
+  .food-card-content strong { color: var(--ink); font-weight: 500; }
+
+  /* TIP BOX */
+  .tip-box { background: var(--paper-warm); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 11px 15px; margin: 14px 0; font-size: 12px; color: var(--ink-mid); line-height: 1.6; }
+  .tip-box strong { color: var(--ink); font-weight: 500; }
+  .tip-box.blue { border-left-color: #378ADD; background: #f0f6fd; }
+  .tip-box.green { border-left-color: #1D9E75; background: #f0faf6; }
+  .tip-box.red { border-left-color: var(--accent); background: #fdf2ee; }
+
+  /* OVERVIEW */
+  .overview-content { padding: 36px 56px 56px; }
+  .overview-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--paper-mid); border: 1px solid var(--paper-mid); border-radius: 12px; overflow: hidden; margin-bottom: 28px; }
+  .ov-cell { background: var(--paper); padding: 18px 22px; }
+  .ov-cell-label { font-size: 9px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 6px; }
+  .ov-cell-value { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.1; }
+  .ov-cell-sub { font-size: 11px; color: var(--ink-light); margin-top: 3px; }
+
+  /* ROUTE TIMELINE */
+  .rt-item { display: flex; align-items: stretch; }
+  .rt-left { display: flex; flex-direction: column; align-items: center; width: 30px; flex-shrink: 0; }
+  .rt-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--paper-warm); flex-shrink: 0; margin-top: 14px; }
+  .rt-line { width: 1px; flex: 1; min-height: 14px; background: var(--paper-mid); }
+  .rt-right { flex: 1; padding: 10px 0 10px 14px; }
+  .rt-city-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 2px; }
+  .rt-city-name { font-size: 14px; font-weight: 500; color: var(--ink); }
+  .rt-city-dates { font-size: 11px; color: var(--ink-light); }
+  .rt-city-desc { font-size: 12px; color: var(--ink-light); line-height: 1.5; }
+  .rt-transport { display: flex; align-items: center; gap: 8px; padding: 6px 0 4px 14px; font-size: 11px; color: var(--ink-faint); }
+  .rt-transport-line { height: 1px; width: 18px; background: var(--paper-mid); }
+
+  /* BUDGET TABLE */
+  .budget-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+  .budget-table th { text-align: left; font-size: 10px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-light); padding: 0 14px 10px; border-bottom: 1px solid var(--paper-mid); }
+  .budget-table th:not(:first-child) { text-align: right; }
+  .budget-table td { padding: 11px 14px; font-size: 13px; border-bottom: 1px solid var(--paper-mid); vertical-align: top; }
+  .budget-table td:not(:first-child) { text-align: right; color: var(--ink-mid); }
+  .td-city { font-weight: 500; }
+  .td-sub { font-size: 11px; color: var(--ink-light); margin-top: 2px; }
+  .tr-total td { font-weight: 500; background: var(--paper-warm); border-bottom: none; border-top: 2px solid var(--paper-mid); }
+  .tr-total td:not(:first-child) { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--ink); }
+
+  /* BOOKING CHECKLIST */
+  .book-list { margin-bottom: 28px; }
+  .book-item { display: flex; gap: 14px; padding: 18px 0; border-bottom: 1px solid var(--paper-mid); }
+  .book-item:last-child { border-bottom: none; }
+  .book-priority { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+  .p-urgent { background: #fde8e0; color: var(--accent); }
+  .p-soon { background: var(--gold-light); color: var(--gold); }
+  .p-prep { background: var(--teal-light); color: var(--teal); }
+  .book-title { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .book-desc { font-size: 12px; color: var(--ink-light); line-height: 1.6; }
+  .priority-section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; padding: 22px 0 8px; border-bottom: 1px solid var(--paper-mid); margin-bottom: 0; }
+  .ps-urgent { color: var(--accent); }
+  .ps-soon { color: var(--gold); }
+  .ps-prep { color: var(--teal); }
+
+  /* PACKING CHECKLIST */
+  .pack-section { margin-bottom: 28px; }
+  .pack-section-title { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--paper-mid); }
+  .pack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+  .pack-item { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: 13px; color: var(--ink-mid); }
+  .pack-item input[type=checkbox] { margin-top: 3px; flex-shrink: 0; width: 14px; height: 14px; cursor: pointer; accent-color: var(--teal); }
+  .pack-item label { cursor: pointer; line-height: 1.4; }
+  .pack-item label small { display: block; font-size: 11px; color: var(--ink-light); margin-top: 1px; }
+  .pack-item.checked label { text-decoration: line-through; color: var(--ink-faint); }
+
+  .esim-card { background: linear-gradient(135deg, #f0faf6 0%, #eaf6f1 100%); border: 1px solid #b8e0d0; border-radius: 10px; padding: 14px 16px; margin: 10px 0 16px; }
+  .esim-card-label { font-size: 9px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+  .esim-option { display: flex; gap: 10px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid #cce8dd; }
+  .esim-option:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+  .esim-name { font-size: 13px; font-weight: 500; color: var(--ink); min-width: 110px; }
+  .esim-detail { font-size: 12px; color: var(--ink-light); line-height: 1.5; }
+  .esim-detail strong { color: var(--ink); font-weight: 500; }
+
+  @media print {
+    .sidebar { position: static; height: auto; }
+    .main { display: block; }
+    .panel { display: block !important; page-break-before: always; }
+    .panel:first-child { page-break-before: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">Travel Itinerary · Party of 7</div>
+  <div class="cover-title">Japan <em>&</em><br>Korea</div>
+  <div class="cover-subtitle">Twenty nights across six cities</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div><div class="cover-meta-label">Departure</div><div class="cover-meta-value">28 September 2026</div></div>
+    <div><div class="cover-meta-label">Return</div><div class="cover-meta-value">17 October 2026</div></div>
+    <div><div class="cover-meta-label">Travellers</div><div class="cover-meta-value">7 people · 2 parties</div></div>
+    <div><div class="cover-meta-label">Style</div><div class="cover-meta-value">Mid-range · Food-first</div></div>
+  </div>
+</div>
+
+<!-- FLIGHTS BANNER -->
+<div class="flights-banner">
+  <div class="flights-inner">
+    <div class="flight-col">
+      <div class="flight-label">Departing flights — Mon 28 September 2026</div>
+      <div class="flight-party">
+        <div class="flight-party-label">Party A — Reuel &amp; Irene</div>
+        <div class="flight-row"><span class="flight-time">9:35 AM</span><span>Melbourne (MEL) depart → Tokyo Narita (NRT)</span></div>
+        <div class="flight-via">QF79 · Airbus A330 · Direct</div>
+        <div class="flight-row" style="margin-top:4px;"><span class="flight-time">7:00 PM</span><span>Arrive Tokyo Narita (NRT)</span></div>
+        <div class="flight-num">Qantas · Economy · QF79</div>
+      </div>
+      <div class="flight-party">
+        <div class="flight-party-label">Party B — Mum, Dad, Karen, E Eang &amp; Sothea</div>
+        <div class="flight-row"><span class="flight-time">7:00 AM</span><span>Melbourne (MEL) depart → Brisbane (BNE)</span></div>
+        <div class="flight-via">QF604 · Boeing 737 · arr 9:20 AM · 1h 15min layover in Brisbane</div>
+        <div class="flight-row" style="margin-top:4px;"><span class="flight-time">10:35 AM</span><span>Brisbane (BNE) depart → Tokyo Narita (NRT)</span></div>
+        <div class="flight-via">QF61 · Airbus A330</div>
+        <div class="flight-row" style="margin-top:4px;"><span class="flight-time">6:50 PM</span><span>Arrive Tokyo Narita (NRT)</span></div>
+        <div class="flight-num">Qantas · Economy</div>
+      </div>
+    </div>
+    <div class="flight-col">
+      <div class="flight-label">Return flight — Sat 17 October 2026 · All travellers</div>
+      <div class="flight-party">
+        <div class="flight-party-label">All 7 travellers</div>
+        <div class="flight-row"><span class="flight-time">8:25 PM</span><span>Tokyo Narita (NRT) depart</span></div>
+        <div class="flight-via">QF80 · Airbus A330 · Overnight · 10h 15min</div>
+        <div class="flight-row" style="margin-top:4px;"><span class="flight-time">8:40 AM<sup>+1</sup></span><span>Arrive Melbourne (MEL) — Sun 18 Oct</span></div>
+        <div class="flight-num">Qantas · Economy · QF80</div>
+      </div>
+      <div class="tip-box red" style="margin-top:12px;font-size:11px;">
+        <strong>Both parties arrive Narita ~6:50 PM on 28 Sep.</strong> Plan to meet at the arrivals hall after immigration and head into the city together on the Narita Express.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROUTE STRIP -->
+<div class="route-strip">
+  <div class="route-city"><span>Tokyo</span><span>28 Sep – 2 Oct</span></div><div class="route-arrow">→</div>
+  <div class="route-city"><span>Seoul</span><span>2 – 5 Oct</span></div><div class="route-arrow">→</div>
+  <div class="route-city"><span>Busan</span><span>5 – 7 Oct</span></div><div class="route-arrow">→</div>
+  <div class="route-city"><span>Fukuoka</span><span>7 – 11 Oct</span></div><div class="route-arrow">→</div>
+  <div class="route-city"><span>Osaka / Kyoto</span><span>11 – 14 Oct</span></div><div class="route-arrow">→</div>
+  <div class="route-city"><span>Hakone</span><span>14 – 16 Oct</span></div><div class="route-arrow">→</div>
+  <div class="route-city"><span>Tokyo</span><span>16 – 17 Oct</span></div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+  <nav class="sidebar">
+    <div style="height:20px;"></div>
+    <div class="sidebar-section-label">Destinations</div>
+    <div class="nav-item active" onclick="showPanel('overview',this)">
+      <div class="nav-dot" style="background:var(--ink-faint);"></div>
+      <div><span class="nav-label">Overview</span><span class="nav-dates">Full journey</span></div>
+    </div>
+    <div class="nav-item" onclick="showPanel('tokyo',this)">
+      <div class="nav-dot" style="background:#378ADD;"></div>
+      <div><span class="nav-label">Tokyo</span><span class="nav-dates">28 Sep – 2 Oct · 4 nights</span></div>
+    </div>
+    <div class="nav-item" onclick="showPanel('seoul',this)">
+      <div class="nav-dot" style="background:#7F77DD;"></div>
+      <div><span class="nav-label">Seoul</span><span class="nav-dates">2 – 5 Oct · 2 nights</span></div>
+    </div>
+    <div class="nav-item" onclick="showPanel('busan',this)">
+      <div class="nav-dot" style="background:#c8502a;"></div>
+      <div><span class="nav-label">Busan</span><span class="nav-dates">5 – 7 Oct · 2 nights</span></div>
+    </div>
+    <div class="nav-item" onclick="showPanel('fukuoka',this)">
+      <div class="nav-dot" style="background:#1D9E75;"></div>
+      <div><span class="nav-label">Fukuoka</span><span class="nav-dates">7 – 11 Oct · 3 nights</span></div>
+    </div>
+    <div class="nav-item" onclick="showPanel('osaka',this)">
+      <div class="nav-dot" style="background:#D4537E;"></div>
+      <div><span class="nav-label">Osaka / Kyoto</span><span class="nav-dates">11 – 14 Oct · 3 nights</span></div>
+    </div>
+    <div class="nav-item" onclick="showPanel('hakone',this)">
+      <div class="nav-dot" style="background:#639922;"></div>
+      <div><span class="nav-label">Hakone</span><span class="nav-dates">14 – 16 Oct · 2 nights</span></div>
+    </div>
+    <div class="nav-item" onclick="showPanel('tokyo2',this)">
+      <div class="nav-dot" style="background:#378ADD;"></div>
+      <div><span class="nav-label">Tokyo (return)</span><span class="nav-dates">16 – 17 Oct · 1 night</span></div>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="sidebar-section-label">Planning</div>
+    <div class="nav-utility-section">
+      <div class="nav-tile nav-tile-budget" onclick="showPanel('budget',this)">
+        <div class="nav-tile-icon">💴</div>
+        <div class="nav-tile-text"><span class="nav-tile-name">Budget Breakdown</span><span class="nav-tile-sub">Per person · AUD estimates</span></div>
+      </div>
+      <div class="nav-tile nav-tile-book" onclick="showPanel('book',this)">
+        <div class="nav-tile-icon">📋</div>
+        <div class="nav-tile-text"><span class="nav-tile-name">Booking Checklist</span><span class="nav-tile-sub">What to book &amp; when</span></div>
+      </div>
+      <div class="nav-tile nav-tile-pack" onclick="showPanel('pack',this)">
+        <div class="nav-tile-icon">🎒</div>
+        <div class="nav-tile-text"><span class="nav-tile-name">Packing List</span><span class="nav-tile-sub">Apps, eSIM, what to bring</span></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="content">
+
+    <!-- OVERVIEW -->
+    <div class="panel active" id="panel-overview">
+      <div class="section-header sh-budget">
+        <div class="section-eyebrow">Complete journey</div>
+        <div class="section-title">Your <em>itinerary</em></div>
+        <div class="section-subtitle">20 nights · 7 cities · Food-first, optimised pace</div>
+      </div>
+      <div class="overview-content">
+        <div class="overview-grid">
+          <div class="ov-cell"><div class="ov-cell-label">Total nights</div><div class="ov-cell-value">20</div><div class="ov-cell-sub">28 Sep – 18 Oct 2026</div></div>
+          <div class="ov-cell"><div class="ov-cell-label">Cities</div><div class="ov-cell-value">7</div><div class="ov-cell-sub">Across Japan &amp; South Korea</div></div>
+          <div class="ov-cell"><div class="ov-cell-label">Est. per person (land)</div><div class="ov-cell-value">A$5,500–6,000</div><div class="ov-cell-sub">Excl. international flights</div></div>
+          <div class="ov-cell"><div class="ov-cell-label">Travel parties</div><div class="ov-cell-value" style="font-size:18px;">Reuel &amp; Irene + 5</div><div class="ov-cell-sub">Both arrive Narita ~6:50 PM 28 Sep</div></div>
+        </div>
+
+        <div class="route-timeline" style="margin-bottom:36px;">
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:#378ADD;"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Tokyo</div><div class="rt-city-dates">28 Sep – 2 Oct · 4 nights</div></div><div class="rt-city-desc">Arrival base. Tsukiji breakfast, Asakusa, TeamLab Planets, Shimokitazawa, Ebisu izakayas. Recover from jet lag while eating extremely well.</div></div></div>
+          <div class="rt-transport"><div class="rt-transport-line"></div>✈ Fly Tokyo → Seoul Incheon · ~2.5 hrs · 2 Oct</div>
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:#7F77DD;"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Seoul</div><div class="rt-city-dates">2 – 5 Oct · 2 nights</div></div><div class="rt-city-desc">Gyeongbokgung Palace, Gwangjang Market street food, Korean BBQ in local alleys, Namsan Tower, Hongdae evening.</div></div></div>
+          <div class="rt-transport"><div class="rt-transport-line"></div>🚄 KTX Seoul → Busan · ~2h 15min · 5 Oct (₩59,800 / ~A$65pp)</div>
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:#c8502a;"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Busan</div><div class="rt-city-dates">5 – 7 Oct · 2 nights</div></div><div class="rt-city-desc">Jagalchi seafood market, Gamcheon Culture Village, Gwangalli Beach, dwaeji gukbap, Bupyeong Market street food.</div></div></div>
+          <div class="rt-transport"><div class="rt-transport-line"></div>✈ Fly Busan → Fukuoka · ~1 hr · 7 Oct · ~A$100pp (Air Busan / Jeju Air)</div>
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:#1D9E75;"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Fukuoka</div><div class="rt-city-dates">7 – 11 Oct · 3 nights</div></div><div class="rt-city-desc">Birthplace of tonkotsu ramen. Yatai street food stalls, Dazaifu Tenmangu, motsunabe hotpot, optional Yanagawa canal day trip.</div></div></div>
+          <div class="rt-transport"><div class="rt-transport-line"></div>🚄 Shinkansen Fukuoka → Osaka · ~2h 15min · 11 Oct (¥14,390 / ~A$160pp)</div>
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:#D4537E;"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Osaka <span style="font-weight:300;color:var(--ink-light);">base</span></div><div class="rt-city-dates">11 – 14 Oct · 3 nights</div></div><div class="rt-city-desc">Day trips to Kyoto (Fushimi Inari, Arashiyama) and Nara (deer park, Todai-ji). Evenings in Osaka: Dotonbori, Shinsekai kushikatsu, Tsuruhashi yakiniku.</div></div></div>
+          <div class="rt-transport"><div class="rt-transport-line"></div>🚆 Shinkansen Osaka → Odawara + Hakone Tozan train · 14 Oct · ~A$120pp</div>
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:#639922;"></div><div class="rt-line"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Hakone</div><div class="rt-city-dates">14 – 16 Oct · 2 nights</div></div><div class="rt-city-desc">Ryokan with kaiseki dinner and onsen. Hakone Free Pass covers all local transport. Open-Air Museum, ropeway, Lake Ashi cruise, volcanic Owakudani valley.</div></div></div>
+          <div class="rt-transport"><div class="rt-transport-line"></div>🚆 Romancecar / Odakyu train → Shinjuku Tokyo · 16 Oct · ~A$18pp</div>
+          <div class="rt-item"><div class="rt-left"><div class="rt-dot" style="background:#378ADD;"></div></div><div class="rt-right"><div class="rt-city-row"><div class="rt-city-name">Tokyo <span style="font-weight:300;color:var(--ink-light);">return</span></div><div class="rt-city-dates">16 – 17 Oct · 1 night</div></div><div class="rt-city-desc">Final meals, Nakameguro in peak autumn colour. Depart Narita 17 Oct 8:25 PM. Arrive Melbourne 8:40 AM 18 Oct.</div></div></div>
+        </div>
+
+        <div class="tip-box"><strong>Accommodation for 7 people:</strong> Book 3–4 rooms at the same hotel — Dormy Inn chain is the best mid-range across Tokyo, Osaka, and Fukuoka. For Hakone, book a ryokan that can take multiple rooms across multiple nights. Book everything now — October is Japan's peak autumn foliage season.</div>
+      </div>
+    </div>
+
+    <!-- TOKYO -->
+    <div class="panel" id="panel-tokyo">
+      <div class="section-header sh-tokyo">
+        <div class="section-eyebrow">Japan · Days 1–4</div>
+        <div class="section-title"><em>Tokyo</em></div>
+        <div class="section-subtitle">28 September – 2 October · 4 nights · Both parties arrive ~6:50 PM on Day 1</div>
+        <div class="section-tags">
+          <span class="tag tag-nights">4 nights</span>
+          <span class="tag tag-food">Tsukiji · Ramen · Yakitori · TeamLab</span>
+          <span class="tag tag-culture">Asakusa · Shibuya · Harajuku</span>
+          <span class="tag tag-shopping">Shimokitazawa · Omotesando</span>
+        </div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box blue"><strong>Where to stay:</strong> Shinjuku or Asakusa. Dormy Inn chain — mid-range, in-house onsen, excellent locations. Book 3–4 rooms at the same property. Narita Express (N'EX) from the airport direct to Shinjuku ~90 min, ¥3,070/pp (~A$33).</div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">1</div><div class="day-info"><div class="day-date-str">Monday 28 September</div><div class="day-title-str">Arrival — both parties land 6:50 PM, Narita</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">6:50 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Land Narita — meet at arrivals, N'EX to hotel <span class="cost-badge">¥3,070/pp (~A$33)</span></div><div class="tl-act-desc">Both parties arrive at roughly the same time. Meet at the international arrivals hall after immigration. Take the Narita Express together to Shinjuku — 90 min, direct, no taxis needed with luggage.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Late</div><div class="tl-dot" style="background:#aaa;"></div><div class="tl-content"><div class="tl-act-title">Late dinner — keep it simple</div><div class="tl-act-desc">Ichiran Ramen near the hotel — open 24/7, individual booths, order by ticket machine, no Japanese needed. Perfect for arrival night. Jet lag is real. Budget ~¥1,200/pp (~A$13).</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">2</div><div class="day-info"><div class="day-date-str">Tuesday 29 September</div><div class="day-title-str">Tsukiji, Asakusa, Akihabara, Yakitori dinner</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">7:30 AM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Tsukiji Outer Market breakfast <span class="cost-badge">¥2,000–2,500/pp (~A$22–27)</span></div><div class="tl-act-desc">Go before 9am. Fresh tuna nigiri, tamagoyaki (egg roll), seafood skewers. Eat your way through it — this is the best market breakfast in Asia. The outer market is still excellent.</div></div></div>
+            <div class="tl-item"><div class="tl-time">10:00 AM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Asakusa & Senso-ji Temple <span class="cost-badge">Free</span></div><div class="tl-act-desc">Tokyo's oldest temple. Walk Nakamise-dori shopping street. Hire kimono from side streets for a group photo — fun and inexpensive at ~¥3,000–4,000 for 2 hours (~A$32–43).</div></div></div>
+            <div class="tl-item"><div class="tl-time">2:00 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Akihabara <span class="cost-badge">Free to browse</span></div><div class="tl-act-desc">Electronics, anime merch, Don Quijote for cheap souvenirs. Budget for shopping as needed.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Yakitori under the Yurakucho tracks <span class="cost-badge">~¥3,000/pp (~A$33)</span></div><div class="tl-act-desc">Grilled chicken skewer alleyways under the train lines near Ginza/Shimbashi. Smoky, zero tourists. Order by pointing. Beer from vending machines outside.</div></div></div>
+          </div>
+          <div class="food-card"><div class="food-card-label">Food strategy — Tokyo</div><div class="food-card-content">Use <strong>Tabelog</strong> (not Google Maps) for restaurant research — Japan's local review platform. A score of 3.5+ means genuinely excellent. Avoid Roppongi and Shibuya main strip. Pivot to <strong>Ebisu, Nakameguro, Koenji, or Shimokitazawa</strong> for local pricing and real quality.</div></div>
+          </div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">3</div><div class="day-info"><div class="day-date-str">Wednesday 30 September</div><div class="day-title-str">TeamLab Planets, Shimokitazawa, Shibuya, Ebisu</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">10:00 AM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">TeamLab Planets — Toyosu <span class="cost-badge">¥3,200/pp (~A$35) · Book online</span></div><div class="tl-act-desc">One of the world's most extraordinary art experiences — immersive rooms of light, colour, and water. You walk barefoot through flooded mirrored rooms and floating flower gardens. <strong>Book tickets in advance online at teamlab.art</strong> — walk-in almost never available. Allow 2 hours. Nearest station: Shin-Toyosu (Yurikamome Line).</div></div></div>
+            <div class="tl-item"><div class="tl-time">1:00 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Shimokitazawa lunch & wander <span class="cost-badge">Lunch ~¥1,200–1,800/pp</span></div><div class="tl-act-desc">Tokyo's most interesting neighbourhood. Dense with vintage clothing, independent cafés, live music venues. Walk until somewhere looks full of locals and eat there.</div></div></div>
+            <div class="tl-item"><div class="tl-time">4:00 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Shibuya Crossing + Omotesando <span class="cost-badge">Free</span></div><div class="tl-act-desc">Best viewed from the Mag's Park observation deck or Starbucks on the corner. Cross it, then walk up Omotesando for window shopping.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:30 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Izakaya dinner — Ebisu or Nakameguro <span class="cost-badge">~¥4,000–5,000/pp (~A$44–55)</span></div><div class="tl-act-desc">Look for izakayas with hand-written menus on A4 paper. Ideal for groups — shared plates, good sake, cold beer.</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">4</div><div class="day-info"><div class="day-date-str">Thursday 1 October</div><div class="day-title-str">Meiji Shrine, Harajuku, Nakameguro, farewell wagyu</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">10:00 AM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Meiji Shrine & Yoyogi Forest <span class="cost-badge">Free</span></div><div class="tl-act-desc">The most serene place in Tokyo. A forested Shinto shrine 5 minutes from Harajuku Station. Then walk Takeshita Street for pop culture and street food.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Nakameguro canal walk + coffee <span class="cost-badge">Coffee ~¥700–900</span></div><div class="tl-act-desc">Great specialty coffee (Onibus, Fuglen). Early October foliage is just beginning — even better on your return in mid-October.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Wagyu yakiniku farewell dinner <span class="cost-badge">~¥6,000–8,000/pp (~A$66–88)</span></div><div class="tl-act-desc">A proper Japanese wagyu beef BBQ before heading to Korea. Japanese yakiniku is a different experience from Korean BBQ — worth doing both as a comparison.</div></div></div>
+          </div>
+          <div class="tip-box"><strong>Korea prep — do tonight:</strong> Download Naver Maps and Kakao T. Check your phone supports eSIM if using one (Settings → General → About → Carrier Lock on iPhone). Get a T-money card at Incheon Airport GS25 on arrival.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEOUL -->
+    <div class="panel" id="panel-seoul">
+      <div class="section-header sh-seoul">
+        <div class="section-eyebrow">South Korea · Days 5–7</div>
+        <div class="section-title"><em>Seoul</em></div>
+        <div class="section-subtitle">2 – 5 October · 2 nights · Fly from Tokyo</div>
+        <div class="section-tags">
+          <span class="tag tag-nights">2 nights</span>
+          <span class="tag tag-food">Korean BBQ · Markets · Fried chicken</span>
+          <span class="tag tag-culture">Palaces · Hanok Village · Namsan</span>
+          <span class="tag tag-shopping">Insadong · Garosu-gil · Hongdae</span>
+        </div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box"><strong>Key tools in Korea:</strong> Naver Maps over Google (Google Maps is broken here for transit). Kakao T for taxis — shows fare upfront, English UI. No tipping anywhere. Korean BBQ for 7 is one of the trip's great communal meals — budget ₩50,000–80,000/pp (~A$55–87) for a proper local spot.</div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">5</div><div class="day-info"><div class="day-date-str">Friday 2 October</div><div class="day-title-str">Arrive Seoul — Gyeongbokgung, BBQ night</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Fly Tokyo → Seoul Incheon (~2.5 hrs) <span class="cost-badge">~A$180–230/pp</span></div><div class="tl-act-desc">AREX Express train from Incheon into the city — 43 min, ₩9,000 (~A$10). Direct, no hassle. Check in, drop bags. Stay in Hongdae or Myeongdong.</div></div></div>
+            <div class="tl-item"><div class="tl-time">2:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Gyeongbokgung Palace <span class="cost-badge">₩3,000/pp (~A$3.30)</span></div><div class="tl-act-desc">Seoul's most important cultural site. Changing of the guard every hour — time arrival for 2pm or 3pm. Walk uphill to Bukchon Hanok Village — traditional tile-roofed houses. Best in late afternoon when crowds thin.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:30 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Korean BBQ — local alleys <span class="cost-badge">₩50,000–70,000/pp (~A$55–77)</span></div><div class="tl-act-desc">Avoid tourist-facing Myeongdong strip. Back alleys behind Sinnonhyeon Station Exit 3 or the Mapo area. Look for full tables, smoke, and noise. Samgyeopsal (pork belly) or galbi (beef ribs), wrapped in lettuce with kimchi and garlic.</div></div></div>
+          </div>
+          <div class="food-card"><div class="food-card-label">Korean BBQ order guide</div><div class="food-card-content"><strong>Samgyeopsal</strong> (pork belly) grilled at table, wrapped in lettuce with <strong>ssamjang</strong> paste, garlic, kimchi. <strong>Galbi</strong> (beef short ribs) if splurging. Order <strong>doenjang jjigae</strong> (fermented soybean soup) on the side. Soju or OB beer.</div></div>
+          </div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">6</div><div class="day-info"><div class="day-date-str">Saturday 3 October</div><div class="day-title-str">Gwangjang Market, Insadong, Namsan, Hongdae</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">9:00 AM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Gwangjang Market — Seoul's best street food <span class="cost-badge">~₩20,000/pp (~A$22)</span></div><div class="tl-act-desc">One of Korea's oldest markets. Sit at a tent stall for <strong>bindaetteok</strong> (mung bean pancakes ~₩4,000), <strong>mayak gimbap</strong> (bite-sized sesame rice rolls ~₩3,000), and <strong>kongnamul</strong> (bean sprout soup). Eat where the grandmothers are eating.</div></div></div>
+            <div class="tl-item"><div class="tl-time">12:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Insadong & Ssamziegil Courtyard <span class="cost-badge">Free to browse</span></div><div class="tl-act-desc">Korean crafts, teahouses, independent stores. Side streets more interesting than the main strip.</div></div></div>
+            <div class="tl-item"><div class="tl-time">4:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Namsan Tower (N Seoul Tower) <span class="cost-badge">Cable car ₩12,000 (~A$13) · Deck optional ₩21,000</span></div><div class="tl-act-desc">Cable car up, spectacular views in late afternoon. Skip the paid observation deck — the free outdoor viewing area is just as good.</div></div></div>
+            <div class="tl-item"><div class="tl-time">8:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Hongdae — chimaek night <span class="cost-badge">~₩30,000–40,000/pp (~A$33–44)</span></div><div class="tl-act-desc"><strong>Chimaek</strong> (fried chicken + beer) — Korea's great communal eating experience. University district, young energy, great late-night scene. Walk the main street for buskers.</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">7</div><div class="day-info"><div class="day-date-str">Sunday 4 October</div><div class="day-title-str">Han River / Bukhansan, Garosu-gil, last Seoul dinner</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Han River Park or Bukhansan hike <span class="cost-badge">Free</span></div><div class="tl-act-desc"><strong>Han River Park</strong> — rent bikes (~₩3,000/hr), buy convenience store food, relax on the grass — quintessential Seoul Sunday. Or <strong>Bukhansan National Park</strong> for spectacular granite peak city views (free, ~3 hr hike).</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Garosu-gil shopping <span class="cost-badge">Free to browse · Cosmetics A$10–30/item</span></div><div class="tl-act-desc">Seoul's most stylish tree-lined shopping street. Korean fashion brands and cosmetics (COSRX, Innisfree, Laneige) — cheaper here than at home. Good independent boutiques.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Last Seoul dinner — budae jjigae or sundubu jjigae <span class="cost-badge">~₩15,000–20,000/pp (~A$16–22)</span></div><div class="tl-act-desc"><strong>Budae jjigae</strong> (Korean-American army stew: kimchi, spam, ramen) or <strong>sundubu jjigae</strong> (silken tofu soup) — comfort dishes that don't exist outside Korea.</div></div></div>
+          </div>
+          <div class="tip-box"><strong>Tomorrow:</strong> KTX Seoul Station → Busan, book in advance on letskorail.com. ₩59,800/pp (~A$65), 2h 15min. Morning train recommended.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUSAN -->
+    <div class="panel" id="panel-busan">
+      <div class="section-header sh-busan">
+        <div class="section-eyebrow">South Korea · Days 8–9</div>
+        <div class="section-title"><em>Busan</em></div>
+        <div class="section-subtitle">5 – 7 October · 2 nights · KTX from Seoul</div>
+        <div class="section-tags">
+          <span class="tag tag-nights">2 nights</span>
+          <span class="tag tag-food">Seafood · Dwaeji Gukbap · Ssiat Hotteok</span>
+          <span class="tag tag-culture">Gamcheon Village · Jagalchi Market</span>
+        </div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box green"><strong>Why Busan:</strong> Korea's coastal second city. Food culture distinct from Seoul — heavier on pork, seafood, and rice soups born from the Korean War refugee era. Far less tourist infrastructure. Best area to stay: Seomyeon (central, great food street) or Haeundae (beach).</div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">8</div><div class="day-info"><div class="day-date-str">Monday 5 October</div><div class="day-title-str">KTX to Busan — Jagalchi Market, Gwangalli Beach</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#c8502a;"></div><div class="tl-content"><div class="tl-act-title">KTX Seoul → Busan <span class="cost-badge">₩59,800/pp (~A$65)</span></div><div class="tl-act-desc">Check out of Seoul hotel. Seoul Station. Store bags at Busan Station coin lockers or hotel if early check-in possible.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#c8502a;"></div><div class="tl-content"><div class="tl-act-title">Jagalchi Seafood Market <span class="cost-badge">~₩30,000–50,000/pp for seafood (~A$33–55)</span></div><div class="tl-act-desc">Korea's largest seafood market. Pick live seafood from ground floor stalls — they take it upstairs and cook it for you. Try <strong>raw crab in soy sauce (gejang)</strong> — Busan's signature. Very authentic atmosphere.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:#c8502a;"></div><div class="tl-content"><div class="tl-act-title">Gwangalli Beach at night + bulgogi dinner <span class="cost-badge">~₩25,000–35,000/pp (~A$27–38)</span></div><div class="tl-act-desc">Famous lit bridge backdrop. Walk the beachfront, eat Eonyang-style <strong>bulgogi</strong> (minced beef patties, a Busan specialty) at beach restaurants. The neon + smoke + bridge at night is a highlight.</div></div></div>
+          </div>
+          <div class="food-card"><div class="food-card-label">Must-eat in Busan</div><div class="food-card-content"><strong>Dwaeji gukbap</strong> (pork rice soup ~₩8,000) — Seomyeon Food Street. <strong>Ssiat hotteok</strong> (seed-filled pancake ~₩2,000) — BIFF Square or Gukje Market. <strong>Eomuk</strong> (fish cake eaten with free hot broth ~₩1,000). <strong>Seafood at Jagalchi</strong>. <strong>Leegane Tteokbokki</strong> (at Gukje Market, ~₩3,000) — highly rated on Reddit.</div></div>
+          </div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">9</div><div class="day-info"><div class="day-date-str">Tuesday 6 October</div><div class="day-title-str">Gamcheon Village, Gukje Market, Seomyeon Food Street</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#c8502a;"></div><div class="tl-content"><div class="tl-act-title">Gamcheon Culture Village <span class="cost-badge">₩2,000/pp (~A$2.20)</span></div><div class="tl-act-desc">Colourful hillside village — former refugee settlement, now painted into a creative community. Go in the morning before tour groups. About 2 hours to explore. Steep streets with excellent views.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#c8502a;"></div><div class="tl-content"><div class="tl-act-title">Gukje Market & BIFF Square <span class="cost-badge">~₩15,000–20,000/pp grazing (~A$16–22)</span></div><div class="tl-act-desc">Busan's most authentic food market. Reddit rates it above Gwangjang (Seoul) for local atmosphere. <strong>Leegane Tteokbokki</strong> inside the market — reportedly some of the best in Korea. BIFF Square stalls for ssiat hotteok.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:#c8502a;"></div><div class="tl-content"><div class="tl-act-title">Seomyeon Food Street — final Korea dinner <span class="cost-badge">~₩10,000–15,000/pp (~A$11–16)</span></div><div class="tl-act-desc">Back alley food street behind Seomyeon Station. Dense concentration of dwaeji gukbap restaurants, kal-guksu (noodle soup), and bossam (pork wraps). Very local, very affordable.</div></div></div>
+          </div>
+          <div class="tip-box"><strong>Tomorrow:</strong> Fly Busan Gimhae (PUS) → Fukuoka (FUK). ~1 hour, multiple airlines. Book the earliest morning departure. Airport transfer: metro or bus to Gimhae Airport ~45 min from Seomyeon. ¥100 fuel surcharge payable in cash at the gate.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUKUOKA -->
+    <div class="panel" id="panel-fukuoka">
+      <div class="section-header sh-fukuoka">
+        <div class="section-eyebrow">Japan · Days 10–13</div>
+        <div class="section-title"><em>Fukuoka</em></div>
+        <div class="section-subtitle">7 – 11 October · 3 nights · Fly from Busan (~1 hr)</div>
+        <div class="section-tags">
+          <span class="tag tag-nights">3 nights</span>
+          <span class="tag tag-food">Tonkotsu Ramen · Yatai · Motsunabe · Mentaiko</span>
+          <span class="tag tag-culture">Dazaifu Shrine · Hakata Old Town</span>
+          <span class="tag tag-shopping">Tenjin Underground · Canal City</span>
+        </div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box green"><strong>Fukuoka is Japan's most underrated city.</strong> Birthplace of tonkotsu ramen. Best yatai (outdoor food stall) culture in Japan. Cheaper than Tokyo and Osaka. Fukuoka Airport is 5 minutes by subway from the city centre — the most convenient airport in Japan. Stay near Hakata or Tenjin Station.</div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">10</div><div class="day-info"><div class="day-date-str">Wednesday 7 October</div><div class="day-title-str">Arrive Fukuoka — Tenjin, yatai night</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Fly Busan → Fukuoka (~1 hr) <span class="cost-badge">~A$100/pp incl. bag</span></div><div class="tl-act-desc">Fukuoka Airport subway to Hakata Station: 5 min, ¥260 (~A$2.80). Check in. Best areas: Hakata or Tenjin.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Tenjin underground shopping <span class="cost-badge">Free to browse</span></div><div class="tl-act-desc">Large underground mall directly connected to the subway. Japanese fashion at non-tourist prices. Walk the Daimyo neighbourhood above ground for independent boutiques.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Yatai dinner — Nakasu or Tenjin riverbank <span class="cost-badge">~¥3,000–4,000/pp (~A$33–44)</span></div><div class="tl-act-desc">The essential Fukuoka experience. Small open-air stalls along the river — tonkotsu ramen, yakitori, oden, mentaiko. Each stall seats 6–8 people. Split the group across two adjacent stalls. Go at 7pm when they open.</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">11</div><div class="day-info"><div class="day-date-str">Thursday 8 October</div><div class="day-title-str">Ramen breakfast, Dazaifu Shrine, motsunabe dinner</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">8:00 AM</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Hakata ramen breakfast — Ippudo Daimyo or Shin-Shin <span class="cost-badge">~¥900–1,200/pp (~A$10–13)</span></div><div class="tl-act-desc">The only city in Japan where ramen at 8am is normal. Thin noodles, creamy pork bone broth, chashu, half egg. Order <strong>kaedama</strong> (extra noodles for ¥100) at the end.</div></div></div>
+            <div class="tl-item"><div class="tl-time">10:00 AM</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Dazaifu Tenmangu Shrine <span class="cost-badge">Free entry · Train ¥400/pp (~A$4.40) return</span></div><div class="tl-act-desc">30 min from Hakata by train. One of Japan's most important Shinto shrines. The approach street has stalls selling <strong>umegae mochi</strong> (grilled rice cake ~¥150) — eat them fresh off the iron. Beautiful gardens and carp ponds.</div></div></div>
+            <div class="tl-item"><div class="tl-time">3:00 PM</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Hakata old town — Kushida Shrine & Machiya Museum <span class="cost-badge">Museum free · Shrine free</span></div><div class="tl-act-desc">Genuinely un-touristy old Japan. Narrow streets, small temples, local life. The merchant townhouse museum near Kushida Shrine is a worthwhile free stop.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Motsunabe dinner <span class="cost-badge">~¥3,000–4,000/pp (~A$33–44)</span></div><div class="tl-act-desc">Fukuoka's other iconic dish — offal (beef/pork tripe) hotpot with cabbage, chives, garlic in rich soy or miso broth, cooked at the table. Finish by adding rice or noodles to the leftover broth.</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">12–13</div><div class="day-info"><div class="day-date-str">Friday–Saturday 9–10 October</div><div class="day-title-str">Ohori Park, optional day trip (Yanagawa or Beppu)</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Ohori Park & Fukuoka Castle ruins <span class="cost-badge">Free</span></div><div class="tl-act-desc">Massive lakeside park in the city. Castle ruins on the hill with views. Very local — joggers, cyclists, families. Not on any tourist itinerary.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#1D9E75;"></div><div class="tl-content"><div class="tl-act-title">Option A: Yanagawa canal boat ride <span class="cost-badge">¥1,500/pp (~A$16) · Train ~¥400 return</span></div><div class="tl-act-desc">45 min south by train. Flat-bottomed wooden boats punted through old castle moat canals. Serene and very Japanese. Half-day.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Alt</div><div class="tl-dot" style="background:#888;"></div><div class="tl-content"><div class="tl-act-title">Option B: Beppu Onsen full day trip <span class="cost-badge">Train ~¥2,000 return · Hells ¥450/hell · Private bath ~¥600–1,500</span></div><div class="tl-act-desc">1.5 hrs by limited express. Japan's most dramatic onsen town — seven volcanic "hells" to view. Book private baths for the group in advance. A full day, one of Japan's most distinctive experiences.</div></div></div>
+          </div>
+          <div class="food-card"><div class="food-card-label">Fukuoka food checklist</div><div class="food-card-content"><strong>Tonkotsu ramen</strong> at Ippudo original (~¥900) or Shin-Shin. <strong>Gyoza</strong> — small, pan-fried in batches (~¥500/plate). <strong>Mentaiko</strong> on rice (~¥500). <strong>Hikiniku to Come</strong> — viral fresh-ground hamburger patty restaurant (~¥1,500, <strong>book 1 week ahead</strong>). <strong>Hakata wagyu</strong> — Kyushu beef at excellent price vs Kobe.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OSAKA -->
+    <div class="panel" id="panel-osaka">
+      <div class="section-header sh-osaka">
+        <div class="section-eyebrow">Japan · Days 14–16</div>
+        <div class="section-title">Osaka <em>& Kyoto</em></div>
+        <div class="section-subtitle">11 – 14 October · 3 nights in Osaka · Shinkansen from Fukuoka</div>
+        <div class="section-tags">
+          <span class="tag tag-nights">3 nights in Osaka</span>
+          <span class="tag tag-food">Dotonbori · Kushikatsu · Takoyaki · Yakiniku</span>
+          <span class="tag tag-culture">Kyoto day trip · Nara day trip · Fushimi Inari</span>
+          <span class="tag tag-shopping">Shinsaibashisuji · Don Quijote</span>
+        </div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box"><strong>Why base in Osaka, not Kyoto:</strong> Better food, better nightlife, cheaper accommodation. Kyoto is 15 min by Shinkansen or 30 min by regular train. Do both cities as day trips and return to Osaka each evening.</div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">14</div><div class="day-info"><div class="day-date-str">Sunday 11 October</div><div class="day-title-str">Arrive Osaka — Shinsekai kushikatsu, Dotonbori night</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#D4537E;"></div><div class="tl-content"><div class="tl-act-title">Shinkansen Hakata → Shin-Osaka <span class="cost-badge">¥14,390/pp (~A$160)</span></div><div class="tl-act-desc">2h 15min on Nozomi. Check in near Namba — best base for food and nightlife. Note: Nozomi is not covered by JR Pass but is the only sensible option for this hop.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#D4537E;"></div><div class="tl-content"><div class="tl-act-title">Shinsekai neighbourhood <span class="cost-badge">Kushikatsu ~¥2,000–3,000/pp (~A$22–33)</span></div><div class="tl-act-desc">Working-class old Osaka. Famous for <strong>kushikatsu</strong> (deep-fried skewers — one dip only in the communal sauce, never double-dip). Tsutenkaku Tower area. Very authentic.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:30 PM</div><div class="tl-dot" style="background:#D4537E;"></div><div class="tl-content"><div class="tl-act-title">Dotonbori at night <span class="cost-badge">Takoyaki ~¥600 · Dinner ~¥3,000–4,000/pp</span></div><div class="tl-act-desc">Touristy but genuinely spectacular at night with neon canal reflections. Eat takoyaki walking, take the Glico Running Man photo. Then find a real dinner at <strong>Hozenji Yokocho</strong> (stone-paved alley nearby) or <strong>Tenma area</strong> (locals' favourite for small bars and izakayas, north of the tourist belt).</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">15</div><div class="day-info"><div class="day-date-str">Monday 12 October</div><div class="day-title-str">Kyoto day trip — Fushimi Inari, Arashiyama, Gion</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">7:30 AM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Fushimi Inari at dawn <span class="cost-badge">Free · Train from Osaka ~¥560/pp return</span></div><div class="tl-act-desc">Arrive by 8am before tour groups. Thousands of orange torii gates winding up the mountain — one of Asia's great sights. Do the full mountain hike (2–3 hrs), not just the lower section. Pack water.</div></div></div>
+            <div class="tl-item"><div class="tl-time">11:00 AM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Arashiyama — bamboo grove & Tenryu-ji <span class="cost-badge">Tenryu-ji garden ¥500/pp (~A$5.50)</span></div><div class="tl-act-desc">Go directly after Fushimi while crowds are still light. UNESCO-listed garden. Walk the Togetsukyo Bridge and hire a river boat (~¥1,200 for 30 min).</div></div></div>
+            <div class="tl-item"><div class="tl-time">2:00 PM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Nishiki Market lunch <span class="cost-badge">~¥1,500–2,000/pp grazing</span></div><div class="tl-act-desc">Covered market — pickled vegetables, fresh tofu, dashi omelette, yuzu sweets. Eat as you walk.</div></div></div>
+            <div class="tl-item"><div class="tl-time">4:30 PM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Gion walk — geisha district <span class="cost-badge">Free</span></div><div class="tl-act-desc">Walk Hanamikoji Street in late afternoon. Best chance of spotting a maiko. Return to Osaka for dinner — Kyoto dining is expensive; Osaka offers far better group value.</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">16</div><div class="day-info"><div class="day-date-str">Tuesday 13 October</div><div class="day-title-str">Nara deer park, Osaka afternoon, final Osaka dinner</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">9:00 AM</div><div class="tl-dot" style="background:#D4537E;"></div><div class="tl-content"><div class="tl-act-title">Nara — deer park & Todai-ji <span class="cost-badge">Entry ¥600/pp (~A$6.60) · Train ~¥800 return</span></div><div class="tl-act-desc">45 min by Kintetsu train. ~1,200 sacred deer roam freely. Buy <strong>shika senbei</strong> (deer crackers ~¥200) — they bow to you. Todai-ji houses Japan's largest bronze Buddha. Genuinely one of the most memorable experiences of the trip.</div></div></div>
+            <div class="tl-item"><div class="tl-time">2:00 PM</div><div class="tl-dot" style="background:#D4537E;"></div><div class="tl-content"><div class="tl-act-title">Osaka afternoon — Shinsaibashisuji + Don Quijote <span class="cost-badge">Free to browse</span></div><div class="tl-act-desc">Shopping street for fashion, cosmetics, gifts. Don Quijote at night for cheap everything — souvenirs, snacks, toiletries. Good final Japan shopping before Hakone.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#D4537E;"></div><div class="tl-content"><div class="tl-act-title">Final Osaka dinner — okonomiyaki or Tsuruhashi yakiniku <span class="cost-badge">~¥2,500–4,000/pp (~A$28–44)</span></div><div class="tl-act-desc"><strong>Option A: Okonomiyaki</strong> — Osaka's savoury pancake. Mizuno in Dotonbori (queue ~20–30 min). <strong>Option B: Tsuruhashi Korea Town yakiniku</strong> — Osaka's Korea Town covered market, smoky alleyways, best yakiniku value in Kansai (~¥3,500/pp with drinks).</div></div></div>
+          </div>
+          <div class="food-card"><div class="food-card-label">Osaka food checklist</div><div class="food-card-content"><strong>Takoyaki</strong> ~¥600 (8 pcs). <strong>Okonomiyaki</strong> ~¥1,200. <strong>Kushikatsu</strong> ~¥200–400/skewer. <strong>Yakiniku at Tsuruhashi</strong> ~¥2,500 all-in. <strong>Tenma izakayas</strong> — locals' choice north of the tourist belt. Avoid Kuromon Ichiba Market which has become a tourist trap — overpriced for what it is.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HAKONE -->
+    <div class="panel" id="panel-hakone">
+      <div class="section-header sh-hakone">
+        <div class="section-eyebrow">Japan · Days 17–18</div>
+        <div class="section-title"><em>Hakone</em></div>
+        <div class="section-subtitle">14 – 16 October · 2 nights · Train from Tokyo/Osaka via Odawara</div>
+        <div class="section-tags">
+          <span class="tag tag-nights">2 nights</span>
+          <span class="tag tag-food">Kaiseki dinner · Ryokan breakfast</span>
+          <span class="tag tag-culture">Onsen · Ropeway · Lake Ashi · Owakudani</span>
+        </div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box green"><strong>Getting to Hakone by train:</strong> From Osaka, take the Shinkansen to Odawara (~2h 30min, ¥13,870/pp), then Hakone Tozan Train to Hakone-Yumoto (15 min). Or take the Romancecar limited express from Shinjuku (80 min, ¥2,470 + ¥1,200 surcharge). <strong>Buy the Hakone Free Pass</strong> (¥7,100 2-day from Odawara / ~¥6,000 without Tokyo return) — covers all local transport: Tozan Train, cable car, ropeway, Lake Ashi cruise, and sightseeing buses. Buy digitally on the Odakyu app before departure.</div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">17</div><div class="day-info"><div class="day-date-str">Wednesday 14 October</div><div class="day-title-str">Travel to Hakone — ryokan check-in, onsen evening</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Shinkansen Osaka → Odawara → Hakone-Yumoto <span class="cost-badge">~¥14,000–15,000/pp (~A$155–165) total</span></div><div class="tl-act-desc">Shinkansen (Kodama) to Odawara, then Hakone Tozan Train to Hakone-Yumoto (15 min). From here, Tozan Train continues up the mountain to Gora with spectacular switchbacks through forest valleys.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Hakone Free Pass — activate on arrival <span class="cost-badge">¥7,100/pp 2-day (~A$79) · Buy digitally in advance</span></div><div class="tl-act-desc">The pass covers: Tozan railway, cable car up to Sounzan, Hakone Ropeway (one of Japan's most dramatic — volcanic valley views), Lake Ashi sightseeing cruise (pirate ship), and all sightseeing buses. Also gives discounts at 70+ attractions including onsen and museums. Worth it especially for a 2-night stay.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Check in to ryokan <span class="cost-badge">¥12,000–20,000/pp per night incl. dinner + breakfast</span></div><div class="tl-act-desc">Most ryokans include kaiseki dinner — multi-course Japanese seasonal cuisine, beautifully presented, served at your table. Local mountain produce and Hakone specialties.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Outdoor onsen (rotemburo) <span class="cost-badge">Included with ryokan stay</span></div><div class="tl-act-desc">The open-air communal onsen bath in the evening with mountain air is the defining Hakone experience. Soak, relax, look at the stars. The ryokan breakfast the next morning — rice, miso, grilled fish, pickles, tamago — is as good as dinner.</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">18</div><div class="day-info"><div class="day-date-str">Thursday 15 October</div><div class="day-title-str">Hakone Loop — ropeway, Owakudani, Lake Ashi cruise, Open-Air Museum</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">9:00 AM</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Hakone Ropeway — Owakudani volcanic valley <span class="cost-badge">Covered by Free Pass</span></div><div class="tl-act-desc">From Sounzan (take cable car from Gora), the ropeway glides over an active volcanic valley with steam vents and sulfurous craters. Buy <strong>kuro tamago</strong> (black eggs hard-boiled in volcanic springs, ~¥600 for 5) at Owakudani Station — rumoured to add 7 years to your life.</div></div></div>
+            <div class="tl-item"><div class="tl-time">11:30 AM</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Lake Ashi pirate ship cruise + Hakone Shrine <span class="cost-badge">Cruise covered by Free Pass · Shrine free</span></div><div class="tl-act-desc">The lake cruise gives the classic Fuji-over-water view (cloud permitting). Walk from Hakone-machi Port to <strong>Hakone Shrine</strong> — red torii gate standing in the lake is one of Japan's great sights. Very peaceful on an autumn weekday.</div></div></div>
+            <div class="tl-item"><div class="tl-time">2:00 PM</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Hakone Open-Air Museum <span class="cost-badge">¥1,600/pp (~A$17.60) · Discounted with Free Pass to ¥1,400</span></div><div class="tl-act-desc">One of Japan's best museums — sculptures and art installations spread across beautifully landscaped grounds with mountain views. A Picasso pavilion, glass mosaics, and a famous Foot Onsen where you can soak your feet in a hot spring inside the museum. Allow 2 hours.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Evening</div><div class="tl-dot" style="background:#639922;"></div><div class="tl-content"><div class="tl-act-title">Second night at ryokan — onsen again + rest</div><div class="tl-act-desc">You've fully earned it. The outdoor rotemburo at night after a full day is the trip highlight for many people. Last onsen morning before returning to Tokyo.</div></div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOKYO RETURN -->
+    <div class="panel" id="panel-tokyo2">
+      <div class="section-header sh-tokyo">
+        <div class="section-eyebrow">Japan · Days 19–20</div>
+        <div class="section-title">Tokyo — <em>Farewell</em></div>
+        <div class="section-subtitle">16 – 17 October · 1 night · Depart Narita 17 Oct 8:25 PM</div>
+        <div class="section-tags">
+          <span class="tag tag-nights">1 night</span>
+          <span class="tag tag-food">Last meals · Nakameguro in autumn</span>
+          <span class="tag tag-shopping">Final shopping run</span>
+        </div>
+      </div>
+      <div class="days-container">
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">19</div><div class="day-info"><div class="day-date-str">Friday 16 October</div><div class="day-title-str">Romancecar to Shinjuku — Nakameguro, final dinner</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Romancecar Hakone-Yumoto → Shinjuku <span class="cost-badge">¥2,470 base + ¥1,200 surcharge (~A$40)</span></div><div class="tl-act-desc">The scenic limited express — wide panoramic windows, direct to Shinjuku in 80 min. No transfers, comfortable seats, mountain views. Book seats on the e-Romancecar platform in advance. Check in to Tokyo hotel.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Nakameguro canal — peak autumn foliage <span class="cost-badge">Free</span></div><div class="tl-act-desc">Mid-October is the best time for Nakameguro — early autumn colour on the cherry trees lining the canal. Two weeks before on Day 3 it was green; now it's turning. Best specialty coffee, best people-watching, Tokyo's most photogenic street.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Final Tokyo dinner — make it count <span class="cost-badge">~¥5,000–8,000/pp (~A$55–88)</span></div><div class="tl-act-desc">Candidates: <strong>Tonkatsu at Maisen</strong> (Omotesando, legendary pork cutlet ~¥2,500), <strong>Sushi omakase counter</strong> (find a 3.7+ Tabelog spot in Shinjuku or Ebisu, ~¥6,000–8,000), or <strong>Teppanyaki</strong> if the group wants theatre with their meal.</div></div></div>
+          </div></div>
+        </div>
+
+        <div class="day-block" onclick="toggleDay(this)">
+          <div class="day-header"><div class="day-number">20</div><div class="day-info"><div class="day-date-str">Saturday 17 October — Departure</div><div class="day-title-str">Last morning, Narita transfer, depart 8:25 PM</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body"><div class="timeline">
+            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Return to Tsukiji or 7-Eleven final run <span class="cost-badge">¥500–2,500</span></div><div class="tl-act-desc">Return visit to Tsukiji Outer Market compares beautifully with Day 2. Or: convenience store final run for snacks, drinks, and gifts to take home. Don Quijote for last-minute items.</div></div></div>
+            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">Luggage consolidation + Japan Post if overweight</div><div class="tl-act-desc">Check suitcase weight. If overweight, most hotels will help you post excess items home via Japan Post (Yamato courier also works) — surprisingly affordable (~¥2,000–5,000/box to Australia) and very reliable. Can take 7–14 days to arrive.</div></div></div>
+            <div class="tl-item"><div class="tl-time">4:30 PM</div><div class="tl-dot" style="background:#378ADD;"></div><div class="tl-content"><div class="tl-act-title">N'EX Shinjuku → Narita Terminal 1 <span class="cost-badge">¥3,070/pp (~A$33)</span></div><div class="tl-act-desc">Allow 2.5 hours before departure. N'EX ~90 min. Check-in, immigration, final duty-free. QF80 departs 8:25 PM → arrives Melbourne 8:40 AM 18 Oct.</div></div></div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUDGET -->
+    <div class="panel" id="panel-budget">
+      <div class="section-header sh-budget">
+        <div class="section-eyebrow">💴 Financial planning</div>
+        <div class="section-title">Budget <em>breakdown</em></div>
+        <div class="section-subtitle">Per person estimates · AUD · Mid-range · 20 nights</div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box"><strong>Exchange rates:</strong> ¥100 ≈ A$1.05 · ₩1,000 ≈ A$1.08. October is peak season in Japan — budget a 15–20% buffer for unexpected costs and impulse meals. Accommodation costs assume 3–4 rooms split across 7 people.</div>
+
+        <table class="budget-table">
+          <thead><tr><th>Destination</th><th>Accommodation</th><th>Food & Drink</th><th>Transport</th><th>Activities</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td><div class="td-city">🗼 Tokyo — 1st stay</div><div class="td-sub">4 nights · 28 Sep – 2 Oct</div></td><td>~A$600</td><td>~A$480</td><td>~A$80</td><td>~A$120</td><td><strong>~A$1,280</strong></td></tr>
+            <tr><td><div class="td-city">🇰🇷 Seoul</div><div class="td-sub">2 nights · 2 – 5 Oct</div></td><td>~A$240</td><td>~A$240</td><td>~A$50</td><td>~A$60</td><td><strong>~A$590</strong></td></tr>
+            <tr><td><div class="td-city">🇰🇷 Busan</div><div class="td-sub">2 nights · 5 – 7 Oct</div></td><td>~A$200</td><td>~A$180</td><td>~A$110</td><td>~A$40</td><td><strong>~A$530</strong></td></tr>
+            <tr><td><div class="td-city">🍜 Fukuoka</div><div class="td-sub">3 nights · 7 – 11 Oct</div></td><td>~A$360</td><td>~A$260</td><td>~A$100</td><td>~A$80</td><td><strong>~A$800</strong></td></tr>
+            <tr><td><div class="td-city">⛩ Osaka / Kyoto</div><div class="td-sub">3 nights · 11 – 14 Oct</div></td><td>~A$360</td><td>~A$320</td><td>~A$160</td><td>~A$100</td><td><strong>~A$940</strong></td></tr>
+            <tr><td><div class="td-city">🌿 Hakone Ryokan</div><div class="td-sub">2 nights · 14 – 16 Oct · incl. dinner+brekky</div></td><td>~A$440</td><td>~A$60</td><td>~A$250</td><td>~A$80</td><td><strong>~A$830</strong></td></tr>
+            <tr><td><div class="td-city">🗼 Tokyo — return</div><div class="td-sub">1 night · 16 – 17 Oct</div></td><td>~A$160</td><td>~A$150</td><td>~A$70</td><td>~A$50</td><td><strong>~A$430</strong></td></tr>
+            <tr><td><div class="td-city">✈ Flights (within trip)</div><div class="td-sub">Tokyo→Seoul · Busan→Fukuoka</div></td><td>—</td><td>—</td><td>~A$380</td><td>—</td><td><strong>~A$380</strong></td></tr>
+            <tr class="tr-total"><td><strong>Total per person</strong><div class="td-sub">Excl. Melbourne ↔ Tokyo flights</div></td><td>~A$2,360</td><td>~A$1,690</td><td>~A$1,200</td><td>~A$530</td><td>~A$5,780</td></tr>
+          </tbody>
+        </table>
+
+        <div class="food-card">
+          <div class="food-card-label">Money tips</div>
+          <div class="food-card-content">
+            <strong>Best card for overseas spending:</strong> <strong>ubank</strong> (Australian bank, no foreign currency fee, no ATM withdrawal fee — use this for everything in Japan and Korea). Alternatively, a Wise multi-currency card for excellent exchange rates.<br><br>
+            <strong>Cash:</strong> Japan is still heavily cash-based — carry ¥20,000–30,000 at all times. Withdraw from <strong>7-Eleven Japan ATMs</strong> (accepts all foreign cards including ubank and Wise). Korea ATMs at 7-Eleven and Citibank also work.<br><br>
+            <strong>JR Pass:</strong> Not worth it for this itinerary. Individual tickets for the short shinkansen hops are cheaper than the pass. The one exception worth considering is the Hakone Free Pass.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOOKING CHECKLIST -->
+    <div class="panel" id="panel-book">
+      <div class="section-header sh-book">
+        <div class="section-eyebrow">📋 Pre-departure checklist</div>
+        <div class="section-title">Book <em>now</em></div>
+        <div class="section-subtitle">October is Japan's peak foliage season — hotels book out 6+ months ahead</div>
+      </div>
+      <div class="days-container">
+
+        <div class="priority-section-label ps-urgent">🔴 Book this week — critical</div>
+        <div class="book-list">
+          <div class="book-item"><div class="book-priority p-urgent">1</div><div><div class="book-title">Hakone Ryokan — 14–16 October (2 nights, 7 people)</div><div class="book-desc">Hardest booking of the trip. Search Jalan.net or Ikkyu — far better ryokan inventory than Booking.com. Look for properties that can accommodate multiple rooms. Budget ¥12,000–20,000/pp/night including dinner and breakfast. Book immediately.</div></div></div>
+          <div class="book-item"><div class="book-priority p-urgent">2</div><div><div class="book-title">All Japan accommodation — Tokyo (×2), Fukuoka, Osaka</div><div class="book-desc">Priority: Tokyo 4 nights → Osaka 3 nights → Fukuoka 3 nights → Tokyo 1 night return. Dormy Inn chain is the gold standard for mid-range in all these cities. Book 3–4 rooms at the same property. Booking.com and Hotels.com typically beat direct hotel rates in Japan.</div></div></div>
+          <div class="book-item"><div class="book-priority p-urgent">3</div><div><div class="book-title">Seoul & Busan accommodation</div><div class="book-desc">Check whether Chuseok (Korean Thanksgiving) falls in early October 2026 — if so, prices spike significantly. Stay in Hongdae or Myeongdong (Seoul) and Seomyeon or Haeundae (Busan). Book 3–4 rooms at the same property.</div></div></div>
+          <div class="book-item"><div class="book-priority p-urgent">4</div><div><div class="book-title">TeamLab Planets (Tokyo) — 30 September</div><div class="book-desc">Book tickets at teamlab.art immediately — walk-in almost never available. Select the 30 September timeslot. ¥3,200/pp (~A$35). One of the most-visited attractions in Tokyo so book earliest to get ideal time.</div></div></div>
+        </div>
+
+        <div class="priority-section-label ps-soon">🟠 Book 4–8 weeks out</div>
+        <div class="book-list">
+          <div class="book-item"><div class="book-priority p-soon">5</div><div><div class="book-title">Tokyo → Seoul flight — 2 October</div><div class="book-desc">Multiple airlines: Korean Air, Asiana, ANA, Qantas codeshares. ~A$180–230/pp one-way. Book via Skyscanner or Google Flights. Check whether departure is from Narita or Haneda — confirm which suits your Tokyo hotel best.</div></div></div>
+          <div class="book-item"><div class="book-priority p-soon">6</div><div><div class="book-title">Busan → Fukuoka flight — 7 October</div><div class="book-desc">Air Busan, Jeju Air, T'Way Air — multiple daily direct flights (~1 hr). Book earliest morning departure to arrive in Fukuoka with the full day. ~A$80–130/pp including one checked bag. Book via Skyscanner.</div></div></div>
+          <div class="book-item"><div class="book-priority p-soon">7</div><div><div class="book-title">KTX Seoul → Busan — 5 October</div><div class="book-desc">Book at letskorail.com. ₩59,800/pp (~A$65). Morning train recommended. October weekend seats sell out weeks in advance. Select seats on the same carriage so the group is together.</div></div></div>
+          <div class="book-item"><div class="book-priority p-soon">8</div><div><div class="book-title">Hakone Free Pass (2-day) — 14–15 October</div><div class="book-desc">Buy digitally via the Odakyu app before departure. ¥7,100/pp (~A$79) from Odawara departure. Covers all Hakone local transport — Tozan train, cable car, ropeway, Lake Ashi cruise, buses. Add ¥1,200/pp Romancecar surcharge for the scenic return to Shinjuku.</div></div></div>
+          <div class="book-item"><div class="book-priority p-soon">9</div><div><div class="book-title">Hikiniku to Come (Fukuoka) — book 1 week ahead</div><div class="book-desc">The viral fresh-ground hamburger patty restaurant. Book via their website or use the walk-in lottery (arrive very early morning). Genuinely one of the best things to eat in Fukuoka.</div></div></div>
+        </div>
+
+        <div class="priority-section-label ps-prep">🟢 Prep — 4–6 weeks before departure</div>
+        <div class="book-list">
+          <div class="book-item"><div class="book-priority p-prep">✓</div><div><div class="book-title">eSIMs for Japan & Korea — buy 1–2 weeks before</div><div class="book-desc">See the Packing List tab for detailed eSIM recommendations. Install and activate before boarding at Melbourne.</div></div></div>
+          <div class="book-item"><div class="book-priority p-prep">✓</div><div><div class="book-title">ubank card — activate and set up before departure</div><div class="book-desc">Australia's best card for overseas spending. No foreign transaction fees, no ATM fees. Download the app, activate the card, and test a small international transaction before departure. Load with your travel budget.</div></div></div>
+          <div class="book-item"><div class="book-priority p-prep">✓</div><div><div class="book-title">Suica card — set up on iPhone Wallet</div><div class="book-desc">Japan's IC card. Add via iPhone Wallet > Add Card > Transit Card > Suica. Load ¥10,000 initially. Works for all trains, subway, buses, and most convenience stores across Tokyo and Fukuoka. No need for a separate physical card.</div></div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PACKING LIST -->
+    <div class="panel" id="panel-pack">
+      <div class="section-header sh-pack">
+        <div class="section-eyebrow">🎒 Pre-departure prep</div>
+        <div class="section-title">Packing <em>checklist</em></div>
+        <div class="section-subtitle">Apps, eSIM, connectivity, and what to bring for late September–October Japan & Korea</div>
+      </div>
+      <div class="days-container">
+
+        <!-- eSIM SECTION -->
+        <div class="pack-section">
+          <div class="pack-section-title">📶 eSIM recommendations — Japan & Korea</div>
+          <div class="tip-box green"><strong>Recommended approach:</strong> Buy one eSIM that covers both Japan AND Korea so you don't have to manage separate activations when crossing borders. Install and activate before boarding in Melbourne — you'll have data the moment you land at Narita.</div>
+          <div class="esim-card">
+            <div class="esim-card-label">Best eSIM options for this trip</div>
+            <div class="esim-option">
+              <div class="esim-name">Trip.com eSIM</div>
+              <div class="esim-detail"><strong>Best all-in-one option.</strong> Asia multi-country plan covers Japan + South Korea on one eSIM. From ~US$0.34/day. 5G on both networks. Simple in-app activation on iOS 17.4+ (no QR code needed). Buy directly in the Trip.com app. Flexible data plans: 3GB, 10GB, 20GB, 30GB options for 20–30 days. Approx. US$15–25 for a 20GB/30-day plan.</div>
+            </div>
+            <div class="esim-option">
+              <div class="esim-name">MobiMatter</div>
+              <div class="esim-detail"><strong>Best value per GB.</strong> Japan + South Korea + China combined eSIM, 35GB for US$24.99 (30 days). ~US$0.71/GB. Connects to 5G in all three countries. QR code activation. Good option if you want maximum data at the lowest price.</div>
+            </div>
+            <div class="esim-option">
+              <div class="esim-name">Airalo</div>
+              <div class="esim-detail"><strong>Most popular brand.</strong> Separate Japan and Korea eSIMs (install both, switch when crossing the border). Japan 20GB for ~US$20, Korea 10GB for ~US$12. Well-rated app, good customer support. Slightly pricier per GB but very reliable.</div>
+            </div>
+          </div>
+          <div class="tip-box"><strong>How to check eSIM compatibility:</strong> iPhone: Settings → General → About → Carrier Lock → should say "No SIM restrictions." Android: Settings → Connections → Mobile Networks → look for "Add Mobile Plan." eSIM works on iPhone XS and later, most Samsung Galaxy S20 and later, Google Pixel 3 and later.</div>
+        </div>
+
+        <!-- APPS SECTION -->
+        <div class="pack-section">
+          <div class="pack-section-title">📱 Essential apps — download before departure</div>
+          <div class="pack-grid">
+            <div class="pack-item"><input type="checkbox" id="app1"><label for="app1"><strong>Tabelog</strong><small>Japan restaurant ratings — more reliable than Google</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="app2"><label for="app2"><strong>Google Maps</strong><small>Works well for Japan; limited in Korea</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="app3"><label for="app3"><strong>Naver Maps</strong><small>Essential for Korea — Google Maps doesn't show transit here</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="app4"><label for="app4"><strong>Kakao T</strong><small>Taxi app in Korea — shows fare upfront, English UI</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="app5"><label for="app5"><strong>Google Translate</strong><small>Camera mode for Japanese menus — game changer</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="app6"><label for="app6"><strong>Suica (via iPhone Wallet)</strong><small>Japan transit IC card — load before departure</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="app7"><label for="app7"><strong>Trip.com eSIM app</strong><small>If using Trip.com — manage and activate eSIM</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="app8"><label for="app8"><strong>ubank app</strong><small>Your no-fee overseas card — test before leaving Australia</small></label></div>
+          </div>
+        </div>
+
+        <!-- DOCUMENTS & MONEY -->
+        <div class="pack-section">
+          <div class="pack-section-title">🛂 Documents & money</div>
+          <div class="pack-grid">
+            <div class="pack-item"><input type="checkbox" id="d1"><label for="d1"><strong>Passport</strong><small>Must be valid 6+ months from Oct 2026 (i.e. April 2027)</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="d2"><label for="d2"><strong>Flight confirmation printouts</strong><small>QF79, QF604/QF61, QF80, inner-trip flights</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="d3"><label for="d3"><strong>Hotel confirmation printouts</strong><small>All 7 cities — Japan sometimes asks at immigration</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="d4"><label for="d4"><strong>Travel insurance documents</strong><small>Print or save offline — needed if anything goes wrong</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="d5"><label for="d5"><strong>ubank card (or Wise card)</strong><small>No foreign transaction fee — your main spending card</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="d6"><label for="d6"><strong>Cash: AUD$200 exchanged before leaving</strong><small>Exchange to JPY at a good rate in Australia before departure</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="d7"><label for="d7"><strong>Japan: carry ¥20,000–30,000 cash always</strong><small>Many places still cash only — withdraw from 7-Eleven ATMs</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="d8"><label for="d8"><strong>Korea: T-money card</strong><small>Buy at Incheon Airport GS25 or 7-Eleven on arrival</small></label></div>
+          </div>
+        </div>
+
+        <!-- CLOTHING -->
+        <div class="pack-section">
+          <div class="pack-section-title">👕 Clothing — late September / October Japan & Korea (15–24°C, cooling through the trip)</div>
+          <div class="tip-box"><strong>Weather notes:</strong> Late September Tokyo is warm (~24°C, humid). By mid-October Hakone can be cool (~15°C evenings). Seoul in early October is mild (~18–22°C). Pack layers. October is prime typhoon season — pack a compact umbrella or buy a cheap one in Japan (~¥700 at any convenience store).</div>
+          <div class="pack-grid">
+            <div class="pack-item"><input type="checkbox" id="c1"><label for="c1"><strong>5–6 T-shirts / light tops</strong><small>Warm in late September, cooler by mid-October</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c2"><label for="c2"><strong>2 long-sleeve shirts or light knits</strong><small>For cooler evenings in Hakone and return Tokyo</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c3"><label for="c3"><strong>1 mid-layer (fleece or light jacket)</strong><small>Essential for Hakone (~15°C evenings at altitude)</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c4"><label for="c4"><strong>1 light rain jacket / windbreaker</strong><small>Typhoon season — doubles as a layer in Hakone</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c5"><label for="c5"><strong>2 pairs of pants / jeans</strong><small>Versatile for temples, restaurants, hiking</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c6"><label for="c6"><strong>1 pair of shorts</strong><small>For warm late September days in Tokyo and Seoul</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c7"><label for="c7"><strong>1 smart casual outfit</strong><small>For nicer dinners — wagyu, omakase, ryokan</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c8"><label for="c8"><strong>Comfortable walking shoes (worn-in)</strong><small>You will walk 15,000–25,000 steps per day</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c9"><label for="c9"><strong>Slip-on shoes or sandals</strong><small>Easier for temple visits where shoes come off</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="c10"><label for="c10"><strong>Compact umbrella</strong><small>Or buy one at a Japan convenience store on arrival</small></label></div>
+          </div>
+        </div>
+
+        <!-- TOILETRIES & HEALTH -->
+        <div class="pack-section">
+          <div class="pack-section-title">💊 Toiletries & health</div>
+          <div class="pack-grid">
+            <div class="pack-item"><input type="checkbox" id="h1"><label for="h1"><strong>Medications (prescription + regular)</strong><small>Bring enough for 3 weeks plus a few days' buffer</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="h2"><label for="h2"><strong>Motion sickness tablets</strong><small>For winding Hakone Tozan mountain train and steep ropeway</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="h3"><label for="h3"><strong>Blister plasters / Band-Aids</strong><small>Walking 20km+ days will happen — prepare early</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="h4"><label for="h4"><strong>Sunscreen SPF50+</strong><small>Late September still strong UV — bring from home (expensive in Japan)</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="h5"><label for="h5"><strong>Insect repellent</strong><small>For outdoor evening activities, especially Yanagawa canals</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="h6"><label for="h6"><strong>Hand sanitiser + tissues</strong><small>Not all public toilets have soap or dryers</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="h7"><label for="h7"><strong>Basic toiletries</strong><small>Hotels provide basics in Japan; bring anything brand-specific</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="h8"><label for="h8"><strong>Jet lag plan</strong><small>Melatonin or similar — Tokyo is +3 hrs from Melbourne. Stay up on arrival night.</small></label></div>
+          </div>
+        </div>
+
+        <!-- TECH & ACCESSORIES -->
+        <div class="pack-section">
+          <div class="pack-section-title">🔌 Tech & accessories</div>
+          <div class="pack-grid">
+            <div class="pack-item"><input type="checkbox" id="t1"><label for="t1"><strong>Type A plug adapters (×2 per person)</strong><small>Japan uses flat 2-pin Type A (same as USA) — not 3-pin Australian</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="t2"><label for="t2"><strong>Portable battery / power bank</strong><small>Essential for 12+ hour days with heavy map usage</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="t3"><label for="t3"><strong>Phone + charger</strong><small>Check eSIM compatibility before packing</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="t4"><label for="t4"><strong>Camera (optional)</strong><small>Phone cameras are excellent but a small mirrorless is worth it for Hakone and Kyoto</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="t5"><label for="t5"><strong>Luggage locks</strong><small>Not required but helpful for checked bags on inner-trip flights</small></label></div>
+            <div class="pack-item"><input type="checkbox" id="t6"><label for="t6"><strong>Daypack / tote bag</strong><small>For day trips — leave main luggage at hotel. Konbini bags (100¥ at any store) also work.</small></label></div>
+          </div>
+        </div>
+
+        <!-- ONSEN NOTE -->
+        <div class="pack-section">
+          <div class="pack-section-title">♨ Onsen etiquette reminders</div>
+          <div class="tip-box green"><strong>For Hakone onsen:</strong> You bathe nude in traditional communal onsen (gender-separated). Shower thoroughly before entering the baths. No swimwear. If anyone has visible tattoos, the ryokan communal bath may not allow entry — ask when booking and consider private baths (kashikiri) which most ryokans offer for groups. The ryokan will provide yukata (cotton robe), towel, and amenities.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<script>
+function showPanel(id, el) {
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item, .nav-tile').forEach(n => n.classList.remove('active'));
+  const panel = document.getElementById('panel-' + id);
+  if (panel) panel.classList.add('active');
+  if (el) el.classList.add('active');
+}
+function toggleDay(el) {
+  const body = el.querySelector('.day-body');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  el.classList.toggle('open', !isOpen);
+}
+// Persist checkbox state in sessionStorage
+document.addEventListener('change', e => {
+  if (e.target.type === 'checkbox') {
+    sessionStorage.setItem(e.target.id, e.target.checked);
+    e.target.closest('.pack-item').classList.toggle('checked', e.target.checked);
+  }
+});
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.pack-item input[type=checkbox]').forEach(cb => {
+    const saved = sessionStorage.getItem(cb.id);
+    if (saved === 'true') { cb.checked = true; cb.closest('.pack-item').classList.add('checked'); }
+  });
+});
+</script>
+</body>
+</html>
