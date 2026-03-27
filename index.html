@@ -222,6 +222,78 @@
   .esim-detail { font-size: 12px; color: var(--ink-light); line-height: 1.5; }
   .esim-detail strong { color: var(--ink); font-weight: 500; }
 
+
+  /* AREA BADGE */
+  .area-badge { display: inline-block; background: #eef2fc; color: #2a3a7a; border: 1px solid #c8d4f0; border-radius: 4px; font-size: 10px; font-weight: 500; padding: 1px 7px; margin-left: 6px; vertical-align: middle; }
+  .tip-box.purple { border-left-color: #5a4a7a; background: #f5f0fc; }
+
+  /* SPEND TRACKER */
+  .tracker-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .tracker-city { border: 1px solid var(--paper-mid); border-radius: 10px; padding: 14px 16px; }
+  .tracker-city-name { font-size: 12px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+  .tracker-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .tracker-label { font-size: 11px; color: var(--ink-light); min-width: 76px; }
+  .tracker-input { flex: 1; border: 1px solid var(--paper-mid); border-radius: 6px; padding: 5px 8px; font-size: 12px; background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; }
+  .tracker-input:focus { outline: none; border-color: var(--gold); }
+  .tracker-city-budget { font-size: 11px; color: var(--gold); font-weight: 500; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--paper-mid); }
+  .tracker-summary { background: var(--paper-warm); border-radius: 12px; padding: 20px 24px; margin-top: 8px; }
+  .tracker-summary-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; margin-bottom: 14px; }
+  .tracker-stat-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+  .tracker-stat-val { font-weight: 500; }
+  .tracker-bar-wrap { height: 10px; background: var(--paper-mid); border-radius: 5px; overflow: hidden; margin: 10px 0; }
+  .tracker-bar { height: 100%; background: var(--gold); border-radius: 5px; transition: width .4s; }
+  .tracker-bar.over { background: var(--accent); }
+  .tracker-pct-label { font-size: 11px; color: var(--ink-light); }
+  .tracker-clear-btn { font-size: 11px; color: var(--accent); background: none; border: 1px solid var(--accent); padding: 5px 12px; border-radius: 6px; cursor: pointer; margin-top: 14px; }
+
+  /* CULTURAL ETIQUETTE */
+  .etiq-country { margin-bottom: 36px; }
+  .etiq-country-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 300; margin-bottom: 2px; }
+  .etiq-country-sub { font-size: 12px; color: var(--ink-light); margin-bottom: 18px; }
+  .etiq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+  .etiq-card { border-radius: 10px; padding: 14px 16px; border: 1px solid; }
+  .etiq-card.do { background: #f0faf6; border-color: #b8e0d0; }
+  .etiq-card.dont { background: #fdf2ee; border-color: #f0c8b0; }
+  .etiq-card.dining { background: #fdf6ed; border-color: #e8d8c0; }
+  .etiq-card.transport { background: #f0f6fd; border-color: #c8d4f0; }
+  .etiq-card-title { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 10px; }
+  .etiq-card.do .etiq-card-title { color: var(--teal); }
+  .etiq-card.dont .etiq-card-title { color: var(--accent); }
+  .etiq-card.dining .etiq-card-title { color: var(--gold); }
+  .etiq-card.transport .etiq-card-title { color: #2a5aaa; }
+  .etiq-item { font-size: 12px; color: var(--ink-mid); line-height: 1.55; padding: 3px 0; display: flex; gap: 8px; }
+  .etiq-item span.ei { flex-shrink: 0; width: 14px; text-align: center; }
+  .etiq-divider { border: none; border-top: 1px solid var(--paper-mid); margin: 22px 0; }
+  .etiq-phrases { background: var(--paper-warm); border-radius: 10px; padding: 14px 16px; margin-top: 10px; }
+  .etiq-phrases-label { font-size: 9px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+  .phrase-row { display: grid; grid-template-columns: 160px 1fr 1fr; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--paper-mid); font-size: 12px; }
+  .phrase-row:last-child { border-bottom: none; }
+  .phrase-eng { color: var(--ink-light); }
+  .phrase-local { color: var(--ink); font-weight: 500; }
+  .phrase-pron { color: var(--ink-light); font-style: italic; }
+
+  /* PRE-TRIP TIMELINE */
+  .prep-section { margin-bottom: 0; }
+  .prep-month { display: flex; gap: 0; }
+  .prep-month-label { width: 100px; flex-shrink: 0; padding: 18px 16px 0 0; text-align: right; }
+  .prep-month-name { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--ink); line-height: 1; }
+  .prep-month-sub { font-size: 10px; color: var(--ink-light); margin-top: 3px; }
+  .prep-month-body { flex: 1; border-left: 2px solid var(--paper-mid); padding: 14px 0 20px 22px; }
+  .prep-task { display: flex; gap: 10px; margin-bottom: 7px; align-items: flex-start; }
+  .prep-task input[type=checkbox] { margin-top: 3px; flex-shrink: 0; width: 14px; height: 14px; cursor: pointer; accent-color: var(--accent); }
+  .prep-task label { font-size: 12px; color: var(--ink-mid); cursor: pointer; line-height: 1.45; }
+  .prep-task label small { display: block; font-size: 11px; color: var(--ink-light); margin-top: 1px; }
+  .prep-task.done label { text-decoration: line-through; color: var(--ink-faint); }
+  .prep-task input:checked ~ label { text-decoration: line-through; color: var(--ink-faint); }
+
+  /* new nav tile colours */
+  .nav-tile-tracker.active { background: rgba(42,107,94,0.2); border-color: rgba(42,107,94,0.45); }
+  .nav-tile-etiquette.active { background: rgba(55,138,221,0.18); border-color: rgba(55,138,221,0.4); }
+  .nav-tile-timeline.active { background: rgba(184,145,74,0.2); border-color: rgba(184,145,74,0.45); }
+  .sh-tracker::before { background: var(--teal); }
+  .sh-etiquette::before { background: #378ADD; }
+  .sh-timeline::before { background: var(--gold); }
+
   @media print {
     .sidebar { position: static; height: auto; }
     .main { display: block; }
@@ -342,6 +414,18 @@
       <div class="nav-tile nav-tile-book" onclick="showPanel('book',this)">
         <div class="nav-tile-icon">📋</div>
         <div class="nav-tile-text"><span class="nav-tile-name">Booking Checklist</span><span class="nav-tile-sub">What to book &amp; when</span></div>
+      </div>
+      <div class="nav-tile nav-tile-tracker" onclick="showPanel('tracker',this)">
+        <div class="nav-tile-icon">💸</div>
+        <div class="nav-tile-text"><span class="nav-tile-name">Spend Tracker</span><span class="nav-tile-sub">Log spend vs budget</span></div>
+      </div>
+      <div class="nav-tile nav-tile-etiquette" onclick="showPanel('etiquette',this)">
+        <div class="nav-tile-icon">🎌</div>
+        <div class="nav-tile-text"><span class="nav-tile-name">Etiquette Guide</span><span class="nav-tile-sub">Japan &amp; Korea do's &amp; don'ts</span></div>
+      </div>
+      <div class="nav-tile nav-tile-timeline" onclick="showPanel('timeline',this)">
+        <div class="nav-tile-icon">📅</div>
+        <div class="nav-tile-text"><span class="nav-tile-name">Pre-trip Timeline</span><span class="nav-tile-sub">Month-by-month checklist</span></div>
       </div>
       <div class="nav-tile nav-tile-pack" onclick="showPanel('pack',this)">
         <div class="nav-tile-icon">🎒</div>
@@ -474,23 +558,24 @@
         </div>
 
         <div class="day-block" onclick="toggleDay(this)">
-          <div class="day-header"><div class="day-number">6</div><div class="day-info"><div class="day-date-str">Saturday 3 October</div><div class="day-title-str">Gwangjang Market, Insadong, Namsan, Hongdae</div></div><div class="day-toggle">›</div></div>
+          <div class="day-header"><div class="day-number">6</div><div class="day-info"><div class="day-date-str">Saturday 3 October</div><div class="day-title-str">Central Seoul loop — Gwangjang Market → Insadong → Namsan → Itaewon/Hannam dinner</div></div><div class="day-toggle">›</div></div>
           <div class="day-body"><div class="timeline">
-            <div class="tl-item"><div class="tl-time">9:00 AM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Gwangjang Market — Seoul's best street food <span class="cost-badge">~₩20,000/pp (~A$22)</span></div><div class="tl-act-desc">One of Korea's oldest markets. Sit at a tent stall for <strong>bindaetteok</strong> (mung bean pancakes ~₩4,000), <strong>mayak gimbap</strong> (bite-sized sesame rice rolls ~₩3,000), and <strong>kongnamul</strong> (bean sprout soup). Eat where the grandmothers are eating.</div></div></div>
-            <div class="tl-item"><div class="tl-time">12:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Insadong & Ssamziegil Courtyard <span class="cost-badge">Free to browse</span></div><div class="tl-act-desc">Korean crafts, teahouses, independent stores. Side streets more interesting than the main strip.</div></div></div>
-            <div class="tl-item"><div class="tl-time">4:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Namsan Tower (N Seoul Tower) <span class="cost-badge">Cable car ₩12,000 (~A$13) · Deck optional ₩21,000</span></div><div class="tl-act-desc">Cable car up, spectacular views in late afternoon. Skip the paid observation deck — the free outdoor viewing area is just as good.</div></div></div>
-            <div class="tl-item"><div class="tl-time">8:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Hongdae — chimaek night <span class="cost-badge">~₩30,000–40,000/pp (~A$33–44)</span></div><div class="tl-act-desc"><strong>Chimaek</strong> (fried chicken + beer) — Korea's great communal eating experience. University district, young energy, great late-night scene. Walk the main street for buskers.</div></div></div>
+            <div class="tl-item"><div class="tl-time">9:00 AM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Gwangjang Market — Seoul's best street food <span class="cost-badge">~₩20,000/pp (~A$22)</span></div><div class="tl-act-desc">One of Korea's oldest markets. Sit at a tent stall for <strong>bindaetteok</strong> (mung bean pancakes ~₩4,000), <strong>mayak gimbap</strong> (bite-sized sesame rice rolls ~₩3,000), and <strong>kongnamul</strong> (bean sprout soup). Eat where the grandmothers are eating. From Hongdae hotel: Line 2 to Euljiro 4-ga, walk to market.</div></div></div>
+            <div class="tl-item"><div class="tl-time">12:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Insadong &amp; Ssamziegil Courtyard <span class="cost-badge">Free to browse</span></div><div class="tl-act-desc">Korean crafts, teahouses, independent stores. Insadong is a 15-minute walk from Gwangjang — no transit needed. Side streets more interesting than the main strip. Good for gifts and handmade goods.</div></div></div>
+            <div class="tl-item"><div class="tl-time">3:30 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Namsan Tower (N Seoul Tower) <span class="cost-badge">Cable car ₩12,000 (~A$13) · Deck optional ₩21,000</span></div><div class="tl-act-desc">Cable car up, spectacular views across Seoul in late afternoon. Skip the paid deck — the free outdoor platform is just as good. Namsan is directly south of Insadong; subway Line 4 to Myeongdong, short walk to cable car station.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:30 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Itaewon or Hannam-dong dinner — chimaek or Korean BBQ <span class="cost-badge">~₩30,000–50,000/pp (~A$33–55)</span></div><div class="tl-act-desc">Itaewon is a 10-minute walk from the base of Namsan — no backtracking. The Hannam-dong area is slightly east of Itaewon and has excellent Korean BBQ spots and chimaek (fried chicken + beer) restaurants popular with locals. Stay in this south-central zone rather than crossing the city to Hongdae.</div></div></div>
           </div></div>
         </div>
 
         <div class="day-block" onclick="toggleDay(this)">
-          <div class="day-header"><div class="day-number">7</div><div class="day-info"><div class="day-date-str">Sunday 4 October</div><div class="day-title-str">Han River / Bukhansan, Garosu-gil, last Seoul dinner</div></div><div class="day-toggle">›</div></div>
+          <div class="day-header"><div class="day-number">7</div><div class="day-info"><div class="day-date-str">Sunday 4 October</div><div class="day-title-str">South Seoul — Banpo Han River Park → Garosu-gil → Hongdae chimaek</div></div><div class="day-toggle">›</div></div>
           <div class="day-body"><div class="timeline">
-            <div class="tl-item"><div class="tl-time">Morning</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Han River Park or Bukhansan hike <span class="cost-badge">Free</span></div><div class="tl-act-desc"><strong>Han River Park</strong> — rent bikes (~₩3,000/hr), buy convenience store food, relax on the grass — quintessential Seoul Sunday. Or <strong>Bukhansan National Park</strong> for spectacular granite peak city views (free, ~3 hr hike).</div></div></div>
-            <div class="tl-item"><div class="tl-time">Afternoon</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Garosu-gil shopping <span class="cost-badge">Free to browse · Cosmetics A$10–30/item</span></div><div class="tl-act-desc">Seoul's most stylish tree-lined shopping street. Korean fashion brands and cosmetics (COSRX, Innisfree, Laneige) — cheaper here than at home. Good independent boutiques.</div></div></div>
-            <div class="tl-item"><div class="tl-time">7:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Last Seoul dinner — budae jjigae or sundubu jjigae <span class="cost-badge">~₩15,000–20,000/pp (~A$16–22)</span></div><div class="tl-act-desc"><strong>Budae jjigae</strong> (Korean-American army stew: kimchi, spam, ramen) or <strong>sundubu jjigae</strong> (silken tofu soup) — comfort dishes that don't exist outside Korea.</div></div></div>
+            <div class="tl-item"><div class="tl-time">10:00 AM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Banpo Han River Park — bikes &amp; brunch <span class="cost-badge">Free · bikes ₩3,000/hr</span></div><div class="tl-act-desc">Banpo section of the Han River is the most scenic — the Banpo Bridge Moonlight Rainbow Fountain runs at set times. Rent bikes, buy convenience store food, relax on the grass. Quintessential Seoul Sunday. Banpo is south of the river, just north of Garosu-gil — perfectly positioned for the next stop.</div></div></div>
+            <div class="tl-item"><div class="tl-time">1:30 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Garosu-gil shopping &amp; café lunch <span class="cost-badge">Free to browse · Cosmetics A$10–30/item</span></div><div class="tl-act-desc">Seoul's most stylish tree-lined shopping street, just 10 minutes south of Banpo. Korean fashion brands and cosmetics (COSRX, Innisfree, Laneige) — significantly cheaper than at home. Good independent boutiques and specialty cafés for lunch.</div></div></div>
+            <div class="tl-item"><div class="tl-time">4:00 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Sinchon / Hongdae neighbourhood wander <span class="cost-badge">Free</span></div><div class="tl-act-desc">Head northwest to Hongdae for the late afternoon — university district energy, street buskers, vintage shops, good independent music venues. 20 minutes from Garosu-gil by subway. Sets up the evening well.</div></div></div>
+            <div class="tl-item"><div class="tl-time">7:30 PM</div><div class="tl-dot" style="background:#7F77DD;"></div><div class="tl-content"><div class="tl-act-title">Last Seoul dinner — budae jjigae or chimaek in Hongdae <span class="cost-badge">~₩20,000–40,000/pp (~A$22–44)</span></div><div class="tl-act-desc"><strong>Chimaek</strong> (Korean fried chicken + beer) in Hongdae for a fun group finale, or <strong>budae jjigae</strong> (army stew: kimchi, spam, ramen) at a local pojangmacha. Both are comfort dishes that don't exist outside Korea and are perfect last-night Seoul food.</div></div></div>
           </div>
-          <div class="tip-box"><strong>Tomorrow:</strong> KTX Seoul Station → Busan, book in advance on letskorail.com. ₩59,800/pp (~A$65), 2h 15min. Morning train recommended.</div>
+          <div class="tip-box"><strong>Tomorrow:</strong> KTX Seoul Station → Busan, book in advance on letskorail.com. ₩59,800/pp (~A$65), 2h 15min. Morning train recommended. Seoul Station is 15 min from Hongdae by subway.</div>
           </div>
         </div>
       </div>
@@ -609,12 +694,14 @@
         </div>
 
         <div class="day-block" onclick="toggleDay(this)">
-          <div class="day-header"><div class="day-number">15</div><div class="day-info"><div class="day-date-str">Monday 12 October</div><div class="day-title-str">Kyoto day trip — Fushimi Inari, Arashiyama, Gion</div></div><div class="day-toggle">›</div></div>
-          <div class="day-body"><div class="timeline">
-            <div class="tl-item"><div class="tl-time">7:30 AM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Fushimi Inari at dawn <span class="cost-badge">Free · Train from Osaka ~¥560/pp return</span></div><div class="tl-act-desc">Arrive by 8am before tour groups. Thousands of orange torii gates winding up the mountain — one of Asia's great sights. Do the full mountain hike (2–3 hrs), not just the lower section. Pack water.</div></div></div>
-            <div class="tl-item"><div class="tl-time">11:00 AM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Arashiyama — bamboo grove & Tenryu-ji <span class="cost-badge">Tenryu-ji garden ¥500/pp (~A$5.50)</span></div><div class="tl-act-desc">Go directly after Fushimi while crowds are still light. UNESCO-listed garden. Walk the Togetsukyo Bridge and hire a river boat (~¥1,200 for 30 min).</div></div></div>
-            <div class="tl-item"><div class="tl-time">2:00 PM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Nishiki Market lunch <span class="cost-badge">~¥1,500–2,000/pp grazing</span></div><div class="tl-act-desc">Covered market — pickled vegetables, fresh tofu, dashi omelette, yuzu sweets. Eat as you walk.</div></div></div>
-            <div class="tl-item"><div class="tl-time">4:30 PM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Gion walk — geisha district <span class="cost-badge">Free</span></div><div class="tl-act-desc">Walk Hanamikoji Street in late afternoon. Best chance of spotting a maiko. Return to Osaka for dinner — Kyoto dining is expensive; Osaka offers far better group value.</div></div></div>
+          <div class="day-header"><div class="day-number">15</div><div class="day-info"><div class="day-date-str">Monday 12 October</div><div class="day-title-str">Kyoto day trip — west→east sweep: Arashiyama → Fushimi Inari → Nishiki → Gion</div></div><div class="day-toggle">›</div></div>
+          <div class="day-body">
+          <div class="tip-box" style="margin-top:16px;background:#fdf6ed;border-left-color:#b8914a;"><strong>Geo-optimised Kyoto route:</strong> This is a clean west-to-east sweep across the city — no backtracking. Arashiyama is in the northwest, Fushimi Inari in the south, Nishiki and Gion in the east centre. Take one train line south from Arashiyama to Fushimi, then the Keihan Line north to central Kyoto. One continuous movement.</div>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-time">7:30 AM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Arashiyama — bamboo grove &amp; Tenryu-ji <span class="cost-badge">Tenryu-ji ¥500/pp · Train from Osaka ~¥560 return</span></div><div class="tl-act-desc">Go early — the bamboo grove is unpleasantly crowded by 10am. Arrive by 7:30am for the best light and near-empty paths. UNESCO-listed Tenryu-ji garden opens at 8:30am. Walk Togetsukyo Bridge, optionally hire a river boat (~¥1,200 / 30 min). From Osaka: JR Sagano Line to Saga-Arashiyama (~50 min). This is the northwest corner of Kyoto.</div></div></div>
+            <div class="tl-item"><div class="tl-time">11:00 AM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Fushimi Inari — thousands of torii gates <span class="cost-badge">Free</span></div><div class="tl-act-desc">From Arashiyama, take the JR San-in Line to Tofukuji (~25 min), then walk or connect to Fushimi-Inari Station. Arriving at 11am you miss the early tour groups. Do the full mountain hike (2–3 hrs) — the upper trails are far less crowded. Pack water. Fushimi is in the south of Kyoto; heading there from Arashiyama is a natural southward movement.</div></div></div>
+            <div class="tl-item"><div class="tl-time">2:30 PM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Nishiki Market lunch <span class="cost-badge">~¥1,500–2,000/pp grazing</span></div><div class="tl-act-desc">From Fushimi Inari, take Keihan Line north 4 stops to Shijo — the market is steps from the station. Covered market lane with pickled vegetables, fresh tofu, dashi omelette, yuzu sweets. Eat as you walk through.</div></div></div>
+            <div class="tl-item"><div class="tl-time">4:30 PM</div><div class="tl-dot" style="background:#b8914a;"></div><div class="tl-content"><div class="tl-act-title">Gion walk — geisha district <span class="cost-badge">Free</span></div><div class="tl-act-desc">Gion is a 5-minute walk east from Nishiki Market — no transit needed. Walk Hanamikoji Street in late afternoon light. Best chance of spotting a maiko leaving for an evening engagement. Return to Osaka for dinner — Kyoto dining is expensive; Osaka offers far better value.</div></div></div>
           </div></div>
         </div>
 
@@ -889,6 +976,231 @@
       </div>
     </div>
 
+
+    <!-- SPEND TRACKER -->
+    <div class="panel" id="panel-tracker">
+      <div class="section-header sh-tracker">
+        <div class="section-eyebrow">💸 Live tracking</div>
+        <div class="section-title">Spend <em>tracker</em></div>
+        <div class="section-subtitle">Log your actual spend per city · compare to budget · data saved in browser</div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box green"><strong>How to use:</strong> Enter your actual spend in AUD for each city as you go. The tracker compares against the per-person budget estimates and shows how you're tracking overall. Data persists across browser sessions via localStorage.</div>
+        <div class="tracker-grid" id="trackerGrid"></div>
+        <div class="tracker-summary">
+          <div class="tracker-summary-title">Overall summary</div>
+          <div id="trackerSummaryBody"></div>
+        </div>
+        <div style="margin-top:12px;">
+          <button class="tracker-clear-btn" onclick="clearTracker()">Reset all tracker data</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CULTURAL ETIQUETTE -->
+    <div class="panel" id="panel-etiquette">
+      <div class="section-header sh-etiquette">
+        <div class="section-eyebrow">🎌 Country guide</div>
+        <div class="section-title">Cultural <em>etiquette</em></div>
+        <div class="section-subtitle">Japan &amp; South Korea — what to do, what to avoid, useful phrases</div>
+      </div>
+      <div class="days-container">
+
+        <!-- JAPAN -->
+        <div class="etiq-country">
+          <div class="etiq-country-title">Japan</div>
+          <div class="etiq-country-sub">Tokyo · Fukuoka · Osaka · Kyoto · Hakone</div>
+          <div class="etiq-grid">
+            <div class="etiq-card do">
+              <div class="etiq-card-title">✓ Do</div>
+              <div class="etiq-item"><span class="ei">✓</span>Bow slightly when greeting, thanking, or apologising — a small nod is enough as a tourist</div>
+              <div class="etiq-item"><span class="ei">✓</span>Remove shoes when entering a home, ryokan room, or anywhere with indoor slippers at the entrance</div>
+              <div class="etiq-item"><span class="ei">✓</span>Use both hands when giving or receiving items (business cards, gifts, change at a register)</div>
+              <div class="etiq-item"><span class="ei">✓</span>Say <em>itadakimasu</em> before eating — locals notice and appreciate it</div>
+              <div class="etiq-item"><span class="ei">✓</span>Queue patiently and stay in line — Japan's queue culture is absolute</div>
+              <div class="etiq-item"><span class="ei">✓</span>Carry cash at all times — Japan is still heavily cash-based, especially yatai stalls and small restaurants</div>
+              <div class="etiq-item"><span class="ei">✓</span>Keep your voice low on trains, in temples, and in restaurants</div>
+              <div class="etiq-item"><span class="ei">✓</span>At onsen: shower thoroughly before entering; tattoos may mean communal baths are off-limits — request kashikiri (private) baths when booking</div>
+            </div>
+            <div class="etiq-card dont">
+              <div class="etiq-card-title">✗ Don't</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't eat or drink while walking — buy food at a stall and eat standing right there</div>
+              <div class="etiq-item"><span class="ei">✗</span>Never tip — it's genuinely confusing and slightly offensive; exceptional service is simply the standard</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't stick chopsticks upright in rice — this is a funeral ritual</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't pass food chopstick-to-chopstick — also associated with funerals</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't talk on your phone on trains or buses — step off or into a quiet area</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't photograph people without permission — especially maiko in Gion; they are working, not tourists</div>
+              <div class="etiq-item"><span class="ei">✗</span>Kushikatsu (Shinsekai, Osaka): NEVER double-dip in the communal sauce — restaurants will ask you to leave</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't blow your nose in public — step aside or excuse yourself</div>
+            </div>
+          </div>
+          <div class="etiq-grid">
+            <div class="etiq-card dining">
+              <div class="etiq-card-title">🍜 Dining etiquette</div>
+              <div class="etiq-item"><span class="ei">→</span>Say <em>sumimasen</em> to get a waiter's attention — never wave or shout</div>
+              <div class="etiq-item"><span class="ei">→</span>Slurping ramen and noodles is normal and appreciated — it cools the noodles and signals enjoyment</div>
+              <div class="etiq-item"><span class="ei">→</span>At smaller restaurants, pay as a group at the register — don't ask for separate bills</div>
+              <div class="etiq-item"><span class="ei">→</span>Try to finish your ramen broth — leaving a full bowl is wasteful</div>
+              <div class="etiq-item"><span class="ei">→</span>At ryokan: wear the provided yukata to dinner; it's expected and part of the experience</div>
+            </div>
+            <div class="etiq-card transport">
+              <div class="etiq-card-title">🚇 Transit etiquette</div>
+              <div class="etiq-item"><span class="ei">→</span>Stand on the left on escalators (except Osaka — stand on the right)</div>
+              <div class="etiq-item"><span class="ei">→</span>Priority seats near the doors are for elderly, pregnant, and injured — always give them up</div>
+              <div class="etiq-item"><span class="ei">→</span>Don't eat on local trains (Shinkansen is fine)</div>
+              <div class="etiq-item"><span class="ei">→</span>Suica on iPhone Wallet is the smoothest payment method — tap in, tap out, no ticket queues</div>
+              <div class="etiq-item"><span class="ei">→</span>At temples: walk to the side of the central path — it's considered reserved for the gods</div>
+            </div>
+          </div>
+          <div class="etiq-phrases">
+            <div class="etiq-phrases-label">Useful Japanese phrases</div>
+            <div class="phrase-row"><div class="phrase-eng">Thank you</div><div class="phrase-local">ありがとうございます</div><div class="phrase-pron">Arigatou gozaimasu</div></div>
+            <div class="phrase-row"><div class="phrase-eng">Excuse me / sorry</div><div class="phrase-local">すみません</div><div class="phrase-pron">Sumimasen</div></div>
+            <div class="phrase-row"><div class="phrase-eng">Before eating</div><div class="phrase-local">いただきます</div><div class="phrase-pron">Itadakimasu</div></div>
+            <div class="phrase-row"><div class="phrase-eng">This one please</div><div class="phrase-local">これをください</div><div class="phrase-pron">Kore wo kudasai</div></div>
+            <div class="phrase-row"><div class="phrase-eng">How much?</div><div class="phrase-local">いくらですか？</div><div class="phrase-pron">Ikura desu ka?</div></div>
+            <div class="phrase-row"><div class="phrase-eng">The bill please</div><div class="phrase-local">お会計をお願いします</div><div class="phrase-pron">Okaikei wo onegaishimasu</div></div>
+            <div class="phrase-row"><div class="phrase-eng">Delicious!</div><div class="phrase-local">美味しい！</div><div class="phrase-pron">Oishii!</div></div>
+            <div class="phrase-row"><div class="phrase-eng">Where is the toilet?</div><div class="phrase-local">トイレはどこですか？</div><div class="phrase-pron">Toire wa doko desu ka?</div></div>
+            <div class="phrase-row"><div class="phrase-eng">I don't eat [meat]</div><div class="phrase-local">[肉]は食べられません</div><div class="phrase-pron">[Niku] wa taberaremasen</div></div>
+          </div>
+        </div>
+
+        <hr class="etiq-divider">
+
+        <!-- KOREA -->
+        <div class="etiq-country">
+          <div class="etiq-country-title">South Korea</div>
+          <div class="etiq-country-sub">Seoul · Busan</div>
+          <div class="etiq-grid">
+            <div class="etiq-card do">
+              <div class="etiq-card-title">✓ Do</div>
+              <div class="etiq-item"><span class="ei">✓</span>Use both hands (or right hand supported at the wrist) when giving and receiving things — especially to elders</div>
+              <div class="etiq-item"><span class="ei">✓</span>Pour drinks for others before yourself; top up others' glasses and they'll top up yours</div>
+              <div class="etiq-item"><span class="ei">✓</span>Wait for the eldest person at the table to begin eating before you start</div>
+              <div class="etiq-item"><span class="ei">✓</span>At Korean BBQ: the youngest person typically does the grilling — it's a sign of respect</div>
+              <div class="etiq-item"><span class="ei">✓</span>Use Naver Maps (not Google Maps) — Google's transit directions are unreliable in Korea</div>
+              <div class="etiq-item"><span class="ei">✓</span>Use Kakao T for taxis — shows fare upfront, has English UI, and is far more reliable than hailing on the street</div>
+              <div class="etiq-item"><span class="ei">✓</span>Remove shoes when entering traditional restaurants with floor seating</div>
+            </div>
+            <div class="etiq-card dont">
+              <div class="etiq-card-title">✗ Don't</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't tip — just like Japan, tipping is not practiced in Korea and can create awkwardness</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't write someone's name in red ink — associated with death</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't stick chopsticks upright in rice or pass food chopstick-to-chopstick — funeral associations</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't pour your own drink — this is considered rude; let others pour for you and reciprocate</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't call Korean food, culture, or language "similar to Japan/China" — Koreans are proud of their distinct heritage</div>
+              <div class="etiq-item"><span class="ei">✗</span>Don't cross your legs in the presence of elders — sit with both feet on the floor</div>
+            </div>
+          </div>
+          <div class="etiq-grid">
+            <div class="etiq-card dining">
+              <div class="etiq-card-title">🍖 Korean BBQ etiquette</div>
+              <div class="etiq-item"><span class="ei">→</span>Wrap grilled meat in lettuce or perilla leaves with rice, ssamjang paste, garlic, and kimchi — eat in one bite</div>
+              <div class="etiq-item"><span class="ei">→</span>Use scissors (provided) to cut meat at the grill — completely normal and expected</div>
+              <div class="etiq-item"><span class="ei">→</span>Banchan (side dishes) are free refills — just ask the server</div>
+              <div class="etiq-item"><span class="ei">→</span>Soju is drunk in shots with eye contact — pour for others first</div>
+              <div class="etiq-item"><span class="ei">→</span>Doenjang jjigae (bean paste soup) on the side is the right move with BBQ</div>
+            </div>
+            <div class="etiq-card transport">
+              <div class="etiq-card-title">🚇 Practical tips</div>
+              <div class="etiq-item"><span class="ei">→</span>T-money card works on all buses, subways, and even some taxis — top up at any GS25 or CU convenience store</div>
+              <div class="etiq-item"><span class="ei">→</span>Convenience stores (GS25, CU, 7-Eleven) are open 24/7 and sell excellent cheap food — kimbap, tteokbokki, ramyeon</div>
+              <div class="etiq-item"><span class="ei">→</span>Street food (hotteok, eomuk, tteokbokki) is eaten standing near the stall — that's the local way</div>
+              <div class="etiq-item"><span class="ei">→</span>Public restrooms are generally clean and free — large subway stations always have them</div>
+            </div>
+          </div>
+          <div class="etiq-phrases">
+            <div class="etiq-phrases-label">Useful Korean phrases</div>
+            <div class="phrase-row"><div class="phrase-eng">Thank you</div><div class="phrase-local">감사합니다</div><div class="phrase-pron">Gamsahamnida</div></div>
+            <div class="phrase-row"><div class="phrase-eng">Excuse me</div><div class="phrase-local">저기요</div><div class="phrase-pron">Jeogiyo</div></div>
+            <div class="phrase-row"><div class="phrase-eng">Delicious!</div><div class="phrase-local">맛있어요!</div><div class="phrase-pron">Masisseoyo!</div></div>
+            <div class="phrase-row"><div class="phrase-eng">How much?</div><div class="phrase-local">얼마예요?</div><div class="phrase-pron">Eolmayeyo?</div></div>
+            <div class="phrase-row"><div class="phrase-eng">The bill please</div><div class="phrase-local">계산해 주세요</div><div class="phrase-pron">Gyesan-hae juseyo</div></div>
+            <div class="phrase-row"><div class="phrase-eng">One more please</div><div class="phrase-local">하나 더 주세요</div><div class="phrase-pron">Hana deo juseyo</div></div>
+            <div class="phrase-row"><div class="phrase-eng">Where is the toilet?</div><div class="phrase-local">화장실이 어디예요?</div><div class="phrase-pron">Hwajangsil-i eodiyeyo?</div></div>
+            <div class="phrase-row"><div class="phrase-eng">I can't eat [pork]</div><div class="phrase-local">[돼지고기] 못 먹어요</div><div class="phrase-pron">[Dwaejigogi] mot meogeoyo</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PRE-TRIP TIMELINE -->
+    <div class="panel" id="panel-timeline">
+      <div class="section-header sh-timeline">
+        <div class="section-eyebrow">📅 Preparation schedule</div>
+        <div class="section-title">Pre-trip <em>timeline</em></div>
+        <div class="section-subtitle">Everything to do before 28 September 2026 · tick as you complete</div>
+      </div>
+      <div class="days-container">
+        <div class="tip-box red"><strong>Right now — most urgent:</strong> Hakone ryokan and all hotel bookings must happen immediately. October is Japan's peak foliage season — properties at ryokan level for 7 people fill up 6+ months ahead.</div>
+
+        <div class="prep-section">
+          <div class="prep-month">
+            <div class="prep-month-label"><div class="prep-month-name">Now</div><div class="prep-month-sub">Mar 2026</div></div>
+            <div class="prep-month-body">
+              <div class="prep-task"><input type="checkbox" id="pt1"><label for="pt1"><strong>Book Hakone ryokan</strong> (14–16 Oct, 7 people, 4 rooms)<small>Jalan.net or Ikkyu. ¥12,000–20,000/pp/night including dinner and breakfast. Most urgent booking of the entire trip.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt2"><label for="pt2"><strong>Book all Japan hotels</strong> — Tokyo (Ebisu, 4 nights), Fukuoka (Hakata, 3 nights), Osaka (Namba, 3 nights), Tokyo return (1 night)<small>Dormy Inn chain recommended. 3–4 rooms same property. Use Booking.com.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt3"><label for="pt3"><strong>Book Seoul hotel</strong> (Hongdae or Myeongdong area, 3 nights) &amp; <strong>Busan hotel</strong> (Seomyeon area, 2 nights)<small>Check if Chuseok falls in early Oct 2026 — prices spike if so.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt4"><label for="pt4"><strong>Book TeamLab Planets</strong> — 30 September timeslot<small>teamlab.art — walk-in almost never available. ¥3,200/pp (~A$35).</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt5"><label for="pt5"><strong>Check all 7 passports valid to April 2027+</strong><small>Australian passports need 6 months validity beyond return date. Renew now if needed.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt6"><label for="pt6"><strong>Purchase travel insurance</strong> for all 7 travellers<small>Cover for trip cancellation, medical evacuation, and delays. Budget ~A$150–300/pp for 21 days.</small></label></div>
+            </div>
+          </div>
+          <div class="prep-month">
+            <div class="prep-month-label"><div class="prep-month-name">Apr–May</div><div class="prep-month-sub">4–5 months out</div></div>
+            <div class="prep-month-body">
+              <div class="prep-task"><input type="checkbox" id="pt7"><label for="pt7"><strong>Book Tokyo → Seoul flight</strong> (2 Oct)<small>Skyscanner / Google Flights. Korean Air, Asiana, ANA, Qantas codeshares. ~A$180–230/pp one-way.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt8"><label for="pt8"><strong>Book Busan → Fukuoka flight</strong> (7 Oct, earliest morning departure)<small>Air Busan, Jeju Air, T'Way Air. ~A$80–130/pp including one checked bag.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt9"><label for="pt9"><strong>Book KTX Seoul → Busan</strong> (5 Oct, morning train)<small>letskorail.com · ₩59,800/pp (~A$65). Book group seats in same carriage.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt10"><label for="pt10"><strong>Buy Hakone Free Pass (2-day)</strong> digitally via Odakyu app<small>¥7,100/pp from Odawara. Covers all Hakone local transport. Activate on first use day.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt11"><label for="pt11"><strong>Book Romancecar seats</strong> — Hakone-Yumoto → Shinjuku (16 Oct)<small>e-Romancecar platform (odakyu.jp). ¥2,470 + ¥1,200 surcharge. Scenic 80-min return to Tokyo.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt12"><label for="pt12"><strong>Open ubank account</strong> and activate card<small>No foreign transaction fee, no ATM fee. Australia's best travel card. Allow 1–2 weeks to receive and activate.</small></label></div>
+            </div>
+          </div>
+          <div class="prep-month">
+            <div class="prep-month-label"><div class="prep-month-name">Jun–Jul</div><div class="prep-month-sub">3 months out</div></div>
+            <div class="prep-month-body">
+              <div class="prep-task"><input type="checkbox" id="pt13"><label for="pt13"><strong>Set up Suica card on iPhone Wallet</strong><small>iPhone Wallet → + → Transit Card → Suica. Load ¥10,000. Works for all trains, buses, subway, and convenience stores in Japan.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt14"><label for="pt14"><strong>Confirm Chuseok 2026 dates</strong> and check Seoul/Busan hotel prices haven't spiked<small>Korean Thanksgiving typically falls Sep–Oct. If it overlaps, some venues close and prices rise significantly.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt15"><label for="pt15"><strong>Research Fukuoka ryokan/hotel tattoo policies</strong> if applicable<small>Book kashikiri (private onsen baths) for the group at Hakone if anyone has visible tattoos.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt16"><label for="pt16"><strong>Download essential apps</strong>: Tabelog, Naver Maps, Kakao T, Google Translate (with Japanese &amp; Korean offline packs)<small>Offline maps also — Google Maps Japan and Korea saved to device for no-signal situations.</small></label></div>
+            </div>
+          </div>
+          <div class="prep-month">
+            <div class="prep-month-label"><div class="prep-month-name">Aug</div><div class="prep-month-sub">6 weeks out</div></div>
+            <div class="prep-month-body">
+              <div class="prep-task"><input type="checkbox" id="pt17"><label for="pt17"><strong>Book Hikiniku to Come, Fukuoka</strong> (book ~1 week before visit date, so around 1–2 Oct for 8–10 Oct visit)<small>Viral fresh-ground hamburger patty restaurant. Book via their website. One of the best things you'll eat in Fukuoka.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt18"><label for="pt18"><strong>Exchange ~A$300–400 into JPY</strong> per person<small>Exchange in Australia at a currency exchange (not airport). Kangaroo Money or Travel Money Oz. Take enough cash for yatai stalls, small restaurants, and markets.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt19"><label for="pt19"><strong>Notify bank(s) of overseas travel dates</strong><small>Even ubank. Prevents blocks on international transactions. Note Japan and Korea dates explicitly.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt20"><label for="pt20"><strong>Start packing list planning</strong> — check weather forecasts for late Sep / Oct<small>Tokyo late Sep ~24°C humid; Hakone mid-Oct ~15°C evenings. Pack light, buy in Japan if needed.</small></label></div>
+            </div>
+          </div>
+          <div class="prep-month">
+            <div class="prep-month-label"><div class="prep-month-name">Sep</div><div class="prep-month-sub">2 weeks out</div></div>
+            <div class="prep-month-body">
+              <div class="prep-task"><input type="checkbox" id="pt21"><label for="pt21"><strong>Buy eSIM</strong> (Trip.com Asia multi-country or MobiMatter Japan+Korea)<small>Install 1–2 weeks before. Activate at boarding in Melbourne — live data from the moment you land in Tokyo.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt22"><label for="pt22"><strong>Print or save offline all confirmations</strong><small>Flights, hotels, TeamLab, KTX, Romancecar, travel insurance. Japanese immigration occasionally asks for hotel printouts.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt23"><label for="pt23"><strong>Pack and do a luggage weight check</strong><small>Qantas economy: 23kg checked + 7kg carry-on. Leave room for shopping — you will buy more than expected in Japan.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt24"><label for="pt24"><strong>Share full itinerary with a trusted contact in Australia</strong><small>Include hotel names, phone numbers, and emergency contacts for all cities.</small></label></div>
+            </div>
+          </div>
+          <div class="prep-month">
+            <div class="prep-month-label"><div class="prep-month-name">Day before</div><div class="prep-month-sub">27 Sep</div></div>
+            <div class="prep-month-body">
+              <div class="prep-task"><input type="checkbox" id="pt25"><label for="pt25"><strong>Party A: check in online for QF79</strong> (departs MEL 9:35 AM 28 Sep)<small>Check-in opens 24 hrs before. Confirm seat assignments.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt26"><label for="pt26"><strong>Party B: check in online for QF604 + QF61</strong> (departs MEL 7:00 AM 28 Sep)<small>Earlier departure — check in the evening of 27 Sep. Set 5 AM alarm.</small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt27"><label for="pt27"><strong>Charge all electronics</strong> fully overnight — phones, cameras, power banks<small></small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt28"><label for="pt28"><strong>Load Suica with ¥10,000 via iPhone Wallet</strong> — ready for N'EX from Narita on arrival<small></small></label></div>
+              <div class="prep-task"><input type="checkbox" id="pt29"><label for="pt29"><strong>Get good sleep</strong> — Tokyo is +3 hrs from Melbourne, jet lag is real<small>Stay awake until at least 10 PM Tokyo time on arrival night to reset your clock faster.</small></label></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div><!-- /content -->
 </div><!-- /main -->
 
@@ -899,6 +1211,7 @@ function showPanel(id, el) {
   const panel = document.getElementById('panel-' + id);
   if (panel) panel.classList.add('active');
   if (el) el.classList.add('active');
+  if (id === 'tracker') renderTracker();
 }
 function toggleDay(el) {
   const body = el.querySelector('.day-body');
@@ -906,19 +1219,96 @@ function toggleDay(el) {
   body.classList.toggle('open', !isOpen);
   el.classList.toggle('open', !isOpen);
 }
-// Persist checkbox state in sessionStorage
+
+// ── Checkbox persistence (packing + prep timeline) ──
+function saveCheck(id, val) { try { localStorage.setItem('chk_' + id, val ? '1' : '0'); } catch(e) {} }
+function loadCheck(id) { try { return localStorage.getItem('chk_' + id) === '1'; } catch(e) { return false; } }
+
 document.addEventListener('change', e => {
-  if (e.target.type === 'checkbox') {
-    sessionStorage.setItem(e.target.id, e.target.checked);
-    e.target.closest('.pack-item').classList.toggle('checked', e.target.checked);
-  }
+  if (e.target.type !== 'checkbox') return;
+  const id = e.target.id;
+  const val = e.target.checked;
+  saveCheck(id, val);
+  const pi = e.target.closest('.pack-item');
+  if (pi) pi.classList.toggle('checked', val);
+  const pt = e.target.closest('.prep-task');
+  if (pt) pt.classList.toggle('done', val);
 });
+
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.pack-item input[type=checkbox]').forEach(cb => {
-    const saved = sessionStorage.getItem(cb.id);
-    if (saved === 'true') { cb.checked = true; cb.closest('.pack-item').classList.add('checked'); }
+  document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+    if (!cb.id) return;
+    const val = loadCheck(cb.id);
+    if (val) {
+      cb.checked = true;
+      const pi = cb.closest('.pack-item');
+      if (pi) pi.classList.add('checked');
+      const pt = cb.closest('.prep-task');
+      if (pt) pt.classList.add('done');
+    }
   });
+  renderTracker();
 });
+
+// ── Spend Tracker ──
+const TRACKER_CITIES = [
+  { id: 'tokyo1', label: '🗼 Tokyo (1st stay)', budget: 1280 },
+  { id: 'seoul',  label: '🇰🇷 Seoul',           budget: 590  },
+  { id: 'busan',  label: '🇰🇷 Busan',           budget: 530  },
+  { id: 'fuk',    label: '🍜 Fukuoka',          budget: 800  },
+  { id: 'osaka',  label: '⛩ Osaka / Kyoto',    budget: 940  },
+  { id: 'hakone', label: '🌿 Hakone',           budget: 830  },
+  { id: 'tokyo2', label: '🗼 Tokyo (return)',    budget: 430  },
+  { id: 'flights',label: '✈ Inner-trip flights', budget: 380  },
+];
+
+function tGet(id) { try { return parseFloat(localStorage.getItem('trk_' + id)) || 0; } catch(e) { return 0; } }
+function tSet(id, v) { try { localStorage.setItem('trk_' + id, v); } catch(e) {} }
+
+function renderTracker() {
+  const grid = document.getElementById('trackerGrid');
+  if (!grid) return;
+  grid.innerHTML = '';
+  TRACKER_CITIES.forEach(c => {
+    const spent = tGet(c.id);
+    const div = document.createElement('div');
+    div.className = 'tracker-city';
+    div.innerHTML = `
+      <div class="tracker-city-name">${c.label}</div>
+      <div class="tracker-row">
+        <div class="tracker-label">Actual (A$)</div>
+        <input class="tracker-input" type="number" min="0" step="10" placeholder="0"
+          value="${spent || ''}"
+          oninput="tSet('${c.id}', this.value); updateTrackerSummary()">
+      </div>
+      <div class="tracker-city-budget">Budget estimate: ~A$${c.budget.toLocaleString()}</div>
+    `;
+    grid.appendChild(div);
+  });
+  updateTrackerSummary();
+}
+
+function updateTrackerSummary() {
+  const body = document.getElementById('trackerSummaryBody');
+  if (!body) return;
+  let totalBudget = 0, totalSpent = 0;
+  TRACKER_CITIES.forEach(c => { totalBudget += c.budget; totalSpent += tGet(c.id); });
+  const pct = totalBudget > 0 ? Math.min(Math.round(totalSpent / totalBudget * 100), 100) : 0;
+  const remaining = totalBudget - totalSpent;
+  const over = totalSpent > totalBudget;
+  body.innerHTML = `
+    <div class="tracker-stat-row"><span>Total budget (per person)</span><span class="tracker-stat-val">A$${totalBudget.toLocaleString()}</span></div>
+    <div class="tracker-stat-row"><span>Spent so far</span><span class="tracker-stat-val" style="color:${over ? 'var(--accent)' : 'var(--ink)'}">A$${totalSpent.toLocaleString()}</span></div>
+    <div class="tracker-bar-wrap"><div class="tracker-bar${over ? ' over' : ''}" style="width:${pct}%"></div></div>
+    <div class="tracker-pct-label">${pct}% of budget used · ${over ? '<span style="color:var(--accent)">A$' + Math.abs(remaining).toLocaleString() + ' over budget</span>' : 'A$' + remaining.toLocaleString() + ' remaining'}</div>
+  `;
+}
+
+function clearTracker() {
+  if (!confirm('Reset all tracker data?')) return;
+  TRACKER_CITIES.forEach(c => { try { localStorage.removeItem('trk_' + c.id); } catch(e) {} });
+  renderTracker();
+}
 </script>
 </body>
 </html>
