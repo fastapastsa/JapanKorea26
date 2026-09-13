@@ -1457,7 +1457,7 @@ const TRANSIT=[
    '<b>Osaka Midotsuji (red)</b> — Umeda ↔ Shinsaibashi ↔ Namba ↔ Dobutsuen-mae for Shinsekai.']}
 ];
 function buildTransit(){
-  let h=`<div class="note"><b>Why there are no metro maps pasted in here.</b> Official network maps are copyrighted by the operators, and a screenshot of one goes out of date the moment a line extends. Each card below links straight to the live English map instead, and the NUUA app works offline once you've downloaded a city — which matters underground, where you won't have signal.</div>`;
+
   h+='<h2 class="sec">City by city</h2>';
   TRANSIT.forEach(t=>{
     const col=cityOf(t.c).c;
