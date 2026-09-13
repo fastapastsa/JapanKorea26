@@ -517,8 +517,7 @@ const DAYS=[
 {n:7,d:'2026-10-04',dow:'Sun',city:'seoul',t:'Seongsu, the Han River &amp; Itaewon',s:'Cafés, an optional ride, then Namsan at night',
  pills:['Flexible day','Good day to split up'],
  blocks:[
-  {k:'The plan',v:[
-   '>+ **Resolved: we are doing the Seongsu and Ttukseom side of the river.** The old Hongdae → Yeouido routing has been dropped — Yeouido and Seongsu are at opposite ends of the river and we were carrying two different plans for the same day.']},
+  
   {k:'Breakfast',v:['Seongsu cafés']},
   {k:'Morning',v:[
    '**Seongsu** — café hopping',
@@ -1271,8 +1270,8 @@ function initMap(city){
   if(city) CUR.city=city, CUR.day=null;
   if(!MAP){
     MAP=L.map('map',{scrollWheelZoom:false,zoomControl:true}).setView([35.68,139.76],12);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-      {maxZoom:19,attribution:'&copy; OpenStreetMap contributors &copy; CARTO'}).addTo(MAP);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+      {maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(MAP);
     LAYER=L.layerGroup().addTo(MAP);
     MAP.on('click',()=>MAP.scrollWheelZoom.enable());
   }
@@ -1388,14 +1387,6 @@ function buildOverview(){
    <div class="stat"><div class="stat-l">Moves between cities</div><div class="stat-v">7</div><div class="stat-s">Four flights, three trains, no backtracking</div></div>
   </div>`;
 
-  h+=`<h2 class="sec">Three dates that change the plan</h2>
-  <p class="lead">None of these were in the original spreadsheet, and each one lands squarely on a day we'd built.</p>
-  <div class="grid g3">
-   <div class="card"><h4>Sat 3 – Mon 5 Oct</h4><p><b>Korean long weekend.</b> National Foundation Day falls on the Saturday, with a substitute holiday on Monday. We visit Gyeongbokgung on the holiday itself and take the KTX to Busan on the substitute Monday, which is peak domestic travel. Book the train now.</p></div>
-   <div class="card"><h4>Tue 6 – Thu 15 Oct</h4><p><b>Busan International Film Festival.</b> Opening day is our one full day in Busan. BIFF Square in Nampo is directly under our hotel and BIFF Village is at Haeundae, so expect crowds on exactly our route. Also an opportunity if anyone wants the open-air screenings.</p></div>
-   <div class="card"><h4>Sat 10 – Mon 12 Oct</h4><p><b>Japanese long weekend.</b> Sports Day is the Monday. That's why the Kyoto days were swapped: Osaka now takes the holiday, Higashiyama waits for Tuesday. The Sunday Shinkansen is the busiest train we catch.</p></div>
-  </div>`;
-
   h+='<h2 class="sec">The route</h2><div class="rt">';
   CITIES.forEach((c,i)=>{
     h+=`<div class="rt-row"><div class="rt-rail"><div class="rt-dot" style="color:${c.c};background:${c.c}"></div><div class="rt-line"></div></div>
@@ -1408,7 +1399,7 @@ function buildOverview(){
   <table class="t"><thead><tr><th>Leg</th><th>Who</th><th>Detail</th></tr></thead><tbody>
    <tr><td><b>MEL → NRT</b><br>28 Sep</td><td>Reuel &amp; Irene</td><td>QF79 direct, 9:35 am → 7:00 pm</td></tr>
    <tr><td><b>MEL → NRT</b><br>28 Sep</td><td>Everyone else</td><td>QF604 to Brisbane 7:00 am, then QF61, landing 6:50 pm. Bags check straight through — don't collect them in Brisbane.</td></tr>
-   <tr><td><b>ICN arrival</b><br>2 Oct</td><td><b>Selena</b></td><td>Flying in separately, landing Incheon about <b>4:30 pm</b> — roughly 90 minutes behind the group. Making her own way in and <b>meeting us in Myeongdong</b>. She needs her own e-Arrival Card and working data before she lands.</td></tr>
+   <tr><td><b>ICN arrival</b><br>2 Oct</td><td><b>Selena</b></td><td>Flying in separately, landing Incheon about <b>4:30 pm</b> — roughly 90 minutes behind the group. Making her own way in and <b>meeting us in Myeongdong</b>.</td></tr>
    <tr><td><b>NRT → MEL</b><br>17 Oct</td><td>All</td><td>QF80, 20:25 → 08:40 on 18 Oct</td></tr>
   </tbody></table>`;
 
@@ -1420,8 +1411,7 @@ function buildOverview(){
    <tr><td><b>11 – 15 Oct</b><br>4 nights</td><td>Hotel Forza Kyoto Shijo Kawaramachi</td><td>After 14:00 / before 11:00</td></tr>
    <tr><td><b>15 – 17 Oct</b><br>2 nights</td><td>Henn na Hotel Akasaka, Tokyo</td><td>After 14:00 / before 11:00</td></tr>
   </tbody></table>
-  <div class="note warn"><b>Worth double-checking.</b> The recorded room bookings across every city only name six of the nine travellers. If Reuel, Irene and Selena are booked separately that's fine, but it should be written down somewhere before we fly.</div>`;
-
+ 
   $('#overviewBody').innerHTML=h;
 }
 
@@ -1530,7 +1520,7 @@ function buildMoney(){
    <tr><td>Airport transfer, Ueno → Narita</td><td><b>$151</b></td><td>RK</td><td>All except Selena</td></tr>
    <tr><td>Fukuoka hotel, one-day extension — room 1</td><td><b>$151.85</b></td><td>Sui</td><td>Cheng Eang + Sothea</td></tr>
    <tr><td>Fukuoka hotel, one-day extension — room 2</td><td><b>$86.81</b></td><td>Sui</td><td>Bun Ly</td></tr>
-   <tr><td colspan="4" style="background:#f8f5ee"><b>Still to be added:</b> the Narita transfer on 17 Oct (~$151), the two Itoshima hire cars, and any group restaurant bookings paid on one card.</td></tr>
+   
   </tbody></table>
   <div class="note"><b>Put this on Splitwise before we leave.</b> Five line items is fine for three transfers. It is not fine for nine people, twenty days, three currencies, shared hire cars, shared rooms and restaurant bills split two tables at a time. Reconstructing it from memory in November is the worst version of this trip.</div>
 
