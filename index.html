@@ -278,7 +278,7 @@ table.t td b{font-weight:600}
 
 <section class="panel" id="p-fukuoka"><div class="head" style="--accent:var(--c-fukuoka)"><div class="head-kick">Japan · Days 10–14</div><h2 class="head-h">Fukuoka</h2><p class="head-s">7 – 11 October · 4 nights at Best Western Plus Tenjin-Minami. The only place on the trip none of us have been. Two day trips out of the city and one day working the city itself, ending with the cosmos fields on Nokonoshima.</p><div class="head-btns"><button class="btn" onclick="go('map','fukuoka')">See these days on the map</button></div></div><div class="body"><div id="days-fukuoka"></div></div></section>
 
-<section class="panel" id="p-kansai"><div class="head" style="--accent:var(--c-kansai)"><div class="head-kick">Japan · Days 14–18</div><h2 class="head-h">Kyoto &amp; Osaka</h2><p class="head-s">11 – 15 October · 4 nights at Hotel Forza Kyoto Shijo Kawaramachi. Osaka sits on the public holiday on purpose; Higashiyama waits for the quieter Tuesday. The Uji day runs entirely on one private rail line.</p><div class="head-btns"><button class="btn" onclick="go('map','kansai')">See these days on the map</button></div></div><div class="body"><div id="days-kansai"></div></div></section>
+<section class="panel" id="p-kansai"><div class="head" style="--accent:var(--c-kansai)"><div class="head-kick">Japan · Days 14–18</div><h2 class="head-h">Kyoto &amp; Osaka</h2><p class="head-s">11 – 15 October · 4 nights at Hotel Forza Kyoto Shijo Kawaramachi. Osaka, Higashiyama, Fushimi and Uji across four Kyoto-based nights.</p><div class="head-btns"><button class="btn" onclick="go('map','kansai')">See these days on the map</button></div></div><div class="body"><div id="days-kansai"></div></div></section>
 
 <section class="panel" id="p-tokyo2"><div class="head" style="--accent:var(--c-tokyo)"><div class="head-kick">Japan · Days 18–20</div><h2 class="head-h">Tokyo, second stay</h2><p class="head-s">15 – 17 October · 2 nights at Henn na Hotel Akasaka. Akasaka down to Tokyo Tower on arrival day, one day still undecided, then home.</p><div class="head-btns"><button class="btn" onclick="go('map','tokyo2')">See these days on the map</button></div></div><div class="body"><div id="days-tokyo2"></div></div></section>
 
@@ -474,6 +474,7 @@ const DAYS=[
    '**Air Premia check-in** — 09:30 to 11:30, Terminal 2, usually the R counters']},
   {k:'Flight',v:['**YP732 · Narita T2 → Incheon T1 · 12:30 – 15:10 · 2h 40m**','Reservation **BBHYJX** (Sothea, Eang, Lay, Karen, Team)','~ Carry-on 10 kg, 1 piece. Checked 15 kg.','~ Seats unassigned']},
   {k:'Lunch',v:['At Narita before boarding']},
+  {k:'Afternoon',v:['Check in at Sejong Hotel, then walk around **Myeongdong**','Explore the shopping streets and town area, then walk to dinner']},
   {k:'Dinner',v:[
    '**Option 1 — Myeongdong Korean BBQ Mongvely**, 11:30–02:00, KBBQ set with unlimited sides, 4.9★. Books max 6 per booking, so we need two.',
    '**Option 2 — Korean BBQ Backdon Euljiro**, 11:30–02:00, same format, 4.9★',
@@ -503,7 +504,7 @@ const DAYS=[
    '**Option 1 — Maison de Paris, Ikseon-dong**, 11:30–22:00 Saturdays. French-style — pesto spaghetti, mushroom risotto with Jeju pork. [Book here](https://www.catchtable.net/shop/lapero.ikseondong)',
    '**Option 2 — Ikseon Chwihyang** (the one Irene wanted), 12:00–21:00, Korean-western, 4.5★. [Book here](https://www.catchtable.net/shop/FavoriteIksoen)',
    '>! Both need booking, and a table of nine will not exist. Book **two tables of 4 and 5**.']},
-  {k:'Afternoon',v:['Insadong and Ikseon-dong','Bukchon Hanok Village — optional. Check current visiting hours first; the village has had access restrictions to protect residents.','Late afternoon — back to the hotel to rest, then out to Hongdae']},
+  {k:'Afternoon',v:['Insadong and Ikseon-dong','Late afternoon — back to the hotel to rest, then out to Hongdae']},
   {k:'Dinner',v:['Eat in Hongdae','**or** Goobne Chicken Myeongdong, 12:00–00:00, fried chicken, 4.9★']},
   {k:'Evening',v:['Hongdae — shopping, bars, street performers']},
   {k:'Getting around',v:[
@@ -513,29 +514,27 @@ const DAYS=[
   {k:'Shops in Hongdae',v:['Sappun (footwear) 12:00–22:00 · NyuNyu Wholesale 11:00–05:00 · Clo Studio 12:00–22:30 · OAT 13:00–22:30 · Cream Market 11:00–23:00 · Hemeko 10:00–23:00 (to 05:00 weekends) · MUSINSA KICKS 10:30–23:00 · miromiro 12:00–23:00 · oyoi 12:00–23:30']}
  ]},
 
-{n:7,d:'2026-10-04',dow:'Sun',city:'seoul',t:'Seongsu, the Han River &amp; Itaewon',s:'Cafés, an optional ride, then Namsan at night',
- pills:['Flexible day','Good day to split up'],
+{n:7,d:'2026-10-04',dow:'Sun',city:'seoul',t:'Seongsu, the Han River &amp; Itaewon',s:'Cafés, shopping, the river, then Namsan at night',
+ pills:['Flexible day'],
  blocks:[
   
-  {k:'Breakfast',v:['Seongsu cafés']},
+  {k:'Breakfast',v:['Seongsu café hopping and shopping']},
   {k:'Morning',v:[
-   '**Seongsu** — café hopping',
-   'Then: Seongsu → Seoul Forest → join the Han River cycle path → ride west 8–10 km → Banpo / Hannam → return bikes → Itaewon',
-   '>! **Do not count on the public bikes.** Nine Ttareungi bikes at one station on a Sunday is unlikely, and app registration is fiddly without a Korean phone number. Use a **rental shop with a fleet** near Seoul Forest or Ttukseom instead — they can do nine at once, take card, and don\'t need a Korean number.',
-   '> **The ride is optional.** If bikes fall through or people aren\'t up for 8–10 km: cafés plus a short flat loop of Ttukseom Hangang Park, then **taxi straight to Itaewon** (Kakao T, 20 min, 3 cars). Don\'t try to walk uphill from Hannam.',
-   '> Easy day to split — riders ride, everyone else does the Seongsu cafés and shops, regroup in Itaewon.']},
-  {k:'Lunch',v:['Seongsu or Itaewon, depending on where the morning ends up']},
+   '**Seongsu** — cafés, shops and a wander',
+   '**Seoul Forest / Ttukseom Hangang Park** — ride or walk along the Han River',
+   'Taxi to **Itaewon** for the afternoon',
+   '> Optional longer ride: continue toward Banpo / Hannam before returning bikes, then taxi to Itaewon.']},
+  {k:'Lunch',v:['Seongsu or Itaewon']},
   {k:'Afternoon',v:['Itaewon shopping and Gyeongnidan-gil — boutique streets and cafés']},
   {k:'Dinner',v:['Itaewon']},
   {k:'Evening',v:['**Namsan Tower**','Optional late spa: SPAREX Jjimjilbang, GoodMorning City. Open 24/7, 4.0★']},
   {k:'Getting around',v:[
    '**Hotel → Seongsu:** Myeongdong (Line 4) → Dongdaemun History &amp; Culture Park, change to Line 2 → Seongsu. About 30 min. Or Kakao T, 25 min, 3 cars.',
    '**Seongsu → Seoul Forest:** 15 min walk, or one stop on the Suin-Bundang line',
-   '**Seoul Forest → river:** walk through the park to the riverside connection into Ttukseom Hangang Park, about 10 min',
-   '**To Itaewon:** Kakao T from Hannam or Banpo, 10 min, 3 cars. Or Hangangjin (Line 6), one stop to Itaewon.',
+   '**Seoul Forest → river:** walk through the park to Ttukseom Hangang Park, about 10 min',
+   '**To Itaewon:** Kakao T, about 20 min, 3 cars.',
    '**Itaewon → Namsan:** Kakao T to the cable car base, or the 02 / 05 Namsan circular bus',
    '**Namsan → hotel:** cable car down, then a 10 min walk to Myeongdong']},
-  {k:'Bike costs',v:['Kiosk: ₩3,300 / 1 hr · ₩4,950 / 1.5 hrs · ₩6,600 / 2 hrs. Card accepted.','Seoul Bike app: ₩5,000 for 24 hrs','Private shop fallback: budget ₩10,000–15,000 per bike for a few hours']}
  ]}
 ];
 </script>
@@ -545,7 +544,7 @@ DAYS.push(
 {n:8,d:'2026-10-05',dow:'Mon',city:'busan',t:'Seoul → Busan',s:'KTX south · Jagalchi, BIFF Square, Gamcheon',
  hotel:'Hotel Foret Premier Nampo · check in after 15:00',pills:['Travel day','Substitute public holiday'],
  blocks:[
-  {k:'Breakfast',v:['Myeongdong','**or** a CU convenience store run, since we\'ll be rushing to check out and get to the station']},
+  {k:'Breakfast',v:['Myeongdong — congee opposite the hotel']},
   {k:'Morning',v:['Last-minute shopping around Myeongdong','Late morning — depart from Seoul Station']},
   {k:'The train',v:[
    '**KTX 10:28 → 13:14, or 10:58 → 13:52.** 2.5–3 hrs.',
@@ -692,7 +691,7 @@ DAYS.push(
  ]},
 
 {n:13,d:'2026-10-10',dow:'Sat',city:'fukuoka',t:'Hakata, Ohori Park &amp; Nokonoshima',s:'Market, shrines, then the cosmos fields',
- pills:['Cosmos peak bloom','Long weekend starts'],
+ pills:['Long weekend starts'],
  blocks:[
   {k:'Breakfast',v:[
    '**Yanagibashi Rengo Market** — "Hakata\'s kitchen", about 10 min walk from the hotel heading towards Hakata',
@@ -702,27 +701,19 @@ DAYS.push(
    '**1.** Yanagibashi Rengo Market, walk from the hotel',
    '**2.** Walk across the river and explore **Hakata old town**',
    '~ **Tochoji Temple**, then **Kushida Shrine**',
-   '~ **Kawabata arcade**',
-   '**3.** From Nakasukawabata, train west to **Ohori Park** (may end up after lunch)',
-   '~ Pond islands and bridges → **Fukuoka Castle ruins / Maizuru Park**']},
-  {k:'Lunch',v:['Hakata, Kawabata or around Ohori Park','Nearby: Itookashi (07:00–12:30 / 17:30–23:00, sashimi, 4.4★) · Menya ISHII (08:00–16:00, wagyu beef udon, 4.3★)']},
+   '~ **Kawabata arcade**']},
+  {k:'Lunch',v:['Eat at Hakata']},
   {k:'Afternoon',v:[
-   '**Optional: Nokonoshima Island Park** — the cosmos fields',
-   '~ Roughly 500,000 cosmos flowers, and **peak bloom is typically around 10 October** — we are right in the window',
-   '~ Same train line as Ohori Park: stay on the Kuko line west to **Meinohama**, 10 min',
-   '~ Meinohama Station → ferry terminal: 15 min walk, or Nishitetsu bus 312 straight there',
-   '~ Ferry, about 10 min, roughly hourly. **Check the timetable both ways** — missing one costs an hour.',
-   '~ Island bus up to Island Park, about 13 min',
-   '~ ¥1,500 adult, park open roughly 09:00–17:30. Allow 2.5 hrs on the island plus an hour each way.',
-   '> Today is a Saturday, which means the evening cosmos light-up is running. Worth checking the times if we want to stay late.',
-   '**Or:** chill at the hotel']},
+   '**Ohori Park** — pond islands and bridges, then **Fukuoka Castle ruins / Maizuru Park**',
+   'Chill at the hotel, walk around **Tenjin**, or go shopping',
+   '**Optional: Nokonoshima Island Park** — flower fields. Looks mid, probably not essential, but something to do if we get bored.']},
   {k:'Dinner',v:['**Yatai** — the street food stalls']},
   {k:'Evening',v:['**Canal City Hakata** — fountain show every 30 min until 22:00','Stroll around Nakasu Island, where the yatai are, for the river scenery after eating']},
   {k:'Getting around',v:[
    '**Hotel → Yanagibashi Market:** 10 min walk towards Hakata',
    '**To Kushida / Tochoji:** Nakasukawabata Station, then 5 min walk',
    '**To Ohori Park:** 12 min walk to Tenjin, Airport line (platform K) 4 min to Ohori Park (K08)',
-   '**Ohori Park → Nokonoshima:** same line west to Meinohama, 10 min · 15 min walk or bus 312 to the ferry · 10 min ferry · 13 min island bus. Door to door about an hour each way.',
+   '**Optional Nokonoshima:** Ohori Park → Meinohama → ferry terminal → island bus. Door to door about an hour each way.',
    '**Back:** Meinohama → Nakasukawabata, same line, 15 min, for Canal City and the yatai']},
   {k:'Heads up',v:['>! **The Japanese long weekend starts today.** Sports Day falls on Monday 12 Oct, so Sat 10 – Mon 12 is a three-day domestic holiday. Tomorrow\'s Shinkansen is the busy return-travel day.']}
  ]}
@@ -739,7 +730,6 @@ DAYS.push(
    '**08:36 Hakata → 11:19 Kyoto. 2h 43m, direct.**',
    'Tickets released 11 Sept. Book on SmartEx (official) or Trip.com / Klook.',
    'Approx A$160–170 per person',
-   '>! **Reserve nine seats together and the oversized baggage slots.** On the Tokaido–Sanyo line, any bag over 160 cm total dimensions needs a reserved oversized-baggage seat — free, but it must be booked. Most 30 kg suitcases exceed it. The alternative is forwarding the bags by takkyubin to the Kyoto hotel, which for nine people is worth every yen.',
    '>! Today is the Sunday of a Japanese three-day weekend. This is the busiest train we take.']},
   {k:'Lunch',v:['**Option 1 — Shokaku**, 2 min from the hotel, 12:00–22:00, ramen, 4.7★','**Option 2 — Udon Shiki**, 4 min from the hotel, 11:00–15:00 and 15:00–22:00, udon, 4.2★']},
   {k:'Afternoon',v:[
@@ -762,10 +752,8 @@ DAYS.push(
  ]},
 
 {n:15,d:'2026-10-12',dow:'Mon',city:'kansai',t:'Osaka day trip',s:'Umeda → Castle → Dotonbori → Shinsekai',
- pills:['Public holiday','Moved here on purpose'],
+ pills:['Public holiday'],
  blocks:[
-  {k:'Why today',v:[
-   '>+ **This day was swapped with 13 Oct.** Today is **Sports Day**, a Japanese public holiday. A big city absorbs a holiday crowd; the narrow stone lanes of Higashiyama do not. So Osaka takes the holiday and Gion moves to the quieter Tuesday.']},
   {k:'Breakfast',v:['Umeda']},
   {k:'Morning',v:[
    'Kyoto-Kawaramachi → Osaka-Umeda, 45 min on the Hankyu line, direct from Kawaramachi, tap with an IC card, ¥410. No need to go via Kyoto Station.',
@@ -804,7 +792,6 @@ DAYS.push(
 {n:16,d:'2026-10-13',dow:'Tue',city:'kansai',t:'Higashiyama &amp; teamLab',s:'Gion part two, on the quiet day',
  pills:['Book teamLab for today','Start early'],
  blocks:[
-  {k:'Why today',v:['>+ **Moved here from 12 Oct.** The 12th is a public holiday and Ninenzaka, Kodai-ji and the Yasaka Pagoda lanes would have been at their worst. Tuesday is a normal weekday.','>! **Rebook the teamLab Biovortex slot for today**, not the 12th.','> Higashiyama is quiet before 9 am and heaving by 11. Worth the early start.']},
   {k:'Morning',v:['**Kodai-ji Temple** and the bamboo grove','**Hokan-ji** — the Yasaka Pagoda','**Hatoya Ryoyousha Kiyomizu Kyoto** — the famous matcha place. Optional.']},
   {k:'Afternoon',v:[
    '**Ninenzaka**',
@@ -822,7 +809,7 @@ DAYS.push(
  pills:['Keihan line only','Dawn start optional'],
  blocks:[
   {k:'The route',v:[
-   '>+ **Re-routed so there\'s no backtracking.** Everything is on the Keihan line: Gion-Shijo → Fushimi-Inari → Chushojima → Keihan Uji line → Uji → back to Gion-Shijo. One IC card tap the whole way, no JR, no Kyoto Station.']},
+   'Everything is on the Keihan line: Gion-Shijo → Fushimi-Inari → Chushojima → Keihan Uji line → Uji → back to Gion-Shijo. One IC card tap the whole way, no JR, no Kyoto Station.']},
   {k:'Morning',v:[
    '**Fushimi Inari Taisha** — early, optional, not R&amp;I',
    '~ 6:30–7:30 am is the only time the torii tunnels are empty. Open 24 hrs, no ticket, no gate.',
@@ -855,8 +842,7 @@ DAYS.push(
    '**Nozomi 346 · Kyoto → Tokyo · 2h 12m**',
    'Recommended departures: **9:24 → 11:36** or **10:21 → 12:33**, to avoid the peak at Tokyo Station. Trains run every 6 min or so.',
    'Approx A$135 per person. Book on Klook or SmartEx.',
-   '**Check-in at Kyoto Station:** scan the QR at a JR machine with a scanner, print the physical tickets, then insert them into the turnstile and take them back on the other side.',
-   '>! Oversized baggage slots again — same rule as the Hakata leg.']},
+   '**Check-in at Kyoto Station:** scan the QR at a JR machine with a scanner, print the physical tickets, then insert them into the turnstile and take them back on the other side.']},
   {k:'Arrival',v:['Drop bags or check in at the hotel. Level 2 has lockers and a luggage port for before check-in and after check-out.']},
   {k:'Lunch',v:['Happiness is KATSUDON Akasaka']},
   {k:'Afternoon',v:[
@@ -887,22 +873,17 @@ DAYS.push(
    '[Klook private one-day tour option](https://www.klook.com/en-AU/activity/88565-hakone-outlet-private-one-day-tour/)',
    '> Worth knowing: the van only helps on the road sections. The ropeway and pirate ship are point-to-point, so the driver has to reposition. And Hakone\'s autumn colour doesn\'t arrive until November.',
    '> If we go, consider building the day around a **day-use onsen** rather than trying to complete the whole loop. It is the one thing this entire trip is missing.']},
-  {k:'Option 2 — relax and shop',v:['A free day in Tokyo. Last shopping, the things that didn\'t fit earlier in the trip — Tsukiji Outer Market and teamLab Planets are both still unvisited.']},
+  {k:'Option 2 — chill Tokyo day',v:['Ningyocho / Nihonbashi / Ginza','Last shopping, wandering, coffee and an easy lunch']},
   {k:'Eat',v:['Nihonbashi Kaisen Don Tsujihan — Ark Hills branch','Tokyo Sushi Itamae Sushi Akasaka']}
  ]},
 
 {n:20,d:'2026-10-17',dow:'Sat',city:'tokyo2',t:'Last morning, then home',s:'QF80 departs 8:25 pm',
  pills:['Transfer at 4:15 pm','Pick one afternoon activity'],
  blocks:[
-  {k:'Shape of the day',v:[
-   '>! **This day cannot hold the morning walk and teamLab and Mario Kart.** Pick one thing for the afternoon.',
-   '>+ **Airport transfer moved earlier to 4:15 pm.** A 4:30 pickup left about 2h55m at Narita, under the 3 hr international minimum on a Saturday.']},
   {k:'Morning',v:[
    'Check out, leave luggage at Level 2',
    '**Akasaka → Gaien-mae → Jingu Gaien → Aoyama** (Sunny Hills is worth seeing for the building alone) **→ Omotesando**',
-   '**or** Ningyocho / Nihonbashi / Ginza',
-   '> The Jingu Gaien ginkgo avenue doesn\'t turn gold until late November, so don\'t go for the trees.',
-   '> Tax-free purchases must stay sealed and unopened, and go in carry-on for the customs check at Narita.']},
+   '**or** Ningyocho / Nihonbashi / Ginza']},
   {k:'Afternoon',v:[
    '**teamLab Borderless** — most likely **not** doing this, since Biovortex is booked in Kyoto. Only if that falls through.',
    '~ 08:30–21:00, 30-min entry slots, last entry 20:30, allow 1.5–2 hrs',
@@ -967,16 +948,15 @@ seoul:[
   {n:'Namdaemun Market',la:37.5591,ln:126.9776,d:'Breakfast. Kalguksu Alley and vegetable hotteok.'},
   {n:'Pink Hanbok Gyeongbokgung',la:37.5760,ln:126.9735,d:'Exit 4. ₩18–20k. No booking. Get there at opening.'},
   {n:'Gyeongbokgung Palace',la:37.5796,ln:126.9770,d:'09:00–18:30. Free in hanbok.'},
-  {n:'Bukchon Hanok Village',la:37.5826,ln:126.9836,d:'Optional. Check visiting hours first.'},
   {n:'Ikseon-dong',la:37.5730,ln:126.9895,d:'Lunch. Book two tables of 4 and 5.'},
   {n:'Insadong',la:37.5740,ln:126.9850,d:'Afternoon wander.'},
   {n:'Hongdae',la:37.5563,ln:126.9236,d:'Evening. Shopping, bars, street performers.'}]},
  {day:7,label:'Day 7 · Seongsu & Itaewon',stops:[
-  {n:'Seongsu-dong Cafe Street',la:37.5445,ln:127.0557,d:'Café hopping. Start here.'},
+  {n:'Seongsu-dong Cafe Street',la:37.5445,ln:127.0557,d:'Cafés, shops and a wander.'},
   {n:'Seoul Forest',la:37.5444,ln:127.0374,d:'15 min walk, or one stop on Suin-Bundang.'},
-  {n:'Ttukseom Hangang Park',la:37.5305,ln:127.0670,d:'Join the river cycle path here.'},
-  {n:'Banpo Hangang Park',la:37.5100,ln:126.9955,d:'End of the 8–10 km ride. Return bikes.'},
-  {n:'Itaewon',la:37.5345,ln:126.9946,d:'Taxi here if the ride is off. Shopping and dinner.'},
+  {n:'Ttukseom Hangang Park',la:37.5305,ln:127.0670,d:'River walk or bike ride.'},
+  {n:'Banpo Hangang Park',la:37.5100,ln:126.9955,d:'Optional longer ride toward Banpo / Hannam.'},
+  {n:'Itaewon',la:37.5345,ln:126.9946,d:'Taxi here for shopping and dinner.'},
   {n:'Gyeongnidan-gil',la:37.5380,ln:126.9880,d:'Boutique streets and cafés.'},
   {n:'N Seoul Tower Namsan',la:37.5512,ln:126.9882,d:'Evening. Cable car down to Myeongdong after.'}]}],
 
@@ -1111,7 +1091,7 @@ const TODO=[
   w:'"Rebook rooms for everyone in Fukuoka" is still open on the spreadsheet, and the recorded bookings only name six travellers. Worth confirming across every city that all nine actually have a bed — Reuel, Irene and Selena aren\'t in any of the logged reservations.',
   m:'For 7–11 Oct · Best Western Plus Tenjin-Minami'},
  {id:'teamlab',by:'2026-09-20',band:'soon',t:'teamLab Biovortex, Kyoto',
-  w:'Timed entry. <b>Book it for 13 Oct, not the 12th</b> — the Kyoto days were swapped so the public holiday lands on the Osaka day. Klook caps at 6 tickets per transaction, so two bookings for the same slot, made at the same time.',
+  w:'Timed entry for <b>13 Oct</b>. Klook caps at 6 tickets per transaction, so two bookings for the same slot, made at the same time.',
   m:'For 13 Oct · ¥4,800 pp · ~3:30–4:00 pm slot'},
  {id:'idp',by:'2026-09-20',band:'soon',t:'International Driving Permits from RACV',
   w:'<b>One per driver.</b> Two are needed for the Itoshima hire cars on 8 Oct. If R&amp;I want to do Mario Kart on the last day, that needs its own IDP too — the go-kart operator checks. Carry the IDP and the Australian licence together; one without the other is not valid.',
@@ -1144,7 +1124,7 @@ const TODO=[
   w:'Max 3 people plus 3 suitcases per car, so three cars. Leaving the hotel at 10:15 for a 13:05 flight.',
   m:'For 7 Oct · ₩14,000–19,000 total'},
  {id:'nrttfr',by:'2026-10-01',band:'pre',t:'Henn na Hotel → Narita transfer',
-  w:'<b>Pickup at 4:15 pm</b>, moved earlier from 4:30. The later time left under three hours at Narita on a Saturday, which is below the international minimum.',
+  w:'<b>Pickup at 4:15 pm</b>. That should put us at Narita around 5:15–5:30 pm, roughly three hours before departure.',
   m:'For 17 Oct · approx $151 total'},
  {id:'vjw2',by:'2026-10-06',band:'pre',t:'Visit Japan Web — second arrival',
   w:'We enter Japan twice. This one covers Busan → Fukuoka on 7 Oct and it is the single easiest thing on this list to forget.',
@@ -1376,7 +1356,7 @@ const BLURB={
  seoul:'Selena joins on arrival day. Two full days, so both are tight: palaces, hanbok and Ikseon-dong on the Saturday public holiday, then the Seongsu side of the river, the Han River cycle path and Itaewon on Sunday, finishing at Namsan.',
  busan:'A day and a half, with the film festival opening while we\'re there. Jagalchi and Gamcheon on arrival, then one long line east along the coast: Cheongsapo, the Sky Capsule, Haeundae, Dongbaek Island and a night cruise from The Bay 101.',
  fukuoka:'The one place none of us have been. A day driving the Itoshima coast finishing at the Sakurai torii at sunset, a day out to Dazaifu and the Yanagawa canals, and a day working Hakata, Ohori Park and the cosmos fields on Nokonoshima.',
- kansai:'Osaka takes the public holiday because a big city handles crowds better than a stone lane. Higashiyama and teamLab on the quiet Tuesday. Then Fushimi Inari at dawn, the sake warehouses at Chushojima and Uji, all on one rail line.',
+ kansai:'Kyoto-based for four nights: Osaka, Higashiyama and teamLab, then Fushimi Inari, the sake warehouses at Chushojima and Uji on one rail line.',
  tokyo2:'Akasaka down through Roppongi and Azabu-Juban to Tokyo Tower on arrival day. One day still undecided — Hakone or a free day. Then a last morning around Omotesando and the 4:15 pm transfer to Narita.'
 };
 function buildOverview(){
