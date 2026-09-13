@@ -659,28 +659,25 @@ DAYS.push(
    'Load the same route into both cars before leaving so nobody gets separated']}
  ]},
 
-{n:12,d:'2026-10-09',dow:'Fri',city:'fukuoka',t:'Dazaifu &amp; Yanagawa',s:'Canal boats, eel, and the shrine',
- pills:['Klook day pass','Long train day'],
+{n:12,d:'2026-10-09',dow:'Fri',city:'fukuoka',t:'Dazaifu',s:'Shrine, street food, shops, then back to Fukuoka',
+ pills:['Easy day'],
  blocks:[
+  {k:'Breakfast',v:['Breakfast around the hotel']},
   {k:'Morning',v:[
-   'Buy and redeem the **Dazaifu &amp; Yanagawa travel pass** from Nishitetsu Tenjin Station',
-   'Train to **Yanagawa**',
-   'Boat ride on arrival — the donko-bune punt down the canals',
-   'Explore Yanagawa. It is a small, quiet town; the boat and the eel are the point.']},
-  {k:'Lunch',v:[
-   '**Yanagawa — steamed eel (seiro-mushi)**: Rokyyu, Ganso M, Wakamatsuya',
-   '**Or once in Dazaifu:**',
-   '~ **Dazaifu Inoji** — 11:00–17:00, sukiyaki and grilled eel, 4.2★. Needs a reservation.',
-   '~ **Oigen** — 10:00–16:00, tonkotsu ramen, 4.5★']},
-  {k:'Afternoon',v:[
    'Train to **Dazaifu**',
    'Explore the street vendors and shops on the approach to the shrine — this can take 1–2 hrs on its own',
    '**Dazaifu Tenmangu** — free entry, blessings and paper fortunes',
    '~ On the way in: Komyozen-ji (lovely garden), the sacred ox statue, Shinji-ike pond, the Taiko-bashi drum bridges',
    '**Tenkai Inari Shrine** — 5–10 min walk from Tenmangu. A miniature Fushimi Inari in a forest setting.',
-   '**(Optional) Kyushu National Museum** — one of only four national museums in Japan, reached by a covered escalator straight from the Tenmangu grounds, about 5 min. Approx ¥700, allow 1–1.5 hrs. Closed Mondays; today is a Friday so it\'s open. Drop it without hesitation if Yanagawa runs long.',
-   '> Worth checking before we go: the Tenmangu main hall has been through a long restoration with a temporary shrine building in place. Confirm what\'s actually open.']},
-  {k:'Dinner',v:['Back in Fukuoka']},
+   '**(Optional) Kyushu National Museum** — one of only four national museums in Japan, reached by a covered escalator straight from the Tenmangu grounds, about 5 min. Approx ¥700, allow 1–1.5 hrs. Closed Mondays; today is a Friday so it\'s open.']},
+  {k:'Lunch',v:[
+   'Lunch in **Dazaifu**',
+   '~ **Dazaifu Inoji** — 11:00–17:00, sukiyaki, 4.2★. Needs a reservation.',
+   '~ **Oigen** — 10:00–16:00, tonkotsu ramen, 4.5★']},
+  {k:'Afternoon',v:[
+   'More time in **Dazaifu**, then come back to Fukuoka mid-afternoon',
+   'Chill at the hotel for now']},
+  {k:'Dinner',v:['Dinner in Fukuoka']},
   {k:'Evening',v:['Tenjin, Daimyo, Imaizumi, Nakasu or Hakata']},
   {k:'Getting around',v:[
    '**Hotel → Dazaifu, by train:** 10 min walk to Nishitetsu Fukuoka (Tenjin), Nishitetsu line 25 min to Nishitetsu-Futsukaichi (trains every 10 min), change to platform 1 for the Dazaifu line. About 40 min total.',
@@ -994,9 +991,8 @@ fukuoka:[
   {n:'Nishiura Itoshima',la:33.5980,ln:130.2160,d:'Lunch, seafood by the beach.'},
   {n:'Hirabaru Historical Park Itoshima',la:33.5480,ln:130.1960,d:'Cosmos field in October. Free.'},
   {n:'Sakurai Futamigaura',la:33.6212,ln:130.2060,d:'LAST STOP. Arrive ~17:00 for an 18:00 sunset.'}]},
- {day:12,label:'Day 12 · Dazaifu & Yanagawa',stops:[
-  {n:'Nishitetsu Fukuoka Tenjin Station',la:33.5895,ln:130.3985,d:'Buy and redeem the Klook pass here.'},
-  {n:'Yanagawa',la:33.1630,ln:130.4060,d:'Canal boat on arrival. Steamed eel for lunch.'},
+{day:12,label:'Day 12 · Dazaifu',stops:[
+  {n:'Nishitetsu Fukuoka Tenjin Station',la:33.5895,ln:130.3985,d:'Train to Dazaifu.'},
   {n:'Dazaifu Tenmangu',la:33.5215,ln:130.5350,d:'Free. The approach street takes 1–2 hrs on its own.'},
   {n:'Komyozen-ji Temple Dazaifu',la:33.5200,ln:130.5340,d:'Lovely garden, on the way in.'},
   {n:'Tenkai Inari Shrine Dazaifu',la:33.5240,ln:130.5390,d:'5–10 min walk. Miniature Fushimi Inari in the forest.'},
@@ -1129,9 +1125,6 @@ const TODO=[
  {id:'vjw2',by:'2026-10-06',band:'pre',t:'Visit Japan Web — second arrival',
   w:'We enter Japan twice. This one covers Busan → Fukuoka on 7 Oct and it is the single easiest thing on this list to forget.',
   m:'For 7 Oct arrival'},
- {id:'klookpass',by:'2026-10-08',band:'ground',t:'Dazaifu &amp; Yanagawa travel pass',
-  w:'Buy on Klook, then redeem at Nishitetsu Tenjin Station on the morning of the trip. Only worth it because we\'re doing both towns — Dazaifu alone doesn\'t need it.',
-  m:'For 9 Oct · redeem at Tenjin'},
  {id:'borderless',by:'2026-10-10',band:'ground',t:'teamLab Borderless — only if Kyoto falls through',
   w:'<b>It is one or the other, never both.</b> Leave this unticked unless the Biovortex booking fails. If it does: ¥5,200 official, and worth re-checking 2–4 weeks out as it sometimes drops to ¥3,800.',
   m:'For 17 Oct · contingency only'}
@@ -1355,7 +1348,7 @@ const BLURB={
  tokyo:'Four nights in Ueno while everyone shakes off the flight. Three walkable clusters, one per day: the old lanes of Yanaka through to Asakusa and Kappabashi; Harajuku down through Shibuya to Nakameguro; then the bookshops of Jimbocho and the lantern alleys of Kagurazaka.',
  seoul:'Selena joins on arrival day. Two full days, so both are tight: palaces, hanbok and Ikseon-dong on the Saturday public holiday, then the Seongsu side of the river, the Han River cycle path and Itaewon on Sunday, finishing at Namsan.',
  busan:'A day and a half, with the film festival opening while we\'re there. Jagalchi and Gamcheon on arrival, then one long line east along the coast: Cheongsapo, the Sky Capsule, Haeundae, Dongbaek Island and a night cruise from The Bay 101.',
- fukuoka:'The one place none of us have been. A day driving the Itoshima coast finishing at the Sakurai torii at sunset, a day out to Dazaifu and the Yanagawa canals, and a day working Hakata, Ohori Park and the cosmos fields on Nokonoshima.',
+ fukuoka:'The one place none of us have been. A day driving the Itoshima coast finishing at the Sakurai torii at sunset, a Dazaifu day, and a day working Hakata, Ohori Park and maybe Nokonoshima.',
  kansai:'Kyoto-based for four nights: Osaka, Higashiyama and teamLab, then Fushimi Inari, the sake warehouses at Chushojima and Uji on one rail line.',
  tokyo2:'Akasaka down through Roppongi and Azabu-Juban to Tokyo Tower on arrival day. One day still undecided — Hakone or a free day. Then a last morning around Omotesando and the 4:15 pm transfer to Narita.'
 };
@@ -1421,11 +1414,11 @@ const TRANSIT=[
    '<b>Bus 1003</b> — Jagalchi Station to Toseong for Gamcheon Culture Village, every 15 min.',
    '<b>Blueline Park Sky Capsule</b> — Cheongsapo to Mipo. Not part of the metro, book separately.',
    '<b>Kakao T</b> is the real answer in Busan. Three cars, three people each, every time.']},
- {c:'fukuoka',n:'Fukuoka',pay:'Suica or Pasmo works on the Fukuoka subway and JR. The Nishitetsu private line to Dazaifu also takes IC cards, but the Dazaifu &amp; Yanagawa day pass is better value for that trip.',
+ {c:'fukuoka',n:'Fukuoka',pay:'Suica or Pasmo works on the Fukuoka subway and JR. The Nishitetsu private line to Dazaifu also takes IC cards.',
   map:'https://metro.nuua.travel/en/fukuoka',off:'https://subway.city.fukuoka.lg.jp/eng/route/',offn:'Fukuoka City Subway',
   lines:['<b>Kuko / Airport line (orange, K)</b> — does almost everything. Airport (K13) → Hakata (K11) → Nakasukawabata → Tenjin → Ohori Park (K08) → Meinohama for the Nokonoshima ferry. One line, the whole city.',
    '<b>Nanakuma line (green, N)</b> — Tenjin-Minami (our hotel, N18) to Hakata, 2 stops. How we get to the Shinkansen.',
-   '<b>Nishitetsu Tenjin-Omuta line</b> — a private railway, not the subway. Tenjin to Yanagawa and to Futsukaichi for the Dazaifu branch.',
+   '<b>Nishitetsu Tenjin-Omuta line</b> — a private railway, not the subway. Tenjin to Futsukaichi for the Dazaifu branch.',
    '<b>Meinohama ferry</b> — 10 min to Nokonoshima, roughly hourly. Check the timetable both ways.']},
  {c:'kansai',n:'Kyoto &amp; Osaka',pay:'ICOCA, or the Suica/Pasmo you already have — they all work interchangeably now. The Hankyu and Keihan private lines take IC cards too, so no separate tickets needed.',
   map:'https://metro.nuua.travel/en/osaka',off:'https://subway.osakametro.co.jp/en/',offn:'Osaka Metro',
