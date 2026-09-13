@@ -236,14 +236,9 @@ table.t td b{font-weight:600}
 <!-- ══ COVER ══ -->
 <header class="cover">
   <div class="cover-kicker">28 September – 18 October 2026 · 19 nights</div>
-  <h1 class="cover-title">Japan &amp;<br>Korea<i>,</i> autumn</h1>
+  <h1 class="cover-title">Japan &amp;<br>Korea<i>,</i> Autumn 2026</h1>
   <p class="cover-sub">Tokyo · Seoul · Busan · Fukuoka · Kyoto · Osaka · Tokyo</p>
-  <div class="cover-meta">
-    <div><div class="cm-l">Travellers</div><div class="cm-v">9<small>Selena joins in Seoul, 2 Oct</small></div></div>
-    <div><div class="cm-l">Countries</div><div class="cm-v">2<small>One loop, no backtracking</small></div></div>
-    <div><div class="cm-l">Beds</div><div class="cm-v">6 hotels<small>Ueno · Myeongdong · Nampo · Tenjin · Kawaramachi · Akasaka</small></div></div>
-    <div><div class="cm-l">Longest single hop</div><div class="cm-v">Hakata → Kyoto<small>2h 43m by Nozomi, 11 Oct</small></div></div>
-  </div>
+  
 </header>
 
 <!-- ══ ROUTE STRIP ══ -->
@@ -361,7 +356,11 @@ const CITIES=[
  {k:'kansai',  n:'Kyoto & Osaka',    d:'11 – 15 Oct',     nights:'4 nights', c:'#a8813c'},
  {k:'tokyo2',  n:'Tokyo (return)',   d:'15 – 17 Oct',     nights:'2 nights', c:'#2c4a6e'}
 ];
-const RATES={JPY:109.2,KRW:962.5};
+let RATES={JPY:109.2,KRW:962.5};
+const RATE_URLS=[
+  'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/aud.min.json',
+  'https://latest.currency-api.pages.dev/v1/currencies/aud.min.json'
+];
 
 /* ══════════════════════════════════════════════════════════
    DAY DATA  — transcribed from Itinerary_v2
@@ -1410,8 +1409,8 @@ function buildOverview(){
    <tr><td><b>7 – 11 Oct</b><br>4 nights</td><td>Best Western Plus Fukuoka Tenjin-Minami</td><td>After 15:00 / before 11:00</td></tr>
    <tr><td><b>11 – 15 Oct</b><br>4 nights</td><td>Hotel Forza Kyoto Shijo Kawaramachi</td><td>After 14:00 / before 11:00</td></tr>
    <tr><td><b>15 – 17 Oct</b><br>2 nights</td><td>Henn na Hotel Akasaka, Tokyo</td><td>After 14:00 / before 11:00</td></tr>
-  </tbody></table>
- 
+  </tbody></table>`;
+
   $('#overviewBody').innerHTML=h;
 }
 
@@ -1457,7 +1456,7 @@ const TRANSIT=[
    '<b>Osaka Midotsuji (red)</b> — Umeda ↔ Shinsaibashi ↔ Namba ↔ Dobutsuen-mae for Shinsekai.']}
 ];
 function buildTransit(){
-
+  let h=`<div class="note"><b>Why there are no metro maps pasted in here.</b> Official network maps are copyrighted by the operators, and a screenshot of one goes out of date the moment a line extends. Each card below links straight to the live English map instead, and the NUUA app works offline once you've downloaded a city - which matters underground, where you won't have signal.</div>`;
   h+='<h2 class="sec">City by city</h2>';
   TRANSIT.forEach(t=>{
     const col=cityOf(t.c).c;
@@ -1501,13 +1500,34 @@ function conv(v){
   $('#cJPY').textContent='¥'+Math.round(n*RATES.JPY).toLocaleString();
   $('#cKRW').textContent='₩'+Math.round(n*RATES.KRW).toLocaleString();
 }
+async function updateLiveRates(){
+  const status=$('#rateStatus');
+  if(status) status.textContent='Checking live daily rates...';
+  for(const url of RATE_URLS){
+    try{
+      const res=await fetch(url,{cache:'no-store'});
+      if(!res.ok) throw new Error('Rate request failed');
+      const data=await res.json();
+      const rates=data.aud||{};
+      const jpy=Number(rates.jpy), krw=Number(rates.krw);
+      if(!Number.isFinite(jpy)||!Number.isFinite(krw)) throw new Error('Rate data missing');
+      RATES={JPY:jpy,KRW:krw};
+      const input=$('#audInput');
+      conv(input?input.value:100);
+      if(status) status.textContent=`Live daily rate from ${data.date||'latest'} - A$1 = ¥${jpy.toFixed(2)} / ₩${krw.toFixed(2)}`;
+      return;
+    }catch(e){}
+  }
+  conv(($('#audInput')||{}).value||100);
+  if(status) status.textContent=`Using spreadsheet fallback - A$1 = ¥${RATES.JPY.toFixed(2)} / ₩${RATES.KRW.toFixed(2)}`;
+}
 function buildMoney(){
   $('#moneyBody').innerHTML=`
   <div class="card" style="margin-bottom:24px">
     <h4>Quick conversion</h4>
-    <p style="margin-bottom:10px">Rates from the spreadsheet — ¥${RATES.JPY} and ₩${RATES.KRW} to the Australian dollar. They'll drift, so treat these as ballpark.</p>
+    <p id="rateStatus" style="margin-bottom:10px">Using spreadsheet fallback until live rates load - A$1 = ¥${RATES.JPY} / ₩${RATES.KRW}.</p>
     <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
-      <label style="font-size:12px;color:#6f6659">A$ <input type="number" value="100" min="0" step="10" oninput="conv(this.value)" style="width:92px;padding:7px 10px;border:1px solid var(--rule);border-radius:7px;font-family:inherit;font-size:14px"></label>
+      <label style="font-size:12px;color:#6f6659">A$ <input id="audInput" type="number" value="100" min="0" step="10" oninput="conv(this.value)" style="width:92px;padding:7px 10px;border:1px solid var(--rule);border-radius:7px;font-family:inherit;font-size:14px"></label>
       <div style="font-family:Fraunces,serif;font-size:21px" id="cJPY">¥10,920</div>
       <div style="font-family:Fraunces,serif;font-size:21px" id="cKRW">₩96,250</div>
     </div>
@@ -1557,6 +1577,7 @@ function buildMoney(){
     <li>10% VAT refund at the designated counter in department stores — keep receipts, bring your passport and the card you paid with</li>
    </ul></div>
   </div>`;
+  updateLiveRates();
 }
 
 /* ══════════════════════════════════════════════════════════
