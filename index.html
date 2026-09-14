@@ -276,7 +276,7 @@ table.t td b{font-weight:600}
 
 <section class="panel" id="p-busan"><div class="head" style="--accent:var(--c-busan)"><div class="head-kick">South Korea · Days 8–10</div><h2 class="head-h">Busan</h2><p class="head-s">5 – 7 October · 2 nights at Hotel Foret Premier Nampo. One and a half days, and the film festival opens while we're there. The plan runs east along the coast in a single line so nothing doubles back.</p><div class="head-btns"><button class="btn" onclick="go('map','busan')">See these days on the map</button></div></div><div class="body"><div id="days-busan"></div></div></section>
 
-<section class="panel" id="p-fukuoka"><div class="head" style="--accent:var(--c-fukuoka)"><div class="head-kick">Japan · Days 10–14</div><h2 class="head-h">Fukuoka</h2><p class="head-s">7 – 11 October · 4 nights at Best Western Plus Tenjin-Minami. The only place on the trip none of us have been. Two day trips out of the city and one day working the city itself, ending with the cosmos fields on Nokonoshima.</p><div class="head-btns"><button class="btn" onclick="go('map','fukuoka')">See these days on the map</button></div></div><div class="body"><div id="days-fukuoka"></div></div></section>
+<section class="panel" id="p-fukuoka"><div class="head" style="--accent:var(--c-fukuoka)"><div class="head-kick">Japan · Days 10–14</div><h2 class="head-h">Fukuoka</h2><p class="head-s">7 – 11 October · 4 nights at Best Western Plus Tenjin-Minami. The only place on the trip none of us have been. Itoshima by car, a Dazaifu day, then Hakata, Ohori Park and an optional seaside afternoon.</p><div class="head-btns"><button class="btn" onclick="go('map','fukuoka')">See these days on the map</button></div></div><div class="body"><div id="days-fukuoka"></div></div></section>
 
 <section class="panel" id="p-kansai"><div class="head" style="--accent:var(--c-kansai)"><div class="head-kick">Japan · Days 14–18</div><h2 class="head-h">Kyoto &amp; Osaka</h2><p class="head-s">11 – 15 October · 4 nights at Hotel Forza Kyoto Shijo Kawaramachi. Osaka, Higashiyama, Fushimi and Uji across four Kyoto-based nights.</p><div class="head-btns"><button class="btn" onclick="go('map','kansai')">See these days on the map</button></div></div><div class="body"><div id="days-kansai"></div></div></section>
 
@@ -415,8 +415,12 @@ const DAYS=[
    '**Kappabashi Street** — ceramics, knives, kitchenware. Walk up to Tsubaya then work south.',
    '~ Knife shops: Tsubaya, Kama-asa, Kamata',
    'Walk back to the hotel, 10–15 min, and rest']},
-  {k:'Dinner',v:['Suzukien for dessert — the strongest matcha ice cream there is']},
-  {k:'Evening',v:['Explore Ueno','**or** back to the Sumida River for a free Skytree view, 16 min by train or 21 min walk from Asakusa']},
+  {k:'Pre-game',v:['Back to the hotel to rest','**5:15 pm** — leave the hotel for Tokyo Dome']},
+  {k:'Getting to Tokyo Dome',v:[
+   '**Ueno → Akihabara → Suidobashi:** JR Yamanote / Keihin-Tohoku to Akihabara, then JR Chuo-Sobu local to Suidobashi. About 15–20 min plus the walk.',
+   'Use **JR Suidobashi Station** East or West Exit, then walk toward Tokyo Dome City. Aim to be at the gates around 5:40 pm for the 6:00 pm first pitch.']},
+  {k:'Dinner',v:['Dinner at **Tokyo Dome**','Look for Giants player bentos, beef tongue bowl, chicken nanban burger, TG curry, Giants fried chicken, helmet-cup snacks or a Giants beer / sour. Go early because the fun stuff sells out.']},
+  {k:'Evening',v:['**6:00 pm · Yomiuri Giants game at Tokyo Dome**','Stay at least through the **7th inning / Lucky 7** cheer and balloon moment.','**~9:30 pm** — estimated finish, depending on pitching changes and extras. After the game, head back and explore Ueno or get late-night supper near the hotel.']},
   {k:'Also nearby',v:['The Matcha Tokyo (frozen matcha latte), Standing Sushi Misaki, Shinpachi Shokudo, Soba Shinshu-ya, Gyukatsu Motomura','Shops: Onitsuka Tiger, Rockwear']}
  ]},
 
@@ -454,7 +458,7 @@ const DAYS=[
    '**16:30 · Kagurazaka-dori and Zenkoku-ji** — work down the slope. Craft, ceramics, kimono fabric and French delis on the side streets.',
    '**17:30 · Hyogo Yokocho and Kakurenbo Yokocho** — the two stone-paved alleys. Go at dusk when the lanterns are lit. The map pin for Kakurenbo is wrong, so just wander the block.']},
   {k:'Dinner',v:['Dinner in the alleys','**or** 400℃ Pizza Tokyo — reservations open 12:00 on 29 Sep']},
-  {k:'Evening',v:['Kagurazaka','Ushigome-Kagurazaka on the Oedo line runs direct to Ueno-okachimachi, about 15 min']},
+  {k:'Evening',v:['Kagurazaka','Ushigome-Kagurazaka on the Oedo line runs direct to Ueno-okachimachi, about 15 min','Explore Ueno after getting back if people still have energy']},
   {k:'Didn\'t fit',v:['Tsukiji Outer Market and teamLab Planets are both still unscheduled — this is the day with the most give if anyone wants to swap something out.']}
  ]},
 
@@ -676,6 +680,8 @@ DAYS.push(
    '~ **Oigen** — 10:00–16:00, tonkotsu ramen, 4.5★']},
   {k:'Afternoon',v:[
    'More time in **Dazaifu**, then come back to Fukuoka mid-afternoon',
+   '**Yakuin and Kego** — low-key neighbourhood wander near the hotel: cafes, bakeries, small shops, side streets and dinner options around Yakuin, Kego and Shirogane.',
+   '**Optional if there is time: Ropponmatsu** — local-feeling cafe and bookstore area near Ohori Park. Good for coffee, browsing, and a quieter wander away from the department-store side of Tenjin.',
    'Chill at the hotel for now']},
   {k:'Dinner',v:['Dinner in Fukuoka']},
   {k:'Evening',v:['Tenjin, Daimyo, Imaizumi, Nakasu or Hakata']},
@@ -687,7 +693,7 @@ DAYS.push(
   {k:'Shops',v:['Ghibli Studio Store · Miffy Oyatsu-do']}
  ]},
 
-{n:13,d:'2026-10-10',dow:'Sat',city:'fukuoka',t:'Hakata, Ohori Park &amp; Nokonoshima',s:'Market, shrines, then the cosmos fields',
+{n:13,d:'2026-10-10',dow:'Sat',city:'fukuoka',t:'Hakata, Ohori Park &amp; Momochi',s:'Market, old town, park, then an optional seaside afternoon',
  pills:['Long weekend starts'],
  blocks:[
   {k:'Breakfast',v:[
@@ -703,15 +709,15 @@ DAYS.push(
   {k:'Afternoon',v:[
    '**Ohori Park** — pond islands and bridges, then **Fukuoka Castle ruins / Maizuru Park**',
    'Chill at the hotel, walk around **Tenjin**, or go shopping',
-   '**Optional: Nokonoshima Island Park** — flower fields. Looks mid, probably not essential, but something to do if we get bored.']},
+   '**Optional: Momochi Seaside and BOSS E・ZO** — beach, Fukuoka Tower / PayPay Dome area, then the entertainment complex for food, games, VR/teamLab-style digital bits or the rooftop attractions if people want something more active.']},
   {k:'Dinner',v:['**Yatai** — the street food stalls']},
   {k:'Evening',v:['**Canal City Hakata** — fountain show every 30 min until 22:00','Stroll around Nakasu Island, where the yatai are, for the river scenery after eating']},
   {k:'Getting around',v:[
    '**Hotel → Yanagibashi Market:** 10 min walk towards Hakata',
    '**To Kushida / Tochoji:** Nakasukawabata Station, then 5 min walk',
    '**To Ohori Park:** 12 min walk to Tenjin, Airport line (platform K) 4 min to Ohori Park (K08)',
-   '**Optional Nokonoshima:** Ohori Park → Meinohama → ferry terminal → island bus. Door to door about an hour each way.',
-   '**Back:** Meinohama → Nakasukawabata, same line, 15 min, for Canal City and the yatai']},
+   '**Optional Momochi:** Ohori Park → Nishijin / Tojinmachi, then walk or short taxi to Momochi Seaside and BOSS E・ZO.',
+   '**Back:** taxi or subway back toward Tenjin / Nakasu for Canal City and the yatai']},
   {k:'Heads up',v:['>! **The Japanese long weekend starts today.** Sports Day falls on Monday 12 Oct, so Sat 10 – Mon 12 is a three-day domestic holiday. Tomorrow\'s Shinkansen is the busy return-travel day.']}
  ]}
 );
@@ -914,7 +920,9 @@ tokyo:[
   {n:'Azumabashi, Sumida River',la:35.7106,ln:139.7995,d:'Exit 4 or 5. Asahi HQ and the Skytree in one view.'},
   {n:'Senso-ji Temple',la:35.7148,ln:139.7967,d:'06:30–17:00. Kaminarimon and Nakamise.'},
   {n:'Kappabashi Street',la:35.7133,ln:139.7885,d:'Walk up to Tsubaya, then work south. Knives and ceramics.'},
-  {n:'Suzukien Asakusa',la:35.7149,ln:139.7900,d:'Strongest matcha gelato in Tokyo.'}]},
+  {n:'Mitsui Garden Hotel Ueno',la:35.7118,ln:139.7790,d:'Rest, then leave at 5:15 pm.'},
+  {n:'Tokyo Dome',la:35.7056,ln:139.7519,d:'Giants game, 6:00 pm. Dinner inside the dome.'},
+  {n:'Ueno',la:35.7138,ln:139.7773,d:'Late-night supper after the game.'}]},
  {day:3,label:'Day 3 · Shibuya & Nakameguro',stops:[
   {n:'Takeshita Street Harajuku',la:35.6716,ln:139.7031,d:'Crepes, then walk south.'},
   {n:'Cat Street Harajuku',la:35.6680,ln:139.7060,d:'The walking route down to Shibuya.'},
@@ -996,16 +1004,19 @@ fukuoka:[
   {n:'Dazaifu Tenmangu',la:33.5215,ln:130.5350,d:'Free. The approach street takes 1–2 hrs on its own.'},
   {n:'Komyozen-ji Temple Dazaifu',la:33.5200,ln:130.5340,d:'Lovely garden, on the way in.'},
   {n:'Tenkai Inari Shrine Dazaifu',la:33.5240,ln:130.5390,d:'5–10 min walk. Miniature Fushimi Inari in the forest.'},
-  {n:'Kyushu National Museum',la:33.5183,ln:130.5400,d:'Optional. Covered escalator from the shrine. ¥700.'}]},
- {day:13,label:'Day 13 · Hakata & Nokonoshima',stops:[
+  {n:'Kyushu National Museum',la:33.5183,ln:130.5400,d:'Optional. Covered escalator from the shrine. ¥700.'},
+  {n:'Yakuin Fukuoka',la:33.5810,ln:130.3970,d:'Cafes, bakeries, small shops and dinner options.'},
+  {n:'Kego Fukuoka',la:33.5860,ln:130.3940,d:'Side streets between Tenjin, Daimyo and Yakuin.'},
+  {n:'Ropponmatsu Fukuoka',la:33.5777,ln:130.3778,d:'Optional cafe and bookstore area if there is time.'}]},
+ {day:13,label:'Day 13 · Hakata & Momochi',stops:[
   {n:'Yanagibashi Rengo Market',la:33.5860,ln:130.4055,d:'10 min walk. Go early, stalls wind down.'},
   {n:'Tochoji Temple Fukuoka',la:33.5930,ln:130.4155,d:'Hakata old town.'},
   {n:'Kushida Shrine Fukuoka',la:33.5930,ln:130.4104,d:'5 min from Nakasukawabata.'},
   {n:'Kawabata Shopping Arcade',la:33.5930,ln:130.4080,d:'Covered arcade.'},
   {n:'Ohori Park',la:33.5860,ln:130.3790,d:'Pond islands and bridges.'},
   {n:'Fukuoka Castle Ruins Maizuru Park',la:33.5849,ln:130.3826,d:'Adjacent to Ohori.'},
-  {n:'Meinohama Ferry Terminal',la:33.5920,ln:130.3210,d:'Same line west. Ferry roughly hourly — check both ways.'},
-  {n:'Nokonoshima Island Park',la:33.6360,ln:130.3090,d:'Cosmos, peak around 10 Oct. ¥1,500. Allow 2.5 hrs.'},
+  {n:'Momochi Seaside Park',la:33.5933,ln:130.3520,d:'Optional beach and sea-air afternoon.'},
+  {n:'BOSS E・ZO FUKUOKA',la:33.5959,ln:130.3620,d:'Optional entertainment complex by PayPay Dome.'},
   {n:'Canal City Hakata',la:33.5896,ln:130.4110,d:'Fountain show every 30 min until 22:00.'},
   {n:'Nakasu Yatai Stalls',la:33.5930,ln:130.4060,d:'Dinner. River scenery after.'}]}],
 
@@ -1348,7 +1359,7 @@ const BLURB={
  tokyo:'Four nights in Ueno while everyone shakes off the flight. Three walkable clusters, one per day: the old lanes of Yanaka through to Asakusa and Kappabashi; Harajuku down through Shibuya to Nakameguro; then the bookshops of Jimbocho and the lantern alleys of Kagurazaka.',
  seoul:'Selena joins on arrival day. Two full days, so both are tight: palaces, hanbok and Ikseon-dong on the Saturday public holiday, then the Seongsu side of the river, the Han River cycle path and Itaewon on Sunday, finishing at Namsan.',
  busan:'A day and a half, with the film festival opening while we\'re there. Jagalchi and Gamcheon on arrival, then one long line east along the coast: Cheongsapo, the Sky Capsule, Haeundae, Dongbaek Island and a night cruise from The Bay 101.',
- fukuoka:'The one place none of us have been. A day driving the Itoshima coast finishing at the Sakurai torii at sunset, a Dazaifu day, and a day working Hakata, Ohori Park and maybe Nokonoshima.',
+ fukuoka:'The one place none of us have been. A day driving the Itoshima coast finishing at the Sakurai torii at sunset, a Dazaifu day, and a day working Hakata, Ohori Park and Momochi.',
  kansai:'Kyoto-based for four nights: Osaka, Higashiyama and teamLab, then Fushimi Inari, the sake warehouses at Chushojima and Uji on one rail line.',
  tokyo2:'Akasaka down through Roppongi and Azabu-Juban to Tokyo Tower on arrival day. One day still undecided — Hakone or a free day. Then a last morning around Omotesando and the 4:15 pm transfer to Narita.'
 };
@@ -1416,10 +1427,10 @@ const TRANSIT=[
    '<b>Kakao T</b> is the real answer in Busan. Three cars, three people each, every time.']},
  {c:'fukuoka',n:'Fukuoka',pay:'Suica or Pasmo works on the Fukuoka subway and JR. The Nishitetsu private line to Dazaifu also takes IC cards.',
   map:'https://metro.nuua.travel/en/fukuoka',off:'https://subway.city.fukuoka.lg.jp/eng/route/',offn:'Fukuoka City Subway',
-  lines:['<b>Kuko / Airport line (orange, K)</b> — does almost everything. Airport (K13) → Hakata (K11) → Nakasukawabata → Tenjin → Ohori Park (K08) → Meinohama for the Nokonoshima ferry. One line, the whole city.',
+  lines:['<b>Kuko / Airport line (orange, K)</b> — does almost everything. Airport (K13) → Hakata (K11) → Nakasukawabata → Tenjin → Ohori Park (K08). One line, the whole city.',
    '<b>Nanakuma line (green, N)</b> — Tenjin-Minami (our hotel, N18) to Hakata, 2 stops. How we get to the Shinkansen.',
    '<b>Nishitetsu Tenjin-Omuta line</b> — a private railway, not the subway. Tenjin to Futsukaichi for the Dazaifu branch.',
-   '<b>Meinohama ferry</b> — 10 min to Nokonoshima, roughly hourly. Check the timetable both ways.']},
+   '<b>Nishijin / Tojinmachi</b> — useful stops for Momochi Seaside, Fukuoka Tower and BOSS E・ZO.']},
  {c:'kansai',n:'Kyoto &amp; Osaka',pay:'ICOCA, or the Suica/Pasmo you already have — they all work interchangeably now. The Hankyu and Keihan private lines take IC cards too, so no separate tickets needed.',
   map:'https://metro.nuua.travel/en/osaka',off:'https://subway.osakametro.co.jp/en/',offn:'Osaka Metro',
   lines:['<b>Kyoto has only two subway lines.</b> Karasuma (green, north–south) and Tozai (red, east–west). Shijo on the Karasuma line is our hotel stop, connected underground.',
@@ -1528,7 +1539,6 @@ function buildMoney(){
    <tr><td>Hanbok rental + Gyeongbokgung</td><td>3 Oct</td><td>₩18,000–20,000 · palace free in hanbok</td></tr>
    <tr><td>The Bay 101 night cruise</td><td>6 Oct</td><td>₩30,000–60,000 · A$30–60</td></tr>
    <tr><td>Sky Capsule, Cheongsapo → Mipo</td><td>6 Oct</td><td>₩45,000 for 3 · ~₩15,000 each</td></tr>
-   <tr><td>Nokonoshima Island Park</td><td>10 Oct</td><td>¥1,500 · ~A$14</td></tr>
    <tr><td>Keya no Oto cave cruise</td><td>8 Oct</td><td>¥1,000 · ~A$9</td></tr>
    <tr><td>Kyushu National Museum <span style="color:#a79d8e">optional</span></td><td>9 Oct</td><td>¥700 · ~A$6</td></tr>
    <tr><td>Osaka attractions, paid individually</td><td>12 Oct</td><td>Umeda Sky ¥2,000 · Castle ¥1,200 · Tsutenkaku ¥1,500 · Tombori cruise ¥2,000</td></tr>
