@@ -144,6 +144,16 @@ a{color:inherit}
 .stat-l{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink4);margin-bottom:6px}
 .stat-v{font-family:Fraunces,serif;font-size:27px;font-weight:400;line-height:1.1}
 .stat-s{font-size:11.5px;color:var(--ink3);margin-top:4px;line-height:1.5}
+.trip-cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.cal-day{min-height:124px;border:1px solid var(--rule);border-top:4px solid var(--cc,var(--ink4));border-radius:8px;background:#fff;padding:11px 12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:7px}
+.cal-date{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;color:var(--ink4);font-size:10px;letter-spacing:.11em;text-transform:uppercase}
+.cal-date b{font-family:Fraunces,serif;font-size:20px;font-weight:500;line-height:1;color:var(--ink)}
+.cal-title{font-size:13px;font-weight:600;line-height:1.35;color:var(--ink2)}
+.cal-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:auto}
+.cal-tag{font-size:10px;font-weight:600;line-height:1.2;padding:4px 7px;border-radius:100px;background:var(--paper2);border:1px solid var(--rule);color:var(--ink3)}
+.cal-tag.hot{background:#fbe9e2;border-color:#f0cfc2;color:var(--warn)}
+.cal-tag.go{background:#e4efe8;border-color:#c8dfd2;color:var(--ok)}
+.cal-tag.dark{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 h2.sec{font-family:Fraunces,serif;font-size:23px;font-weight:400;margin:34px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--rule)}
 h2.sec:first-child{margin-top:0}
 p.lead{font-size:13.5px;color:var(--ink2);margin-bottom:16px;max-width:78ch}
@@ -228,7 +238,12 @@ table.t td b{font-weight:600}
   .slot{grid-template-columns:1fr;gap:5px}
   .ck{grid-template-columns:30px 1fr}
   .ck-r{grid-column:1/-1;border-left:none;border-top:1px solid var(--rule);flex-direction:row;align-items:baseline;gap:9px}
+  .trip-cal{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .cal-day{min-height:112px}
   .cover-meta{gap:22px}
+}
+@media(max-width:520px){
+  .trip-cal{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -258,12 +273,10 @@ table.t td b{font-weight:600}
 <section class="panel on" id="p-overview">
   <div class="head" style="--accent:var(--persimmon)">
     <div class="head-kick">The whole trip</div>
-    <h2 class="head-h">Nineteen nights, one clean loop</h2>
-    <p class="head-s">East to west across Japan, over to Korea and back in at Fukuoka, then east again to Kyoto and Tokyo. Everything below comes from the master spreadsheet — this is the same plan, just readable on a phone while you're standing on a platform.</p>
+    <h2 class="head-h">Nineteen nights, 6 cities</h2>
     <div class="head-btns">
       <button class="btn solid" onclick="go('map')">Open the map</button>
       <button class="btn" onclick="go('checklist')">What still needs booking</button>
-      <button class="btn" onclick="go('transit')">Metro maps &amp; getting around</button>
     </div>
   </div>
   <div class="body" id="overviewBody"></div>
@@ -1347,55 +1360,39 @@ function buildChecklist(){
 /* ══════════════════════════════════════════════════════════
    OVERVIEW
    ══════════════════════════════════════════════════════════ */
-const LEGS=[
- ['✈','Fly Melbourne → Tokyo Narita','QF79 direct, or QF604/QF61 via Brisbane · 28 Sep'],
- ['✈','Fly Narita → Incheon','Air Premia YP732, 12:30–15:10 · 2 Oct'],
- ['🚄','KTX Seoul → Busan','10:28 or 10:58, about 2h 45m · ₩54,400 pp · 5 Oct'],
- ['✈','Fly Gimhae → Fukuoka','Jeju Air 7C1453, 13:05–14:05 · 7 Oct'],
- ['🚄','Shinkansen Hakata → Kyoto','Nozomi 08:36–11:19, 2h 43m · ~A$165 pp · 11 Oct'],
- ['🚄','Shinkansen Kyoto → Tokyo','Nozomi 346, 2h 12m · ~A$135 pp · 15 Oct'],
- ['✈','Fly Tokyo Narita → Melbourne','QF80, 20:25–08:40+1 · 17 Oct']
+const OVERVIEW_DAYS=[
+ {d:'28 Sep',dow:'Mon',city:'tokyo',title:'Melbourne → Tokyo · land 7pm · Ueno',tags:[['Private transfer','go']]},
+ {d:'29 Sep',dow:'Tue',city:'tokyo',title:'Yanaka · Asakusa · Kappabashi',tags:[['Baseball 6pm','hot']]},
+ {d:'30 Sep',dow:'Wed',city:'tokyo',title:'Harajuku · Shibuya shopping · Nakameguro → Ebisu',tags:[['Shopping','']]},
+ {d:'1 Oct',dow:'Thu',city:'tokyo',title:'Kanda · Jimbocho · Kagurazaka',tags:[['400°C Pizza','']]},
+ {d:'2 Oct',dow:'Fri',city:'seoul',title:'Tokyo → Seoul · Myeongdong',tags:[['Selena joins','go'],['Airport pickup','']]},
+ {d:'3 Oct',dow:'Sat',city:'seoul',title:'Palaces · hanbok · Ikseon-dong',tags:[['Public holiday','hot'],['Book lunch','']]},
+ {d:'4 Oct',dow:'Sun',city:'seoul',title:'Seongsu · Han River · Itaewon · Namsan',tags:[['Bike split','']]},
+ {d:'5 Oct',dow:'Mon',city:'busan',title:'Seoul → Busan · Jagalchi · Gamcheon',tags:[['KTX','dark'],['Holiday travel','hot']]},
+ {d:'6 Oct',dow:'Tue',city:'busan',title:'Cheongsapo · Haeundae · Marine City · Bay 101',tags:[['BIFF opening','hot'],['Night cruise','']]},
+ {d:'7 Oct',dow:'Wed',city:'fukuoka',title:'Busan → Fukuoka · Tenjin · Daimyo · Imaizumi',tags:[['Jeju Air','dark']]},
+ {d:'8 Oct',dow:'Thu',city:'fukuoka',title:'Itoshima coast by car',tags:[['2 cars',''],['Sunset torii','go']]},
+ {d:'9 Oct',dow:'Fri',city:'fukuoka',title:'Dazaifu · Yakuin · Kego',tags:[['Izakaya','']]},
+ {d:'10 Oct',dow:'Sat',city:'fukuoka',title:'Hakata · Ohori Park · Momochi',tags:[['Long weekend','hot']]},
+ {d:'11 Oct',dow:'Sun',city:'kansai',title:'Fukuoka → Kyoto · Nishiki · Gion night walk',tags:[['Shinkansen','dark']]},
+ {d:'12 Oct',dow:'Mon',city:'kansai',title:'Osaka · Castle · Dotonbori · Shinsekai',tags:[['Amazing Pass','go'],['Tombori cruise','']]},
+ {d:'13 Oct',dow:'Tue',city:'kansai',title:'Higashiyama · Ninenzaka · teamLab',tags:[['teamLab','hot']]},
+ {d:'14 Oct',dow:'Wed',city:'kansai',title:'Fushimi Inari · sake district · Uji',tags:[['Canal boats','go']]},
+ {d:'15 Oct',dow:'Thu',city:'tokyo2',title:'Kyoto → Tokyo · Akasaka → Tokyo Tower',tags:[['Shinkansen','dark']]},
+ {d:'16 Oct',dow:'Fri',city:'tokyo2',title:'Hakone or free Tokyo day',tags:[['Decide','hot']]},
+ {d:'17 Oct',dow:'Sat',city:'tokyo2',title:'Last morning · Omotesando or Ginza · home',tags:[['Transfer 4:15pm','hot'],['QF80 8:25pm','dark']]}
 ];
-const BLURB={
- tokyo:'Four nights in Ueno while everyone shakes off the flight. Three walkable clusters, one per day: the old lanes of Yanaka through to Asakusa and Kappabashi; Harajuku down through Shibuya to Nakameguro; then the bookshops of Jimbocho and the lantern alleys of Kagurazaka.',
- seoul:'Selena joins on arrival day. Two full days, so both are tight: palaces, hanbok and Ikseon-dong on the Saturday public holiday, then the Seongsu side of the river, the Han River cycle path and Itaewon on Sunday, finishing at Namsan.',
- busan:'A day and a half, with the film festival opening while we\'re there. Jagalchi and Gamcheon on arrival, then one long line east along the coast: Cheongsapo, the Sky Capsule, Haeundae, Dongbaek Island and a night cruise from The Bay 101.',
- fukuoka:'The one place none of us have been. A day driving the Itoshima coast finishing at the Sakurai torii at sunset, a Dazaifu day, and a day working Hakata, Ohori Park and Momochi.',
- kansai:'Kyoto-based for four nights: Osaka, Higashiyama and teamLab, then Fushimi Inari, the sake warehouses at Chushojima and Uji on one rail line.',
- tokyo2:'Akasaka down through Roppongi and Azabu-Juban to Tokyo Tower on arrival day. One day still undecided — Hakone or a free day. Then a last morning around Omotesando and the 4:15 pm transfer to Narita.'
-};
 function buildOverview(){
-  let h=`<div class="grid g3">
-   <div class="stat"><div class="stat-l">Nights away</div><div class="stat-v">19</div><div class="stat-s">28 Sep – 18 Oct 2026</div></div>
-   <div class="stat"><div class="stat-l">Travellers</div><div class="stat-v">9</div><div class="stat-s">Eight from Australia, Selena joining in Seoul</div></div>
-   <div class="stat"><div class="stat-l">Moves between cities</div><div class="stat-v">7</div><div class="stat-s">Four flights, three trains, no backtracking</div></div>
-  </div>`;
-
-  h+='<h2 class="sec">The route</h2><div class="rt">';
-  CITIES.forEach((c,i)=>{
-    h+=`<div class="rt-row"><div class="rt-rail"><div class="rt-dot" style="color:${c.c};background:${c.c}"></div><div class="rt-line"></div></div>
-    <div class="rt-body"><div class="rt-city">${c.n}</div><div class="rt-date">${c.d} · ${c.nights}</div><div class="rt-desc">${BLURB[c.k]}</div></div></div>`;
-    if(i<LEGS.length-1){const L=LEGS[i+1];h+=`<div class="rt-leg"><div class="rt-leg-rail"></div><div><b>${L[0]} ${L[1]}</b> — ${L[2]}</div></div>`;}
+  const cityColor=k=>(CITIES.find(c=>c.k===k)||{}).c||'#a79d8e';
+  let h='<div class="trip-cal">';
+  OVERVIEW_DAYS.forEach((day,i)=>{
+    h+=`<article class="cal-day" style="--cc:${cityColor(day.city)}">
+      <div class="cal-date"><span>${day.d}<br>${day.dow}</span><b>${i+1}</b></div>
+      <div class="cal-title">${day.title}</div>
+      <div class="cal-tags">${day.tags.map(t=>`<span class="cal-tag ${t[1]}">${t[0]}</span>`).join('')}</div>
+    </article>`;
   });
   h+='</div>';
-
-  h+=`<h2 class="sec">Who's where</h2>
-  <table class="t"><thead><tr><th>Leg</th><th>Who</th><th>Detail</th></tr></thead><tbody>
-   <tr><td><b>MEL → NRT</b><br>28 Sep</td><td>Reuel &amp; Irene</td><td>QF79 direct, 9:35 am → 7:00 pm</td></tr>
-   <tr><td><b>MEL → NRT</b><br>28 Sep</td><td>Everyone else</td><td>QF604 to Brisbane 7:00 am, then QF61, landing 6:50 pm. Bags check straight through — don't collect them in Brisbane.</td></tr>
-   <tr><td><b>ICN arrival</b><br>2 Oct</td><td><b>Selena</b></td><td>Flying in separately, landing Incheon about <b>4:30 pm</b> — roughly 90 minutes behind the group. Making her own way in and <b>meeting us in Myeongdong</b>.</td></tr>
-   <tr><td><b>NRT → MEL</b><br>17 Oct</td><td>All</td><td>QF80, 20:25 → 08:40 on 18 Oct</td></tr>
-  </tbody></table>`;
-
-  h+=`<h2 class="sec">Where we sleep</h2><table class="t"><thead><tr><th>Nights</th><th>Hotel</th><th>Check in / out</th></tr></thead><tbody>
-   <tr><td><b>28 Sep – 2 Oct</b><br>4 nights</td><td>Mitsui Garden Hotel Ueno, Tokyo</td><td>After 15:00 / before 11:00</td></tr>
-   <tr><td><b>2 – 5 Oct</b><br>3 nights</td><td>Sejong Hotel Seoul Myeongdong</td><td>After 15:00 / before 12:00</td></tr>
-   <tr><td><b>5 – 7 Oct</b><br>2 nights</td><td>Hotel Foret Premier Nampo, Busan</td><td>After 15:00 / before 11:00</td></tr>
-   <tr><td><b>7 – 11 Oct</b><br>4 nights</td><td>Best Western Plus Fukuoka Tenjin-Minami</td><td>After 15:00 / before 11:00</td></tr>
-   <tr><td><b>11 – 15 Oct</b><br>4 nights</td><td>Hotel Forza Kyoto Shijo Kawaramachi</td><td>After 14:00 / before 11:00</td></tr>
-   <tr><td><b>15 – 17 Oct</b><br>2 nights</td><td>Henn na Hotel Akasaka, Tokyo</td><td>After 14:00 / before 11:00</td></tr>
-  </tbody></table>`;
-
   $('#overviewBody').innerHTML=h;
 }
 
