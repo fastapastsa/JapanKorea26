@@ -516,7 +516,6 @@ const DAYS=[
   {k:'Lunch',v:[
    '**Option 1 — Maison de Paris, Ikseon-dong**, 11:30–22:00 Saturdays. French-style — pesto spaghetti, mushroom risotto with Jeju pork. [Book here](https://www.catchtable.net/shop/lapero.ikseondong)',
    '**Option 2 — Ikseon Chwihyang** (the one Irene wanted), 12:00–21:00, Korean-western, 4.5★. [Book here](https://www.catchtable.net/shop/FavoriteIksoen)',
-   '>! Both need booking, and a table of nine will not exist. Book **two tables of 4 and 5**.']},
   {k:'Afternoon',v:['Insadong and Ikseon-dong','Late afternoon — back to the hotel to rest, then out to Hongdae']},
   {k:'Dinner',v:['Eat in Hongdae','**or** Goobne Chicken Myeongdong, 12:00–00:00, fried chicken, 4.9★']},
   {k:'Evening',v:['Hongdae — shopping, bars, street performers']},
@@ -1365,22 +1364,22 @@ const OVERVIEW_DAYS=[
  {d:'29 Sep',dow:'Tue',city:'tokyo',title:'Yanaka · Asakusa · Kappabashi',tags:[['Baseball 6pm','hot']]},
  {d:'30 Sep',dow:'Wed',city:'tokyo',title:'Harajuku · Shibuya shopping · Nakameguro → Ebisu',tags:[['Shopping','']]},
  {d:'1 Oct',dow:'Thu',city:'tokyo',title:'Kanda · Jimbocho · Kagurazaka',tags:[['400°C Pizza','']]},
- {d:'2 Oct',dow:'Fri',city:'seoul',title:'Tokyo → Seoul · Myeongdong',tags:[['Selena joins','go'],['Airport pickup','']]},
- {d:'3 Oct',dow:'Sat',city:'seoul',title:'Palaces · hanbok · Ikseon-dong',tags:[['Public holiday','hot'],['Book lunch','']]},
- {d:'4 Oct',dow:'Sun',city:'seoul',title:'Seongsu · Han River · Itaewon · Namsan',tags:[['Bike split','']]},
+ {d:'2 Oct',dow:'Fri',city:'seoul',title:'Tokyo → Seoul · Myeongdong',tags:[['YP732 NRT T2 12:30','dark'],['Selena joins','go'],['Airport pickup','']]},
+ {d:'3 Oct',dow:'Sat',city:'seoul',title:'Palaces · Insa & Ikseon-dong · Itaewon',tags:[['Public holiday','hot'],['Hanbok','']]},
+ {d:'4 Oct',dow:'Sun',city:'seoul',title:'Seongsu · Han River · Itaewon · Namsan',tags:[['Biking','']]},
  {d:'5 Oct',dow:'Mon',city:'busan',title:'Seoul → Busan · Jagalchi · Gamcheon',tags:[['KTX','dark'],['Holiday travel','hot']]},
  {d:'6 Oct',dow:'Tue',city:'busan',title:'Cheongsapo · Haeundae · Marine City · Bay 101',tags:[['BIFF opening','hot'],['Night cruise','']]},
- {d:'7 Oct',dow:'Wed',city:'fukuoka',title:'Busan → Fukuoka · Tenjin · Daimyo · Imaizumi',tags:[['Jeju Air','dark']]},
+ {d:'7 Oct',dow:'Wed',city:'fukuoka',title:'Busan → Fukuoka · Tenjin · Daimyo · Imaizumi',tags:[['7C1453 13:05','dark']]},
  {d:'8 Oct',dow:'Thu',city:'fukuoka',title:'Itoshima coast by car',tags:[['2 cars',''],['Sunset torii','go']]},
  {d:'9 Oct',dow:'Fri',city:'fukuoka',title:'Dazaifu · Yakuin · Kego',tags:[['Izakaya','']]},
  {d:'10 Oct',dow:'Sat',city:'fukuoka',title:'Hakata · Ohori Park · Momochi',tags:[['Long weekend','hot']]},
  {d:'11 Oct',dow:'Sun',city:'kansai',title:'Fukuoka → Kyoto · Nishiki · Gion night walk',tags:[['Shinkansen','dark']]},
  {d:'12 Oct',dow:'Mon',city:'kansai',title:'Osaka · Castle · Dotonbori · Shinsekai',tags:[['Amazing Pass','go'],['Tombori cruise','']]},
  {d:'13 Oct',dow:'Tue',city:'kansai',title:'Higashiyama · Ninenzaka · teamLab',tags:[['teamLab','hot']]},
- {d:'14 Oct',dow:'Wed',city:'kansai',title:'Fushimi Inari · sake district · Uji',tags:[['Canal boats','go']]},
- {d:'15 Oct',dow:'Thu',city:'tokyo2',title:'Kyoto → Tokyo · Akasaka → Tokyo Tower',tags:[['Shinkansen','dark']]},
+ {d:'14 Oct',dow:'Wed',city:'kansai',title:'Fushimi Inari · sake district · Uji',tags:[['Canal boats','go'],['Matcha','go' ]]},
+ {d:'15 Oct',dow:'Thu',city:'tokyo2',title:'Kyoto → Tokyo · Akasaka → Roppongi → Tokyo Tower',tags:[['Shinkansen','dark']]},
  {d:'16 Oct',dow:'Fri',city:'tokyo2',title:'Hakone or free Tokyo day',tags:[['Decide','hot']]},
- {d:'17 Oct',dow:'Sat',city:'tokyo2',title:'Last morning · Omotesando or Ginza · home',tags:[['Transfer 4:15pm','hot'],['QF80 8:25pm','dark']]}
+ {d:'17 Oct',dow:'Sat',city:'tokyo2',title:'Last morning · Omotesando or Ginza · home',tags:[['Transfer 4:15pm','hot'],['QF80 NRT T2 20:25','dark']]}
 ];
 function buildOverview(){
   const cityColor=k=>(CITIES.find(c=>c.k===k)||{}).c||'#a79d8e';
