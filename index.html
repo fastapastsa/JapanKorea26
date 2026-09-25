@@ -708,6 +708,7 @@ DAYS.push(
    '>+ **Booked through Trip.com: 2 × Honda Fit** — one under **RK**, one under **Om Ly**.',
    '**Thursday 8 October · 08:00 pickup → 19:30 drop-off.**',
    '**Budget Hakata** — 18 min walk from the hotel. **2-11-19, Hakataekimae, Hakata-ku, Fukuoka City, Fukuoka**.',
+    '**Ask for an ETC card** for tolls. Use the purple ETC express lane to avoid stopping at toll booths; pay the toll charges to the rental company when returning the cars.',
    '2 cars × 5 seats = 10 seats for 9 people',
    '>! **Two drivers, each with their own International Driving Permit.** Carry the physical IDP and the Australian licence together — one without the other is not valid.',
    'Load the same route into both cars before leaving so nobody gets separated']}
@@ -730,7 +731,7 @@ DAYS.push(
    '~ **Oigen** — 10:00–16:00, tonkotsu ramen, 4.5★']},
   {k:'Afternoon',v:[
    'More time in **Dazaifu**, then come back to Fukuoka mid-afternoon',
-   '**Yakuin and Kego** — low-key neighbourhood wander near the hotel: cafes, bakeries, small shops, side streets and dinner options around Yakuin, Kego and Shirogane.',
+    '**Yakuin and Kego** — low-key neighbourhood wander near the hotel: cafes, bakeries, small shops, side streets and dinner options around Yakuin, Kego and Shirogane. If you haven’t explored it yet, add **Daimyo**, a cool indie, hip area.',
    '**Optional if there is time: Ropponmatsu** — local-feeling cafe and bookstore area near Ohori Park. Good for coffee, browsing, and a quieter wander away from the department-store side of Tenjin.',
    'Chill at the hotel for now']},
   {k:'Dinner',v:['**R&amp;I only:** Hikiniku to Come, **6:30 pm** — booked and paid already']},
@@ -780,8 +781,8 @@ DAYS.push(
  blocks:[
   {k:'Breakfast',v:['Konbini — we\'re out early']},
   {k:'The train',v:[
-   '**08:36 Hakata → 11:19 Kyoto. 2h 43m, direct.**',
-   'Tickets released 11 Sept. Book on SmartEx (official) or Trip.com / Klook.',
+    '**Nozomi 128 · 09:00 Hakata → 11:46 Kyoto. Direct.**',
+    '**Seats: Car 14, 6A–6D and 5A–5E.**',
    'Approx A$160–170 per person',
    '>! Today is the Sunday of a Japanese three-day weekend. This is the busiest train we take.']},
   {k:'Lunch',v:['**Option 1 — Shokaku**, 2 min from the hotel, 12:00–22:00, ramen, 4.7★','**Option 2 — Udon Shiki**, 4 min from the hotel, 11:00–15:00 and 15:00–22:00, udon, 4.2★']},
@@ -1084,8 +1085,8 @@ fukuoka:[
 
 kansai:[
  {day:14,label:'Day 14 · Arrival & Gion by night',stops:[
-  {n:'Hakata Station',la:33.5897,ln:130.4207,d:'08:36 Nozomi. Reserve seats and baggage slots.'},
-  {n:'Kyoto Station',la:34.9858,ln:135.7585,d:'Arrive 11:19. Karasuma line to Shijo.'},
+  {n:'Hakata Station',la:33.5897,ln:130.4207,d:'09:00 Nozomi 128. Car 14: seats 6A–6D and 5A–5E.'},
+  {n:'Kyoto Station',la:34.9858,ln:135.7585,d:'Arrive 11:46. Karasuma line to Shijo.'},
   {n:'Hotel Forza Kyoto Shijo Kawaramachi',la:35.0040,ln:135.7690,d:'B1F connects to the Shijo-dori underground walkway, Exit 11.'},
   {n:'Nishiki Market Kyoto',la:35.0050,ln:135.7648,d:'Touristed now, but worth a look.'},
   {n:'Teramachi Shopping Arcade Kyoto',la:35.0055,ln:135.7672,d:'Teramachi and Shinkyogoku.'},
@@ -1148,7 +1149,7 @@ const TODO=[
   w:'<b>Booked:</b> KTX 10:58 → 13:52 on 5 Oct. Keep the Korail confirmation handy and make sure everyone has the carriage / seat details.',
   m:'For 5 Oct · Korail · approx ₩54,400 pp'},
  {id:'shink1',by:'2026-09-14',band:'now',t:'Shinkansen Hakata → Kyoto, 9 seats',
-  w:'Tickets released 11 Sept and <b>11 Oct is the Sunday of a Japanese three-day weekend</b>. Book the 08:36 and <b>reserve the oversized-baggage slots at the same time</b> — bags over 160 cm total need one, and most 30 kg cases exceed it. Alternative: forward the luggage by takkyubin.',
+  w:'<b>Booked: Nozomi 128, 09:00 → 11:46.</b> Car 14: seats 6A–6D and 5A–5E. <b>11 Oct is the Sunday of a Japanese three-day weekend</b>; confirm oversized-baggage slots are reserved for bags over 160 cm total. Alternative: forward the luggage by takkyubin.',
   m:'For 11 Oct · SmartEx, Trip.com or Klook · approx A$160–170 pp'},
  {id:'shink2',by:'2026-09-15',band:'now',t:'Shinkansen Kyoto → Tokyo, 9 seats',
   w:'Releases <b>15 Sept at 10:00 JST</b>. Set an alarm. Same again — nine seats plus oversized-baggage slots, or send the bags ahead.',
@@ -1577,12 +1578,14 @@ function buildMoney(){
   <h2 class="sec">Paying on the ground</h2>
   <div class="grid g2">
    <div class="card"><h4>Japan</h4><ul>
+    <li><b>ATMs:</b> Seven Bank — ¥110 for withdrawals under ¥20,000; ¥220 for ¥20,000 or more. Aeon Bank is another option (about ¥75–110).</li>
     <li>Tax-free shopping needs your <b>physical passport</b> at the till, and a minimum of ¥5,000 in one store on one day</li>
     <li>Tax-free goods must stay <b>sealed in their clear bags</b> and travel in carry-on for the customs check at Narita</li>
     <li>Snacks are cheaper at drugstores than convenience stores — Matsumoto Kiyoshi, Okashi no Machioka</li>
     <li>Cards are widely taken, but yatai stalls and small shrines are cash</li>
    </ul></div>
    <div class="card"><h4>South Korea</h4><ul>
+    <li><b>ATMs:</b> Look for KEB Hana Bank or Woori Bank.</li>
     <li>Cards work almost everywhere — but <b>carry the physical card</b>, Apple Pay is unreliable</li>
     <li>T-money top-ups are <b>cash only</b>, at a convenience store</li>
     <li>10% VAT refund at the designated counter in department stores — keep receipts, bring your passport and the card you paid with</li>
